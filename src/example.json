@@ -1,0 +1,85 @@
+{
+	"id": "1512",
+	"name": {
+		"fi": "Louis Vuitton Helsinki",
+		"en": "Louis Vuitton",
+		"sv": "Louis Vuitton",
+		"zh": null
+	},
+	"source_type": {
+		"id": 2,
+		"name": "Matko"
+	},
+	"info_url": "http://www.louisvuitton.com",
+	"modified_at": "2019-09-11T12:07:23.000Z",
+	"location": {
+		"lat": 60.1678352355957,
+		"lon": 24.94523048400879,
+		"address": {
+			"street_address": "Pohjoisesplanadi 35",
+			"postal_code": "00100",
+			"locality": "Helsinki"
+		}
+	},
+	"description": {
+		"intro": null,
+		"body": "Louis Vuitton on yksi maailman tunnetuimmista luksusmerkeistä, jonka Helsingin liikkeen valikoimiin kuuluvat laadukkaat nahkalaukut sekä muut nahkatuotteet ja asusteet.",
+		"images": null
+	},
+	"tags": [{
+		"id": "matko2:66",
+		"name": "Shoes"
+	}, {
+		"id": "matko2:258",
+		"name": "Bags"
+	}, {
+		"id": "matko2:44",
+		"name": "International"
+	}, {
+		"id": "matko1:9",
+		"name": "SHOPPING"
+	}, {
+		"id": "matko2:112",
+		"name": "Luxury"
+	}],
+	"image":"https://previews.123rf.com/images/krasnevsky/krasnevsky1601/krasnevsky160100013/51412555-helsinki-finland-january-4-facade-of-louis-vuitton-store-in-helsinki-on-january-4-2016-louis-vuitton.jpg",
+	"opening_hours": {
+		"hours": [{
+			"weekday_id": 1,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 2,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 3,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 4,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 5,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 6,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 7,
+			"opens": null,
+			"closes": null,
+			"open24h": false
+		}],
+		"openinghours_exception": ""
+	}
+}
