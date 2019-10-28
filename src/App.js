@@ -2,10 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Organization from './pages/organizations/Organization';
+import Profile from './pages/profile/Profile';
 
 function App() {
-
- return (
+return (
+  <Organization/>
+  )
+ /*return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -22,7 +25,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  );*/
 }
 
 export default App;

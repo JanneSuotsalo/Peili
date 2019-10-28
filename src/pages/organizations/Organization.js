@@ -12,6 +12,7 @@ export default class Organization extends React.Component {
         return (
             <div>
             <ListView item={data} />
+            <ListView item={data} />
             </div>
         );
     }
