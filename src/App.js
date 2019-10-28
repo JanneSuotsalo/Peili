@@ -3,29 +3,25 @@ import logo from './logo.svg';
 import './App.css';
 import Organization from './pages/organizations/Organization';
 import Profile from './pages/profile/Profile';
+import { BrowserRouter, Switch, Route, Link, Router } from "react-router-dom";
 
+  
 function App() {
-return (
-  <Organization/>
-  )
- /*return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> HELLO WORLD.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return (
+    <div>
+    <h1>NavBar</h1>
+
+    <BrowserRouter>
+        <Route path="/organization">
+          <Organization />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+    </BrowserRouter>
     </div>
-  );*/
+
+  );
 }
 
 export default App;
