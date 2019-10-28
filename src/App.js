@@ -3,6 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Organization from "./pages/organizations/Organization";
 import Profile from "./pages/profile/Profile";
+import Login from "./pages/signIn/Login"
+import Register from "./pages/signIn/Register"
 import { BrowserRouter, Switch, Route, Link, Router } from "react-router-dom";
 
 function App() {
@@ -21,11 +23,27 @@ function App() {
                 <a>Organization</a>
               </Link>
             </li>
+            <li>
+              <Link to="/login">
+                <a>Login</a>
+              </Link>
+            </li>
+            <li>
+              <Link to="/register">
+                <a>Register</a>
+              </Link>
+            </li>
           </ul>
         </div>
 
         <Route exact path="/">
           <Profile />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
         </Route>
         <Route path="/organization">
           <Organization />
