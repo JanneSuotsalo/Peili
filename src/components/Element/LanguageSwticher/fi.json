@@ -1,0 +1,12 @@
+{
+    "profilePage":{
+        "favoriteOrganizations":"Suosikki järjestöt",
+        "statistic":"Statistiikkaa",
+        "update":"Päivitä"
+    },
+    "organizationPage":{
+        "location":"Sijainti",
+        "homepage":"kotisivu",
+        "meter":"metriä"
+    }
+}

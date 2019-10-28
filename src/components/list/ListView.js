@@ -1,5 +1,6 @@
 import React from 'react';
 import './List.css'
+import I18n from '../../components/Element/LanguageSwticher/I18n';
 import { FaWalking, FaInfo, FaMap } from 'react-icons/fa';
 
 
@@ -21,9 +22,9 @@ export default class ListView extends React.Component {
                     </div>
                     <div className="listBody">
                         <div className="mobileBody">
-                        <h4 id="listIconWalking"><FaWalking /> 100 metriä</h4>
-                        <h4 id="listIconInfo"><FaInfo /><a href={this.props.item.image}>kotisivu</a></h4>
-                        <h4 id="listIconMap"><FaMap /> Sijainti</h4>                        
+                        <h4 id="listIconWalking"><FaWalking /> 100 {I18n.t('organizationPage.meter')}</h4>
+                        <h4 id="listIconInfo"><FaInfo /><a href={this.props.item.image}>{I18n.t('organizationPage.homepage')}</a></h4>
+                        <h4 id="listIconMap"><FaMap /> {I18n.t('organizationPage.location')}</h4>                        
                         </div>
                         <p id="listDetail">{this.props.item.description.body}</p>
                     </div>

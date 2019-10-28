@@ -1,0 +1,12 @@
+{
+    "profilePage":{
+        "favoriteOrganizations":"Favorite Organisations",
+        "statistic":"Statistic",
+        "update":"Update"
+    },
+    "organizationPage":{
+        "location":"Sijainti",
+        "homepage":"homepage",
+        "meter":"meters"    
+    }
+}
