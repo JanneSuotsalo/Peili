@@ -8,5 +8,10 @@
         "location":"Sijainti",
         "homepage":"kotisivu",
         "meter":"metriä"
+    },
+    "testpage":{
+        "header":"Testejä",
+        "headerText":"Tässä osiossa voit suorittaa erilaisia tehtäviä"
     }
+
 }

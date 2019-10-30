@@ -4,6 +4,7 @@ import './App.css';
 import Organization from './pages/organizations/Organization';
 import Profile from './pages/profile/Profile';
 import { BrowserRouter, Switch, Route, Link, Router } from "react-router-dom";
+import Test from './pages/test/Test';
 
   
 function App() {
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/test">
+          <Test />
         </Route>
     </BrowserRouter>
     </div>

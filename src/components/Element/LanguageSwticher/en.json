@@ -8,5 +8,9 @@
         "location":"Sijainti",
         "homepage":"homepage",
         "meter":"meters"    
+    },
+    "testpage":{
+        "header":"Tests",
+        "headerText":"Here you can do different kind of tests"
     }
 }
