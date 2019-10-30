@@ -16,7 +16,7 @@ export default class Test extends React.Component {
                     <h1>{I18n.t('testpage.header')}</h1>
                     <p>{I18n.t('testpage.headerText')}</p>
                 </div>
-                <div className="TestBody">
+                <div className="testList">
                 {this.state.item.map((item) => (
                     <TestCard title={item}/>
                 ))}

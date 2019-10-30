@@ -1,18 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Organization from './pages/organizations/Organization';
-import Profile from './pages/profile/Profile';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Organization from "./pages/organizations/Organization";
+import Profile from "./pages/profile/Profile";
+import Login from "./pages/signIn/Login"
+import Register from "./pages/signIn/Register"
 import { BrowserRouter, Switch, Route, Link, Router } from "react-router-dom";
 import Test from './pages/test/Test';
 
-  
 function App() {
   return (
     <div>
-    <h1>NavBar</h1>
+      <BrowserRouter>
+        <div>
+          <ul id="nav">
+            <li>
+              <Link to="/profile">
+                <a>Profile</a>
+              </Link>
+            </li>
+            <li>
+              <Link to="/organization">
+                <a>Organization</a>
+              </Link>
+            </li>
+            <li>
+              <Link to="/login">
+                <a>Login</a>
+              </Link>
+            </li>
+            <li>
+              <Link to="/register">
+                <a>Register</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-    <BrowserRouter>
+        <Route exact path="/">
+          <Profile />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
         <Route path="/organization">
           <Organization />
         </Route>
@@ -23,8 +56,8 @@ function App() {
           <Test />
         </Route>
     </BrowserRouter>
-    </div>
 
+    </div>
   );
 }
 

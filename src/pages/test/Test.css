@@ -1,3 +1,6 @@
+html, body{
+    height: 100%;
+}
 .TestBody{
     text-align: center;
     width: 100%;
@@ -6,7 +9,7 @@
     text-align: center;
     width: 100%;
 }
-.TestBody{
+.testList{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -18,10 +21,16 @@
 .TestCard{
     border-radius: 10% 10%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: white;
     text-align: center;
     width: 45%;
     max-width: 400px;
     height: 30%;
-    margin-left: 2%;
+    margin-left: 3%;
     margin-top: 3%;
+}
+@media only screen and (max-width: 600px) {
+    html{
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdLOC6rTfaICbCJ2sTG1oKkM8027WykJ-nlLuxx3MUCcT4N-WZ&s");
+    }
 }
