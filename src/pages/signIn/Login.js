@@ -4,52 +4,71 @@ import "./Login.css";
 export default function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [errorMsg, setErrorMsg] = useState("");
+    const [loginErrorMsg, setLoginErrorMsg] = useState("");
 
     function onUsernameChange(username){
         setUsername(username.target.value);
         console.log(username.target.value);
-        setErrorMsg("")
+        setLoginErrorMsg("")
     }
 
     function validateForm() {
         if(username == ""){
-            setErrorMsg("Username can not be empty");
+            setLoginErrorMsg("Username can not be empty");
         }
     }
 
     return (
-        <div className="login-container">
-            <div className="box">
+        <div className="login_container">
+            <div className="login_box">
+
+            <div className="login_signintext">
+                Sign in
+            </div>
             
-            <label htmlFor="username">Username</label>
-            <div className="input-group">
+            <hr className="login_line">
+            </hr>
+
+            <div className="login_usernameContainer">
                 <input
+                className="login_username"
                 type="text"
                 name="username"
                 placeholder="Username"
+                maxLength={20}
                 onChange={onUsernameChange}
                 />
             </div>
 
-            <label htmlFor="password">Password</label>
-            <div className="input-group">
+            <div className="login_passwordContainer">
                 <input
+                className="login_password"
                 type="password"
                 name="password"
                 placeholder="Password"/>
             </div>
 
-            <div className="errorMsg">
-                <small>{errorMsg}</small>
+            <div className="login_ErrorMsg">
+                <small>{loginErrorMsg}</small>
             </div>
 
+            <div className="login_btncontainer">
+                <button
+                    type="button"
+                    className="login_btn"
+                    onClick={() => validateForm()}>
+                    Login
+                </button>
+        	</div>
+
+            <div className="login_noAccount">
             <button
-                type="button"
-                className="login-btn"
-                onClick={() => validateForm()}>
-                Login
-            </button>
+                    type="button"
+                    className="login_noaccountbtn"
+                    >
+                    Not registered?
+                </button>
+            </div>
 
             </div>
         </div>
