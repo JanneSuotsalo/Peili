@@ -74,12 +74,19 @@ export default function Login(props) {
     }
 
     return (
-        <div className="register-container">
-            <div className="register-box">
+        <div className="register_container">
+            <div className="register_box">
+
+            <div className="register_signUpText">
+                Sign up
+            </div>
+
+            <hr className="register_line">
+            </hr>
             
-            <label htmlFor="username">Username</label>
-            <div className="input-group">
+            <div className="register_usernameContainer">
                 <input
+                className="register_username"
                 type="text"
                 name="username"
                 placeholder="Username"
@@ -88,27 +95,28 @@ export default function Login(props) {
                 onChange={onUsernameChange}
                 />
             </div>
-            <div className="usernameErrorMsg">
+            <div className="register_usernameErrorMsg">
                 <small>{usernameErrorMsg}</small>
             </div>
 
-            <label htmlFor="email">Email</label>
-            <div className='input-group'>
+            <div className='register_emailContainer'>
               <input 
+              className="register_email"
               type='email' 
               name='email'
+              placeholder="Email"
               value={email}
               onBlur={validEmailCheck}
               onChange={(email) => setEmail(email.target.value)}
               />
             </div>
-            <div className="emailErrorMsg">
+            <div className="register_emailErrorMsg">
                 <small>{emailErrorMsg}</small>
             </div>
 
-            <label htmlFor="password">Password</label>
-            <div className="input-group">
+            <div className="register_passwordContainer">
                 <input
+                className="register_password"
                 type="password"
                 name="password"
                 value={password}
@@ -116,29 +124,40 @@ export default function Login(props) {
                 placeholder="Password"/>
             </div>
 
-            <label htmlFor="rePassword">Retype your password</label>
-            <div className="input-group">
+            <div className="register_rePasswordContainer">
                 <input
+                className="register_rePassword"
                 type="password"
                 name="rePassword"
                 value={rePassword}
                 onChange={(rePassword) => setRePassword(rePassword.target.value)}
                 placeholder="Retype your password"/>
             </div>
-            <div className="passwordErrorMsg">
+            <div className="register_passErrorMsg">
                 <small>{passwordErrorMsg}</small>
             </div>
 
-            <div className="registerErrorMsg">
+            <div className="register_registerErrorMsg">
                 <small>{registerErrorMsg}</small>
             </div>
 
-            <button
-                type="button"
-                className="register-btn"
-                onClick={() => validateForm()}>
+            <div className="register_btnContainer">
+                <button
+                    type="button"
+                    className="register_btn"
+                    onClick={() => validateForm()}>
                     Register
                 </button>
+            </div>
+
+            <div className="register_haveAccount">
+            <button
+                    type="button"
+                    className="register_haveAccountBtn"
+                    >
+                    already registered?
+                </button>
+            </div>
 
             </div>
         </div>

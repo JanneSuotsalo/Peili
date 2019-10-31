@@ -13,7 +13,7 @@ export default function Login(props) {
     }
 
     function validateForm() {
-        if(username == ""){
+        if(username === ""){
             setLoginErrorMsg("Username can not be empty");
         }
     }
@@ -22,7 +22,7 @@ export default function Login(props) {
         <div className="login_container">
             <div className="login_box">
 
-            <div className="login_signintext">
+            <div className="login_signInText">
                 Sign in
             </div>
             
@@ -48,11 +48,11 @@ export default function Login(props) {
                 placeholder="Password"/>
             </div>
 
-            <div className="login_ErrorMsg">
+            <div className="login_errorMsg">
                 <small>{loginErrorMsg}</small>
             </div>
 
-            <div className="login_btncontainer">
+            <div className="login_btnContainer">
                 <button
                     type="button"
                     className="login_btn"
@@ -64,13 +64,14 @@ export default function Login(props) {
             <div className="login_noAccount">
             <button
                     type="button"
-                    className="login_noaccountbtn"
+                    className="login_noAccountBtn"
                     >
                     Not registered?
                 </button>
             </div>
-
+            
             </div>
         </div>
+        
         );
 }

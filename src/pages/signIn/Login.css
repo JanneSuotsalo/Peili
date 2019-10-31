@@ -8,12 +8,12 @@
   border-radius: 10% 10%;
   width: 450px;
   height: 430px;
-  background-color: orange;
+  background-color: rgba(255, 138, 4, 0.8);
   box-shadow: 0 8px 12px 1px rgba(0,0,0,0.2);
   padding: 10px;
 }
 
-.login_signintext{
+.login_signInText{
   text-align: center;
   color: white;
   font-size: 4em;
@@ -27,19 +27,19 @@
 }
 
 .login_usernameContainer{
-  margin-top: 5%;
+  margin-top: 8%;
   text-align: center;
 }
 
 .login_passwordContainer{
-  margin-top: 10%;
+  margin-top: 8%;
   text-align: center;
 }
 
 .login_username{
   width: 75%;
   height: 35px;
-  border-radius: 20px;
+  border-radius: 10px;
   border-style: none;
   font-size: 1.2em;
   padding-left: 3%;
@@ -52,15 +52,15 @@
 .login_password{
   width: 75%;
   height: 35px;
-  border-radius: 20px;
+  border-radius: 10px;
   border-style: none;
   font-size: 1.2em;
   padding-left: 3%;
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
 }
 
-.login_btncontainer{
-  margin-top: 10%;
+.login_btnContainer{
+  margin-top: 8%;
   text-align: center;
 }
 
@@ -75,9 +75,12 @@
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
 }
 
-.login_ErrorMsg{
+.login_errorMsg{
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  color: white;
   padding-top: 5px;
-  text-align: center;
 }
 
 .login_noAccount{
@@ -85,7 +88,7 @@
   text-align: center;
 }
 
-.login_noaccountbtn{
+.login_noAccountBtn{
   color: white;
   font-size: 1.1em;
   background-color: transparent;

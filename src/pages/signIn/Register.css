@@ -1,13 +1,155 @@
-@media all and (min-width: 480px) {
-    .register-container {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-    }
+.register_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 
-    .register-box {
-      border-radius: 10% 10%;
-      box-shadow: 0 8px 12px 1px rgba(0,0,0,0.2);
-      padding: 10px;
-    }
-  }
+.register_box {
+  border-radius: 10% 10%;
+  width: 450px;
+  height: 550px;
+  background-color: rgba(255, 138, 4, 0.8);
+  box-shadow: 0 8px 12px 1px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.register_signUpText{
+  text-align: center;
+  color: white;
+  font-size: 4em;
+}
+
+.register_line{
+  margin-top: 5%;
+  text-align: center;
+  width: 60%;
+  border: 0.5px solid white;
+}
+
+.register_usernameContainer{
+  margin-top: 8%;
+  text-align: center;
+}
+
+.register_passwordContainer{
+  margin-top: 8%;
+  text-align: center;
+}
+
+.register_rePasswordContainer{
+  margin-top: 8%;
+  text-align: center;
+}
+
+.register_emailContainer{
+  margin-top: 8%;
+  text-align: center;
+}
+
+.register_username{
+  width: 75%;
+  height: 35px;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 1.2em;
+  padding-left: 3%;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
+}
+
+.register_email{
+  width: 75%;
+  height: 35px;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 1.2em;
+  padding-left: 3%;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
+}
+
+.register_password{
+  width: 75%;
+  height: 35px;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 1.2em;
+  padding-left: 3%;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
+}
+
+.register_rePassword{
+  width: 75%;
+  height: 35px;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 1.2em;
+  padding-left: 3%;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
+}
+
+.register_btnContainer{
+  margin-top: 8%;
+  text-align: center;
+}
+
+.register_btn{
+  width: 45%;
+  height: 50px;
+  border-radius: 20px;
+  border-style: none;
+  font-size: 1.2em;
+  background-color: grey;
+  color: white;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
+}
+
+.register_btn:hover{
+
+}
+
+.register_usernameErrorMsg{
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  padding-top: 2px;
+  text-align: center;
+  color: white;
+}
+
+.register_emailErrorMsg{
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  padding-top: 2px;
+  text-align: center;
+  color: white;
+}
+
+.register_passErrorMsg{
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  padding-top: 2px;
+  text-align: center;
+  color: white;
+}
+
+.register_registerErrorMsg{
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  padding-top: 2px;
+  text-align: center;
+  color: white;
+}
+
+.register_haveAccount{
+  margin-top: 5%;
+  text-align: center;
+}
+
+.register_haveAccountBtn{
+  color: white;
+  font-size: 1.1em;
+  background-color: transparent;
+  border-style: none;
+}
