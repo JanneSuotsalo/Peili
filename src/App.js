@@ -4,6 +4,7 @@ import "./App.css";
 import Organization from "./pages/organizations/Organization";
 import Profile from "./pages/profile/Profile";
 import { BrowserRouter, Switch, Route, Link, Router } from "react-router-dom";
+import Test from './pages/test/Test';
 
 function App() {
   return (
@@ -33,7 +34,10 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
-      </BrowserRouter>
+        <Route path="/test">
+          <Test />
+        </Route>
+    </BrowserRouter>
     </div>
   );
 }
