@@ -1,0 +1,13 @@
+@media all and (min-width: 480px) {
+    .login-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .box {
+      border-radius: 10% 10%;
+      box-shadow: 0 8px 12px 1px rgba(0,0,0,0.2);
+      padding: 10px;
+    }
+  }

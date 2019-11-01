@@ -44,3 +44,8 @@
   font-weight: bold;
   color: #069;
 }
+
+#nav li :hover {
+  background-color: #ffffff;
+  color: rgb(107, 148, 224);
+}
