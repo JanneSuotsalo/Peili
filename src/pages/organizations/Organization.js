@@ -1,6 +1,6 @@
 import React from 'react';
 import ListView from '../../components/list/ListView';
-import '../../components/list/List.css'
+import './Organization'
 var data = require('../../example.json');
 
 export default class Organization extends React.Component {

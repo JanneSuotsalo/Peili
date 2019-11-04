@@ -17,7 +17,6 @@ export default class ProfileCard extends React.Component {
                         <p>{this.props.user.birth}</p>
                         <p>{this.props.user.city}</p>
                         <p>{this.props.user.email}</p>
-                        <button id="buttonCustom">{I18n.t('profilePage.update')}</button>
                 </div>
         );
     }
