@@ -25,6 +25,11 @@ function App() {
               </Link>
             </li>
             <li>
+              <Link to="/test">
+                <a>Quizes</a>
+              </Link>
+            </li>
+            <li>
               <Link to="/login">
                 <a>Login</a>
               </Link>

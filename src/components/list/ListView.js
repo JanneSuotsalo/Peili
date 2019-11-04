@@ -9,7 +9,6 @@ export default class ListView extends React.Component {
         super(props);
     }
     render() {
-        console.log(JSON.stringify(this.props.item))
         return (
             <div className="listMain">
                 <div className="listCard">

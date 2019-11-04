@@ -8,6 +8,10 @@ export default class Test extends React.Component {
     state = {
         item: [1,2,3,4,5,6,7,8,9,10]
     }
+
+    testClicked = (event) => {
+        console.log("clicked event:" + event);
+    }
     
     render() {
         return (
@@ -18,7 +22,7 @@ export default class Test extends React.Component {
                 </div>
                 <div className="TestBody">
                 {this.state.item.map((item) => (
-                    <TestCard title={item}/>
+                    <TestCard onClick={this.testClicked} title={item}/>
                 ))}
                 </div>
             </div>

@@ -10,7 +10,7 @@ export default class Organization extends React.Component {
     render() {
         //now only one item but will be changed to a list
         return (
-            <div>
+            <div className="orgBody">
             <ListView item={data} />
             <ListView item={data} />
             </div>
