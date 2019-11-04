@@ -42,8 +42,10 @@
 }   
 
 @media only screen and (max-width: 600px) {
+    #head{
+        margin-top: -2%;
+    }
     .listHeader{
-        margin-top: 17%;
         background-color: cornsilk;
     }
     #listIconWalking{
@@ -71,7 +73,7 @@
     }
     .listImage img{
         width: 100%;
-        margin: -19%;
+        margin-top: -60%;
         height: auto;
     }
     #link{
