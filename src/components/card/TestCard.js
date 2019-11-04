@@ -11,7 +11,7 @@ export default class TestCard extends React.Component {
         //now only one item but will be changed to a list
         return (
             <div className="TestCard">
-                <div className="imageHolder" style={{backgroundColor:this.style()}}></div>                
+                <div className="imageHolder" style={{backgroundColor:this.style(), height:"50px"}}></div>                
                 <h2>Testi {this.props.title}</h2> 
             </div>
         );

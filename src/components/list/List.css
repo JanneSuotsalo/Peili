@@ -5,6 +5,9 @@
 .listHeader{
     background-color: cornsilk;
 }
+.listSlot{
+    width: 100%;
+}
 .mobileBody{
     display: inline-flex;
     flex-flow: row;
