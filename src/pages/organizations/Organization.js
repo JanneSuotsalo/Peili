@@ -1,5 +1,6 @@
 import React from 'react';
 import ListView from '../../components/list/ListView';
+import '../../components/list/List.css'
 var data = require('../../example.json');
 
 export default class Organization extends React.Component {
@@ -10,9 +11,10 @@ export default class Organization extends React.Component {
     render() {
         //now only one item but will be changed to a list
         return (
-            <div>
+            <div className="listSlot">
             <ListView item={data} />
             <ListView item={data} />
+            
             </div>
         );
     }

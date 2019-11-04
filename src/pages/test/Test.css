@@ -30,7 +30,4 @@ html, body{
     margin-top: 3%;
 }
 @media only screen and (max-width: 600px) {
-    html{
-        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdLOC6rTfaICbCJ2sTG1oKkM8027WykJ-nlLuxx3MUCcT4N-WZ&s");
-    }
 }

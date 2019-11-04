@@ -21,12 +21,11 @@ export default class Profile extends React.Component {
     render() {
         //now only one item but will be changed to a list
         return (
-            <div className="ProfileMain">
+            <div className="profileMain">
                 <ProfileCard user={this.state.user}/>
                 <SmallCard title={I18n.t('profilePage.favoriteOrganizations')}/>
                 <SmallCard title={I18n.t('profilePage.statistic')}/>
-
-            </div>
+                </div>
         );
     }
 }

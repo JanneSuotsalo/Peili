@@ -8,6 +8,9 @@
     margin-top: -25px;
     background-color: cornsilk;
 }
+.listSlot{
+    width: 100%;
+}
 .mobileBody{
     display: inline-flex;
     flex-flow: row;
