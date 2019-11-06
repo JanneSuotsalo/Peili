@@ -7,10 +7,12 @@ export default class TestCard extends React.Component {
     style(){
         return '#'+Math.random().toString(16).substr(-6); 
     }
+    handleClick = () => {
+        this.props.clicked(this.props.title);
+    }
     render() {
-        //now only one item but will be changed to a list
         return (
-            <div className="TestCard">
+            <div className="TestCard" onClick={this.handleClick}>
                 <div className="imageHolder" style={{backgroundColor:this.style(), height:"50px"}}></div>                
                 <h2>Testi {this.props.title}</h2> 
             </div>

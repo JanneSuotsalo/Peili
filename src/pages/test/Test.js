@@ -9,8 +9,9 @@ export default class Test extends React.Component {
         item: [1,2,3,4,5,6,7,8,9,10]
     }
 
-    testClicked = (event) => {
-        console.log("clicked event:" + event);
+    testClicked = event => {
+        console.log("You clicked on test: "+ event)
+        //        this.props.testChange(event);
     }
     
     render() {
@@ -22,7 +23,7 @@ export default class Test extends React.Component {
                 </div>
                 <div className="testList">
                 {this.state.item.map((item) => (
-                    <TestCard onClick={this.testClicked} title={item}/>
+                    <TestCard clicked={this.testClicked} title={item}/>
                 ))}
                 </div>
             </div>

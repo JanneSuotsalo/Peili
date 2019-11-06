@@ -2,7 +2,8 @@
     "profilePage":{
         "favoriteOrganizations":"Suosikki järjestöt",
         "statistic":"Statistiikkaa",
-        "update":"Päivitä"
+        "update":"Päivitä",
+        "Achievements":"Saavutukset"
     },
     "organizationPage":{
         "location":"Sijainti",

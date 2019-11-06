@@ -59,6 +59,9 @@
 
     .profileCard1{
         border-radius: 10% 10%;
+        border: black;
+        border-width: 1px;
+        border-style: solid;
         box-shadow: 0 8px 12px 1px rgba(0,0,0,0.2);
         width: 80%;
         max-width: 500px;
@@ -67,5 +70,11 @@
         margin-left: 10%;        
         margin-bottom: 4%;
         margin-top: 2%;
+    }
+    .profileCard1:hover{
+        border: gray;
+        border-width: 1px;
+        border-style: solid;
+        box-shadow: 0 16px 24px 0px rgba(0,0,0,0.2);
     }
 }

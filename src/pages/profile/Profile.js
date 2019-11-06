@@ -25,6 +25,7 @@ export default class Profile extends React.Component {
                 <ProfileCard user={this.state.user}/>
                 <SmallCard title={I18n.t('profilePage.favoriteOrganizations')}/>
                 <SmallCard title={I18n.t('profilePage.statistic')}/>
+                <SmallCard title={I18n.t('profilePage.Achievements')}/>                
                 </div>
         );
     }

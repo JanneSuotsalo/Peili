@@ -8,10 +8,15 @@ import Register from "./pages/signIn/Register"
 import { BrowserRouter, Switch, Route, Link, Router } from "react-router-dom";
 import Test from './pages/test/Test';
 
+function handleTestClick (){
+  console.log("here")
+} 
+
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <Toolbar/>
         <div>
           <ul id="nav">
             <li>

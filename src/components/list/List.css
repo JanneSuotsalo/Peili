@@ -1,83 +1,8 @@
-.listMain{
-    margin-top: 3%;
-    flex-wrap: wrap;
-}
-.listHeader{
-    background-color: cornsilk;
-}
-.listSlot{
-    width: 100%;
-}
-.mobileBody{
-    display: inline-flex;
-    flex-flow: row;
-}
-.listImage img{
-    width: 100%;
-    margin: 0;
-    height: auto;
-}
-#listDetail{
-    visibility: visible;
-}
-#listIconWalking{
-    margin: 0;
-}
-#listIconInfo{
-    margin: 0;
-}
-#listIconMap{
-    margin: 0;
-}
-.listCard {
-    box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-    width: 40%;
-    max-width: 400px;
-    height: 20%;
-    max-width: 500px;
-    text-align: center;
-}
-.listCard:hover {
-    box-shadow: 0 20px 15px 0 rgba(0,0,0,0.2);
-}   
 
 @media only screen and (max-width: 600px) {
-    #head{
-        margin-top: -2%;
-    }
-    .listHeader{
-        background-color: cornsilk;
-    }
-    #listIconWalking{
-        margin-top: 1%;
-        margin-bottom: 1%;
-    }
-    #listIconInfo{
-        margin-top: 1%;
-        margin-bottom: 1%;
-    }#listIconMap{
-        margin-top: 1%;
-        margin-bottom: 1%;
-    }
-    .mobileBody{
-        visibility: visible;
-        display: inline-flex;
-        flex-flow: column;
-        justify-content: left;
-        margin: 0;
-    }
-    #listDetail{
-        height: 0%;
-        float: right;
-        visibility: hidden;
-    }
-    .listImage img{
-        width: 100%;
-        margin-top: -60%;
-        height: auto;
-    }
-    #link{
-        visibility: hidden;
+   
+    img{
+        max-width: 100%;
     }
     .listCard {
         box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
@@ -85,6 +10,10 @@
         margin-left: 10%;
         margin-right: 10%;
         text-align: center;
+    }
+    .listHeader{
+        color: aqua;
+        
     }
 
   }

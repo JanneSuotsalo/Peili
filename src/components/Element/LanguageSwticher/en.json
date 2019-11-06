@@ -2,15 +2,17 @@
     "profilePage":{
         "favoriteOrganizations":"Favorite Organisations",
         "statistic":"Statistic",
-        "update":"Update"
+        "update":"Update",
+        "Achievements":"Saavutukset"
     },
     "organizationPage":{
         "location":"Sijainti",
         "homepage":"homepage",
-        "meter":"meters"    
+        "meter":"meters"   
     },
     "testpage":{
         "header":"Tests",
         "headerText":"Here you can do different kind of tests"
     }
+
 }
