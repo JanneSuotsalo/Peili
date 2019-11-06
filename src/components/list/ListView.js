@@ -14,7 +14,6 @@ export default class ListView extends React.Component {
                         <img src={this.props.item.image}></img>
                     <div className="listHeader">
                         <h2 id="head">{this.props.item.name.fi}</h2>
-                        <a id="link" href={this.props.item.info_url}>{this.props.item.info_url}</a>
                     </div>
                     <div className="listBody">
                         <h4 id="listIconWalking"><FaWalking /> 100 {I18n.t('organizationPage.meter')}</h4>

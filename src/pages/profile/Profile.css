@@ -45,6 +45,12 @@
 }
 @media only screen and (max-width: 600px) {
 
+    .profileMain{
+        background-color: white;
+        width: 100%;
+        text-align: center;
+
+    }
     
 .profileCard{
     float: left;
@@ -57,12 +63,13 @@
     margin-bottom: 10%;
 }
 
+.profileCard img{
+    box-shadow: 0 8px 4px 3px rgba(0,0,0,0.2);
+    border-radius: 50%;
+}
     .profileCard1{
         border-radius: 10% 10%;
-        border: black;
-        border-width: 1px;
-        border-style: solid;
-        box-shadow: 0 8px 12px 1px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 8px 1px rgba(0,0,0,0.5);
         width: 80%;
         max-width: 500px;
         text-align: center;
@@ -77,4 +84,5 @@
         border-style: solid;
         box-shadow: 0 16px 24px 0px rgba(0,0,0,0.2);
     }
+
 }

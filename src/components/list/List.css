@@ -1,8 +1,10 @@
 
 @media only screen and (max-width: 600px) {
    
-    img{
-        max-width: 100%;
+    .listCard img{        
+        width: 100%;
+        float: left;
+
     }
     .listCard {
         box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
@@ -12,8 +14,7 @@
         text-align: center;
     }
     .listHeader{
-        color: aqua;
-        
+        padding-bottom: 0;
     }
 
   }
