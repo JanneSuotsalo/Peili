@@ -1,0 +1,43 @@
+.toolbar{
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: cornflowerblue;
+    height: 56px;
+}
+.toolbarLogo {
+    margin-left: 2rem;
+}
+
+.toolbarLogo a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+.space{
+    flex: 1;
+}
+.toolbarNavigation{
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;    
+}
+.toolbarNavItems a{
+    color: white;
+    text-decoration: none;
+}
+.toolbarNavItems ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.toolbarNavItems li{
+    padding: 0.5rem;
+}
+.toolbarNavItems a:active{
+    color: red;
+    text-decoration: none;
+}

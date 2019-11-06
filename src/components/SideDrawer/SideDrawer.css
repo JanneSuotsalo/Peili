@@ -1,0 +1,27 @@
+.sideDrawer{
+    height: 100%;
+    background: rgba(255, 255, 255, 0.89);
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    z-index: 200;
+}
+.sideDrawer ul{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.sideDrawer li{
+    margin: 1.2rem 0;
+}
+.sideDrawer a{
+    font-size: 1.2rem;
+    color: saddlebrown;
+    text-decoration: none;
+}
+.sideDrawer a:active{
+    color: red;
+}
