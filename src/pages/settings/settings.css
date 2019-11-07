@@ -4,10 +4,10 @@
 }
 
 #main {
-    float: left;
-    position: relative;
-    width: 50%;
-    left: 25%;
+  width: 80%;
+  height: fit-content;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 /* Page end */
 /* Collapsible start */
@@ -93,19 +93,19 @@ input:checked + .slider:before {
 #settingList {
     float: left;
     position: relative;
-    left: -50%;
+    left: -80%;
 }
 /* Settings list end */
 /* Setting list item start */
 #itemContainer {
     width: 100%;
     display: inline-block;
-    border: #2196F3 groove;
+    border: #2196F3 groove 3px;
     margin: 2px 0 2px 0;
 }
 
 #itemTitle {
-    width: 50%;
+    width: 80%;
     float: left;
     padding: 4px 0 4px 14px;
 }
