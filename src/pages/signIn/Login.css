@@ -85,3 +85,12 @@
   background-color: transparent;
   border-style: none;
 }
+
+@media only screen and (max-width: 600px) {
+  
+  .login_box {
+    box-shadow: none;
+    background-color: rgb(255, 255, 255);
+  }
+
+}
