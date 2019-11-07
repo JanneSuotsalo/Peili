@@ -77,6 +77,10 @@ export default function Login(props) {
         <div className="register_container">
             <div className="register_box">
 
+            <div className="register_peiliLogoContainer">
+            <img className="register_peiliLogo" src="PeiliLogo.png" />
+            </div>
+
             <div className="register_signUpText">
                 Sign up
             </div>
@@ -84,9 +88,9 @@ export default function Login(props) {
             <hr className="register_line">
             </hr>
             
-            <div className="register_usernameContainer">
+            <div className="register_inputContainers">
                 <input
-                className="register_username"
+                className="register_inputs"
                 type="text"
                 name="username"
                 placeholder="Username"
@@ -95,13 +99,13 @@ export default function Login(props) {
                 onChange={onUsernameChange}
                 />
             </div>
-            <div className="register_usernameErrorMsg">
+            <div className="register_inputErrorMsgs">
                 <small>{usernameErrorMsg}</small>
             </div>
 
-            <div className='register_emailContainer'>
+            <div className='register_inputContainers'>
               <input 
-              className="register_email"
+              className="register_inputs"
               type='email' 
               name='email'
               placeholder="Email"
@@ -110,13 +114,13 @@ export default function Login(props) {
               onChange={(email) => setEmail(email.target.value)}
               />
             </div>
-            <div className="register_emailErrorMsg">
+            <div className="register_inputErrorMsgs">
                 <small>{emailErrorMsg}</small>
             </div>
 
-            <div className="register_passwordContainer">
+            <div className="register_inputContainers">
                 <input
-                className="register_password"
+                className="register_inputs"
                 type="password"
                 name="password"
                 value={password}
@@ -124,21 +128,17 @@ export default function Login(props) {
                 placeholder="Password"/>
             </div>
 
-            <div className="register_rePasswordContainer">
+            <div className="register_inputContainers">
                 <input
-                className="register_rePassword"
+                className="register_inputs"
                 type="password"
                 name="rePassword"
                 value={rePassword}
                 onChange={(rePassword) => setRePassword(rePassword.target.value)}
                 placeholder="Retype your password"/>
             </div>
-            <div className="register_passErrorMsg">
+            <div className="register_inputErrorMsgs">
                 <small>{passwordErrorMsg}</small>
-            </div>
-
-            <div className="register_registerErrorMsg">
-                <small>{registerErrorMsg}</small>
             </div>
 
             <div className="register_btnContainer">

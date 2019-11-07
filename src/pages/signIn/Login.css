@@ -5,58 +5,49 @@
 }
 
 .login_box {
-  border-radius: 10% 10%;
-  width: 450px;
-  height: 430px;
-  background-color: rgba(255, 138, 4, 0.8);
+  border-radius: 1%;
+  width: 400px;
+  height: 470px;
+  background-color: #F2F2F2;
   box-shadow: 0 8px 12px 1px rgba(0,0,0,0.2);
   padding: 10px;
 }
 
+.login_peiliLogoContainer{
+  text-align: center;
+}
+
+.login_peiliLogo{
+  width: 70px;
+}
+
 .login_signInText{
   text-align: center;
-  color: white;
+  color: #F27127;
   font-size: 4em;
+  font-weight: bold;
 }
 
 .login_line{
   margin-top: 5%;
   text-align: center;
   width: 60%;
-  border: 0.5px solid white;
+  border: 0.5px solid #F2955E;
 }
 
-.login_usernameContainer{
+.login_inputContainers{
   margin-top: 8%;
   text-align: center;
 }
 
-.login_passwordContainer{
-  margin-top: 8%;
-  text-align: center;
-}
-
-.login_username{
-  width: 75%;
+.login_inputs{
+  width: 80%;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 3px;
   border-style: none;
   font-size: 1.2em;
   padding-left: 3%;
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
-}
-
-.login_username:hover{
-}
-
-.login_password{
-  width: 75%;
-  height: 35px;
-  border-radius: 10px;
-  border-style: none;
-  font-size: 1.2em;
-  padding-left: 3%;
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
+  box-shadow: 0 5px 6px -6px rgba(13, 13, 13, 0.500);
 }
 
 .login_btnContainer{
@@ -67,10 +58,10 @@
 .login_btn{
   width: 45%;
   height: 50px;
-  border-radius: 20px;
+  border-radius: 3px;
   border-style: none;
   font-size: 1.2em;
-  background-color: grey;
+  background-color: #04BFBF;
   color: white;
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.500);
 }
@@ -89,7 +80,7 @@
 }
 
 .login_noAccountBtn{
-  color: white;
+  color: #F2955E;
   font-size: 1.1em;
   background-color: transparent;
   border-style: none;

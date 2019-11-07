@@ -22,6 +22,10 @@ export default function Login(props) {
         <div className="login_container">
             <div className="login_box">
 
+            <div className="login_peiliLogoContainer">
+            <img className="login_peiliLogo" src="PeiliLogo.png" />
+            </div>
+
             <div className="login_signInText">
                 Sign in
             </div>
@@ -29,9 +33,9 @@ export default function Login(props) {
             <hr className="login_line">
             </hr>
 
-            <div className="login_usernameContainer">
+            <div className="login_inputContainers">
                 <input
-                className="login_username"
+                className="login_inputs"
                 type="text"
                 name="username"
                 placeholder="Username"
@@ -40,9 +44,9 @@ export default function Login(props) {
                 />
             </div>
 
-            <div className="login_passwordContainer">
+            <div className="login_inputContainers">
                 <input
-                className="login_password"
+                className="login_inputs"
                 type="password"
                 name="password"
                 placeholder="Password"/>
