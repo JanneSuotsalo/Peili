@@ -1,0 +1,112 @@
+/* Page start */
+#pageTitle {
+    width: 100%;
+}
+
+#main {
+    float: left;
+    position: relative;
+    width: 50%;
+    left: 25%;
+}
+/* Page end */
+/* Collapsible start */
+.collapsible {
+    background-color: #eee;
+    color: black;
+    cursor: pointer;
+    padding: 4px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+/* Collapsible end */
+/* Slider start */
+.switch {
+  position: relative;
+  width: 34px;
+  height: 19px;
+  float: right;
+  margin: 28px 14px 28px 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 19px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+/* Slider end */
+/* Settings list start */
+#settingList {
+    float: left;
+    position: relative;
+    left: -50%;
+}
+/* Settings list end */
+/* Setting list item start */
+#itemContainer {
+    width: 100%;
+    display: inline-block;
+    border: #2196F3 groove;
+    margin: 2px 0 2px 0;
+}
+
+#itemTitle {
+    width: 50%;
+    float: left;
+    padding: 4px 0 4px 14px;
+}
+/* Setting list item end */
