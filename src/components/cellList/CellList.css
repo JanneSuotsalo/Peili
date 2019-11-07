@@ -16,6 +16,30 @@
     border-width: 3px;
     }
 
+    .cardHeader {
+        padding: 0 0 0 3px;
+        text-align: left;
+        width: 100%;
+    }
+
+    .cardBody {
+        padding: 0 0 0 3px;
+        text-align: left;
+    }
+
+    .cardFooter {
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    .footerItem {
+        padding: 0 3px 0 3px;
+        float: left;
+        display: inline-block;
+    }
+
+
 @media only screen and (max-width: 600px) {
    
     img{
