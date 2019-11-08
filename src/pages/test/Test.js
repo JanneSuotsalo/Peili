@@ -3,6 +3,16 @@ import I18n from '../../components/Element/LanguageSwticher/I18n';
 import TestCard from '../../components/card/TestCard';
 import './Test.css'
 
+
+
+/*
+Chatbot layout  
+History
+quiz start - end
+quiz content
+
+
+*/
 export default class Test extends React.Component {
     //fetch somewhere
     state = {
