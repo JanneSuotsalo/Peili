@@ -1,7 +1,14 @@
 import React from 'react';
 import './SideDrawer.css';
-const sideDrawer = props => (
-    <nav className="sideDrawer">
+
+const sideDrawer = props => {
+    let drawAnim = 'sideDrawer';
+    if(props.show){
+        drawAnim = 'sideDrawer open';
+    }
+
+return(
+    <nav className={drawAnim}>
        <ul>
             <li>
                 <a onClick={()=> props.routeHandler("profile")}>Profile</a>
@@ -25,5 +32,5 @@ const sideDrawer = props => (
     </nav>
 
     );
-
+}
 export default sideDrawer;

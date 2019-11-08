@@ -7,7 +7,7 @@
     height: 56px;
 }
 .toolbarLogo {
-    margin-left: 2rem;
+    margin-left: 0.3rem;
 }
 
 .toolbarLogo a{
@@ -15,17 +15,17 @@
     text-decoration: none;
     font-size: 1.25rem;
 }
-.space{
-    flex: 1;
+.toolbarLogo img{
+    width: 35%;
+    
 }
-.toolbarNavigation{
-    padding: 0 1rem;
+.toolbarNavigation{ 
     height: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;    
 }
 .toolbarNavItems a{
-    color: #f27127;
     text-decoration: none;
 }
 .toolbarNavItems ul{

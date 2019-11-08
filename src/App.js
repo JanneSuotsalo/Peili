@@ -27,7 +27,7 @@ class App extends React.Component {
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
       return {sideDrawer: !prevState.sideDrawer};
-    });
+    }); 
   };
   
   routeHandler = (param) => {
@@ -38,7 +38,6 @@ class App extends React.Component {
     let sideDraw;
     let backDrop;
     if(this.state.sideDrawer){
-      sideDraw = <SideDrawer routeHandler={this.routeHandler}/>;
       backDrop = <BackDrop drawerToggleClickHandler={this.drawerToggleClickHandler}/>;
 
     }
@@ -46,7 +45,7 @@ class App extends React.Component {
   return (
     <div style={{height: '100%'}}>
         <Toolbar drawClickHandler={this.drawerToggleClickHandler}/>
-        {sideDraw}
+        <SideDrawer show={this.state.sideDrawer} routeHandler={this.routeHandler}/>;
         {backDrop}
       <main style={{marginTop: '64px'}}>
       <BrowserRouter>

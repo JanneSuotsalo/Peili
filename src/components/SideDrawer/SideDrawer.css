@@ -1,4 +1,4 @@
-.sideDrawer{
+ .sideDrawer{
     height: 100%;
     background: rgba(255, 255, 255, 0.89);
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
@@ -6,7 +6,14 @@
     top: 0;
     left: 0;
     width: 70%;
+    max-width: 350px;
     z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.sideDrawer.open{
+    transform: translateX(0);
 }
 .sideDrawer ul{
     height: 100%;
