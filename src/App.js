@@ -4,7 +4,7 @@ import "./App.css";
 import Toolbar from './components/Toolbar/Toolbar'
 import Organization from "./pages/organizations/Organization";
 import Profile from "./pages/profile/Profile";
-import Settings from "./pages/settings/Settings";
+import Settings from "./pages/settings/settings";
 import Feed from "./pages/feed/Feed";
 import Login from "./pages/signIn/Login"
 import Register from "./pages/signIn/Register"
