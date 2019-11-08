@@ -4,54 +4,78 @@ import "./Login.css";
 export default function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [errorMsg, setErrorMsg] = useState("");
+    const [loginErrorMsg, setLoginErrorMsg] = useState("");
 
     function onUsernameChange(username){
         setUsername(username.target.value);
         console.log(username.target.value);
-        setErrorMsg("")
+        setLoginErrorMsg("")
     }
 
     function validateForm() {
-        if(username == ""){
-            setErrorMsg("Username can not be empty");
+        if(username === ""){
+            setLoginErrorMsg("Username can not be empty");
         }
     }
 
     return (
-        <div className="login-container">
-            <div className="box">
+        <div className="login_container">
+            <div className="login_box">
+
+            <div className="login_peiliLogoContainer">
+            <img className="login_peiliLogo" src="PeiliLogo.png" />
+            </div>
+
+            <div className="login_signInText">
+                Sign in
+            </div>
             
-            <label htmlFor="username">Username</label>
-            <div className="input-group">
+            <hr className="login_line">
+            </hr>
+
+            <div className="login_inputContainers">
                 <input
+                className="login_inputs"
                 type="text"
                 name="username"
                 placeholder="Username"
+                maxLength={20}
                 onChange={onUsernameChange}
                 />
             </div>
 
-            <label htmlFor="password">Password</label>
-            <div className="input-group">
+            <div className="login_inputContainers">
                 <input
+                className="login_inputs"
                 type="password"
                 name="password"
                 placeholder="Password"/>
             </div>
 
-            <div className="errorMsg">
-                <small>{errorMsg}</small>
+            <div className="login_errorMsg">
+                <small>{loginErrorMsg}</small>
             </div>
 
-            <button
-                type="button"
-                className="login-btn"
-                onClick={() => validateForm()}>
-                Login
-            </button>
+            <div className="login_btnContainer">
+                <button
+                    type="button"
+                    className="login_btn"
+                    onClick={() => validateForm()}>
+                    Login
+                </button>
+        	</div>
 
+            <div className="login_noAccount">
+            <button
+                    type="button"
+                    className="login_noAccountBtn"
+                    >
+                    Not registered?
+                </button>
+            </div>
+            
             </div>
         </div>
+        
         );
 }
