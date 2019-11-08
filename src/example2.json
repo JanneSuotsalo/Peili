@@ -1,0 +1,73 @@
+    {
+	"id": "2",
+	"name": {
+		"fi": "Kohtaus",
+		"en": "Kohtaus",
+		"sv": "Kohtaus",
+		"zh": null
+	},
+	"source_type": {
+		"id": 2,
+		"name": "Matko"
+    },
+    "datetype": {
+        "date": "2.12.2019",
+        "type": "Tapahtuma"
+    },
+	"info_url": "https://www.kohtaus.info/",
+	"modified_at": "2019-09-11T12:07:23.000Z",
+	"location": {
+		"lat": 60.194984,
+		"lon": 24.959127,
+		"address": {
+			"street_address": "Inarintie 35",
+			"postal_code": "00550",
+			"locality": "Helsinki"
+		}
+	},
+	"description": {
+		"intro": null,
+		"body": "Ammatillinen Kela-kuntoutus.",
+		"images": null
+	},
+	"image":"https://www.kohtaus.info/wp-content/uploads/2019/08/elamaa.png",
+	"opening_hours": {
+		"hours": [{
+			"weekday_id": 1,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 2,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 3,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 4,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 5,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 6,
+			"opens": "10:00:00",
+			"closes": "18:00:00",
+			"open24h": false
+		}, {
+			"weekday_id": 7,
+			"opens": null,
+			"closes": null,
+			"open24h": false
+		}],
+		"openinghours_exception": ""
+    }
+}

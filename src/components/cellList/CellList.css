@@ -1,0 +1,61 @@
+
+    img{
+        max-width: 100%;
+        background-color: black;
+    }
+    .listCard {
+        width: 40%;
+        height: fit-content;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+    }
+    .innerCard {
+    box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    border: #2196F3 groove;
+    border-width: 3px;
+    }
+
+    .cardHeader {
+        padding: 0 0 0 3px;
+        text-align: left;
+        width: 100%;
+    }
+
+    .cardBody {
+        padding: 0 0 0 3px;
+        text-align: left;
+    }
+
+    .cardFooter {
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    .footerItem {
+        padding: 0 3px 0 3px;
+        float: left;
+        display: inline-block;
+    }
+
+
+@media only screen and (max-width: 600px) {
+   
+    img{
+        max-width: 100%;
+        background-color: black;
+    }
+    .listCard {
+        width: 80%;
+        height: fit-content;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+    }
+    .innerCard {
+    box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    border: #2196F3 groove;
+    border-width: 3px;
+    }
+  }

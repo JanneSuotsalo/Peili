@@ -1,0 +1,25 @@
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.scrolling-wrapper .card {
+    display: inline-block;
+}
+
+.scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
+}
+
+.cellTitle {
+    padding: 0 0 0 10%;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    ::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+}

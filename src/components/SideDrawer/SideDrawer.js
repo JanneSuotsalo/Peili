@@ -7,6 +7,9 @@ const sideDrawer = props => (
                 <a onClick={()=> props.routeHandler("profile")}>Profile</a>
             </li>
             <li>
+                <a onClick={()=> props.routeHandler("Feed")}>Feed</a>
+            </li>
+            <li>
                 <a onClick={()=> props.routeHandler("organization")}>Organization</a>
             </li>
             <li>
