@@ -22,8 +22,6 @@ export default class Profile extends React.Component {
         //now only one item but will be changed to a list
         return (
             <div className="profileMain">
-                <h1>Profiili</h1>
-                <p>Tällä sivulla näät omat tietos ja muuta mukavaa</p>
                 <ProfileCard user={this.state.user}/>
                 <SmallCard title={I18n.t('profilePage.favoriteOrganizations')}/>
                 <SmallCard title={I18n.t('profilePage.statistic')}/>

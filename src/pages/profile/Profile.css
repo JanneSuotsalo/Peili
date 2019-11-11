@@ -1,90 +1,33 @@
-.profileMain{
-    background-color: aqua;
-}
-.profileCard{
-    float: left;
-    background-color: white;    
-    border-radius: 10% 10%;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    width: 40%;
-    max-width: 500px;
-    text-align: center;
-    margin-left: 2%;
-}
-.profileCard img{
-    width: 70%;
-}
-.buttonCustom{
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-#listItems{
-    text-align: left;
-    width: 100%;
-    margin-right: 2%;
-    margin-left: -10%;
-}
-.profileCard1{
-    float: right;
-    border-radius: 10% 10%;
-    box-shadow: 0 8px 12px 1px rgba(0,0,0,0.2);
-    background-color: white;    
-    width: 50%;
-    max-width: 500px;
-    text-align: center;
-    margin-right: 2%;
-    margin-bottom: 3%;
-    margin-top: 2%;
-}
-.profileAvatar{
-    margin-top: 2%;
-}
-@media only screen and (max-width: 600px) {
 
+@media only screen and (max-width: 600px) {
+    .profileHeader img{
+        border-radius: 50%;
+    }
+
+    .profileHeader .imageBig{
+        transform: scale(1);
+        transition: transform 0.4s;
+    }
+    .profileHeader .imageSmall{
+        transform: scale(0.4);
+        transition: transform 0.4s;
+    }
     .profileMain{
         background-color: white;
         width: 100%;
         text-align: center;
 
     }
-    
-.profileCard{
-    float: left;
-    border-radius: 10% 10%;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    margin-left: 10%;
-    margin-bottom: 10%;
-}
-
-.profileCard img{
-    box-shadow: 0 8px 4px 3px rgba(0,0,0,0.2);
-    border-radius: 50%;
-}
     .profileCard1{
         border-radius: 10% 10%;
         box-shadow: 0 2px 8px 1px rgba(0,0,0,0.5);
         width: 80%;
-        max-width: 500px;
-        text-align: center;
         margin-right: 10%;
         margin-left: 10%;        
         margin-bottom: 4%;
         margin-top: 2%;
     }
-    .profileCard1:hover{
-        border: gray;
-        border-width: 1px;
-        border-style: solid;
-        box-shadow: 0 16px 24px 0px rgba(0,0,0,0.2);
-    }
+    .profileCard1 p{
 
+    }
 }
