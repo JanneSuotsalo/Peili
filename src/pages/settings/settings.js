@@ -10,7 +10,6 @@ export default class Settings extends React.Component {
                 </div>
                 <div id="settingsList">
                     <ListSliderItem title="Dark Theme" />
-                    <ListSliderItem title="Colorblind Theme" />
                     <ListItem title="Login Credentials" />
                     <ListItem title="Feed Settings" />
                 </div>

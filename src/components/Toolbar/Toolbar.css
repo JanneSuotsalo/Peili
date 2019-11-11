@@ -38,6 +38,5 @@
     padding: 0.5rem;
 }
 .toolbarNavItems a:active{
-    color: red;
     text-decoration: none;
 }
