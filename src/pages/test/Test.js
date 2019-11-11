@@ -16,7 +16,7 @@ quiz content
 export default class Test extends React.Component {
     //fetch somewhere
     state = {
-        item: [1,2,3,4,5,6,7,8,9,10]
+        item: [1,2,3,4,5,6,7,8,9,10,11]
     }
 
     testClicked = event => {

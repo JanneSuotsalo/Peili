@@ -11,10 +11,18 @@ export default class TestCard extends React.Component {
         this.props.clicked(this.props.title);
     }
     render() {
+        let width1 = "";
+        if(this.props.title % 3 == 0){
+            console.log("here")
+            width1 = "90%"
+        } else {
+            width1 = "45%"
+        }
         return (
-            <div className="TestCard" onClick={this.handleClick}>
-                <div className="imageHolder" style={{backgroundColor:this.style(), height:"50px"}}></div>                
+            <div className="TestCard" style={{backgroundImage: 'linear-gradient(' +this.style() +',' +this.style()+')',width:width1}} onClick={this.handleClick}>
+                <div className="TestCircle"></div>                            
                 <h2>Testi {this.props.title}</h2> 
+                <div className="TestWindow"></div>            
             </div>
         );
     }

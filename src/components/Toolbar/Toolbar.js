@@ -7,7 +7,10 @@ const toolbar = props => (
     <header className="toolbar">
         <nav className="toolbarNavigation">
         <div className="toolbarLogo"><img src="PeiliLogo.png" alt="Italian Trulli"/></div>
-        <div className="toolbarLogo"><a>PEILI</a></div>
+        <div className="toolbarLogo"><a></a></div>
+        <div className="toolbarLogo"><a></a></div>
+        <div className="toolbarLogo"><a></a></div>
+
         <div className="toolbarLogo center"><a></a></div>
 
 

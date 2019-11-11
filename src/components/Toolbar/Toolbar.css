@@ -7,7 +7,7 @@
     height: 56px;
 }
 .toolbarLogo {
-    margin-left: 0.3rem;
+    margin-left: 1rem;
 }
 
 .toolbarLogo a{
@@ -16,8 +16,8 @@
     font-size: 1.25rem;
 }
 .toolbarLogo img{
+    background-color: #f2f2f2;
     width: 35%;
-    
 }
 .toolbarNavigation{ 
     height: 100%;

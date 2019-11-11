@@ -1,7 +1,8 @@
 import React from 'react';
 import ListView from '../../components/list/ListView';
 import './Organization.css'
-var data = require('../../example.json');
+import Simplelist from '../../components/list/SimpleList';
+var data = require('../../example2.json');
 
 export default class Organization extends React.Component {
     state = {
@@ -17,7 +18,9 @@ export default class Organization extends React.Component {
             <p>Tästä löydät Applikaation kaikki Järjestöt</p>
             </div>
             <ListView item={data} />
-            <ListView item={data} />
+            <Simplelist item={data}/>
+            <Simplelist item={data}/>
+            <Simplelist item={data}/>
             </div>
         );
     }

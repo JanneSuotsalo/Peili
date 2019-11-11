@@ -9,7 +9,7 @@ import Feed from "./pages/feed/Feed";
 import Login from "./pages/signIn/Login"
 import Register from "./pages/signIn/Register"
 import SideDrawer from './components/SideDrawer/SideDrawer'
-import { BrowserRouter, Switch, Route, Link, Router } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Test from './pages/test/Test';
 import BackDrop from './components/BackDrop/Backdrop';
 
@@ -21,17 +21,12 @@ function handleTestClick (){
 class App extends React.Component {
   state = {
     sideDrawer: false,
-    direct: "profile"
   };
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
       return {sideDrawer: !prevState.sideDrawer};
     }); 
-  };
-  
-  routeHandler = (param) => {
-    window.location.assign("/"+ param);
   };
 
   render(){
@@ -43,16 +38,16 @@ class App extends React.Component {
     }
 
   return (
+    <Router>    
     <div style={{height: '100%'}}>
         <Toolbar drawClickHandler={this.drawerToggleClickHandler}/>
-        <SideDrawer show={this.state.sideDrawer} routeHandler={this.routeHandler}/>;
+         <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer} routeHandler={this.routeHandler}/>;
         {backDrop}
       <main style={{marginTop: '64px'}}>
-      <BrowserRouter>
         <Route exact path="/">
-          <Profile />
+          <Login />
         </Route>
-        <Route path="/login">
+        <Route path="/login" component={Login}>
           <Login />
         </Route>
         <Route path="/register">
@@ -67,15 +62,19 @@ class App extends React.Component {
         <Route path="/test">
           <Test />
         </Route>
+        <Route path='/test:id'>
+          <Test />
+        </Route>
         <Route path="/settings">
           <Settings />
         </Route>
         <Route path="/feed">
           <Feed />
         </Route>
-    </BrowserRouter>
     </main>
     </div>
+    </Router>
+
   );
 }
 }

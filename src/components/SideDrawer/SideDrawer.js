@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './SideDrawer.css';
 
 const sideDrawer = props => {
@@ -7,27 +8,44 @@ const sideDrawer = props => {
         drawAnim = 'sideDrawer open';
     }
 
+const handleClick = () => {
+    props.routeHandler("profile")
+}    
+
 return(
     <nav className={drawAnim}>
        <ul>
+            <Link to="/profile">
             <li>
-                <a onClick={()=> props.routeHandler("profile")}>Profile</a>
+                <a onClick={props.closeDraw}>Profile</a>
             </li>
+            </Link>
+            <Link to="/Feed">
             <li>
-                <a onClick={()=> props.routeHandler("Feed")}>Feed</a>
+                <a onClick={props.closeDraw}>Feed</a>
             </li>
+            </Link>
+            <Link to="/organization">
             <li>
-                <a onClick={()=> props.routeHandler("organization")}>Organization</a>
+                <a onClick={props.closeDraw}>Organization</a>
             </li>
+            </Link>
+            <Link to="/test">
             <li>
-                <a onClick={()=> props.routeHandler("test")}>Quizes</a>
+                <a onClick={props.closeDraw}>Quizes</a>
             </li>
+            </Link>
+            <Link to="/login">
             <li>
-                <a onClick={()=> props.routeHandler("login")}>Login</a>
+                <a onClick={props.closeDraw}>Login</a>
             </li>
+            </Link>
+            <Link to="/register">
             <li>
-                <a onClick={()=> props.routeHandler("register")}>Register</a>
+                <a onClick={props.closeDraw}>Register</a>
             </li>
+            </Link>
+
           </ul>
     </nav>
 
