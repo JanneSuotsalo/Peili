@@ -5,7 +5,7 @@ var exampleIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAA
 
 export default class ProfileCard extends React.Component {
     state = {
-        scrolled: false
+        scrolled: true
     }
     constructor(props){
         super(props)
@@ -21,7 +21,6 @@ export default class ProfileCard extends React.Component {
         })
     }
     componentWillUnmount(){
-        window.removeEventListener('scroll');
     }
     
     render() {
@@ -33,11 +32,13 @@ export default class ProfileCard extends React.Component {
         return (
             <div className="profileHeader">
                         {img}
-                        <h1>{this.props.user.name}</h1>
+                        <div className="profileHeaderBody">
+                        <h3>{this.props.user.name}</h3>
                         <p>{this.props.user.birth}</p>
                         <p>{this.props.user.city}</p>
                         <p>{this.props.user.email}</p>
-                </div>
+                        </div>
+                        </div>
         );
     }
 }

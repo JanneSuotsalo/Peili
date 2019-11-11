@@ -12,6 +12,17 @@
         transform: scale(0.4);
         transition: transform 0.4s;
     }
+    .profileHeaderBody{
+
+        border-bottom: 1px solid black;
+    }
+    .profileHeaderBody h3{
+        margin: 0;
+    }
+    .profileHeaderBody p{
+        margin: 0.8rem;
+    }
+
     .profileMain{
         background-color: white;
         width: 100%;
@@ -19,15 +30,15 @@
 
     }
     .profileCard1{
-        border-radius: 10% 10%;
+        border-radius: 2% 2%;
         box-shadow: 0 2px 8px 1px rgba(0,0,0,0.5);
         width: 80%;
         margin-right: 10%;
         margin-left: 10%;        
         margin-bottom: 4%;
-        margin-top: 2%;
+        margin-top: 5%;
     }
-    .profileCard1 p{
-
+    .profileList p{
+        padding: 0;
     }
 }

@@ -9,7 +9,7 @@ export default class SmallCard extends React.Component {
         return (
             <div className="profileCard1">
                 <h2>{this.props.title}</h2>
-                <ul>
+                <ul className="profileList">
                     <p>Laitela</p>
                     <p>Laitela</p>
                     <p>Laitela</p>
