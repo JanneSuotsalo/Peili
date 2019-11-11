@@ -11,6 +11,7 @@ import Register from "./pages/signIn/Register"
 import SideDrawer from './components/SideDrawer/SideDrawer'
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Test from './pages/test/Test';
+import TestDetail from './pages/testDetail/TestDetail';
 import BackDrop from './components/BackDrop/Backdrop';
 
 
@@ -21,6 +22,7 @@ function handleTestClick (){
 class App extends React.Component {
   state = {
     sideDrawer: false,
+    popup: false
   };
 
   drawerToggleClickHandler = () => {
@@ -28,21 +30,29 @@ class App extends React.Component {
       return {sideDrawer: !prevState.sideDrawer};
     }); 
   };
-
+  popupClickHandler = () => {
+    this.setState((prevState) => {
+      return {popup: !prevState.popup};
+    }); 
+  };
   render(){
-    let sideDraw;
     let backDrop;
+    let backDrop1;
     if(this.state.sideDrawer){
       backDrop = <BackDrop drawerToggleClickHandler={this.drawerToggleClickHandler}/>;
-
+    }
+    if(this.state.popup){
+      backDrop1 = <BackDrop popupClickHandler={this.popupClickHandler}/>;
     }
 
   return (
     <Router>    
     <div style={{height: '100%'}}>
         <Toolbar drawClickHandler={this.drawerToggleClickHandler}/>
-         <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer} routeHandler={this.routeHandler}/>;
+         <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
+        
         {backDrop}
+        {backDrop1}
       <main style={{marginTop: '64px'}}>
         <Route exact path="/">
           <Login />
@@ -59,11 +69,8 @@ class App extends React.Component {
         <Route path="/profile">
           <Profile />
         </Route>
-        <Route path="/test">
-          <Test />
-        </Route>
-        <Route path='/test:id'>
-          <Test />
+        <Route exact path="/test">
+          <Test popHandler={this.popupClickHandler}/>
         </Route>
         <Route path="/settings">
           <Settings />

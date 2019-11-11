@@ -21,6 +21,11 @@ export default class Organization extends React.Component {
             <Simplelist item={data}/>
             <Simplelist item={data}/>
             <Simplelist item={data}/>
+            <ListView item={data} />
+            <Simplelist item={data}/>
+            <Simplelist item={data}/>
+            <Simplelist item={data}/>
+            
             </div>
         );
     }

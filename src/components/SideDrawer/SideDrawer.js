@@ -6,11 +6,7 @@ const sideDrawer = props => {
     let drawAnim = 'sideDrawer';
     if(props.show){
         drawAnim = 'sideDrawer open';
-    }
-
-const handleClick = () => {
-    props.routeHandler("profile")
-}    
+    }    
 
 return(
     <nav className={drawAnim}>

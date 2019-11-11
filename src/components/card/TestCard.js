@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 
 export default class TestCard extends React.Component {
     constructor(props){
@@ -13,7 +15,6 @@ export default class TestCard extends React.Component {
     render() {
         let width1 = "";
         if(this.props.title % 3 == 0){
-            console.log("here")
             width1 = "90%"
         } else {
             width1 = "45%"
