@@ -5,6 +5,7 @@ import Toolbar from './components/Toolbar/Toolbar'
 import Organization from "./pages/organizations/Organization";
 import Profile from "./pages/profile/Profile";
 import Settings from "./pages/settings/settings";
+import Quiz from "./pages/quiz/Quiz";
 import Feed from "./pages/feed/Feed";
 import Login from "./pages/signIn/Login"
 import Register from "./pages/signIn/Register"
@@ -70,6 +71,9 @@ class App extends React.Component {
         </Route>
         <Route path="/settings">
           <Settings />
+        </Route>        
+        <Route path="/quiz">
+          <Quiz />
         </Route>
         <Route path="/feed">
           <Feed />
