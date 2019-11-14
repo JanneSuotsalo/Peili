@@ -31,15 +31,25 @@ class Title extends React.Component {
 class Opentext extends React.Component {    
     constructor(props) {
     super(props)
-    this.props = {rows: "7", maxLength: "200"}
+    this.props = {rows: "7", maxLength: "250"}
     }
+
+    checkProp() {
+        if (this.props.maxLength == null) {
+            var placeHolder = "Vastaa vapaasti:"
+            return placeHolder;
+        } else {
+            var placeHolder = "Vastaa vapaasti: (Maksimi pituus " + this.props.maxLength + " kirjainta)"
+            return placeHolder;
+        }
+    };
     
     render() {
-        var placeHolder = "Vastaa vapaasti: (Maksimi pituus " + this.props.maxLength + " kirjainta)"
-
         return (
             <div className="textArea">
-                <textarea placeholder={placeHolder} className="textBox" rows={this.props.rows} maxLength={this.props.maxLength}></textarea>
+                <label>
+                    <textarea placeholder={this.checkProp()} className="textBox" rows={this.props.rows} maxLength={this.props.maxLength}></textarea>
+                </label>
             </div>
         )
     }
