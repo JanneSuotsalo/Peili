@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Test from './pages/test/Test';
 import TestDetail from './pages/testDetail/TestDetail';
 import BackDrop from './components/BackDrop/Backdrop';
+import History from "./pages/history/History";
+import Result from "./pages/result/Result";
 
 
 function handleTestClick (){
@@ -77,6 +79,12 @@ class App extends React.Component {
         </Route>
         <Route path="/feed">
           <Feed />
+        </Route>
+        <Route path="/history">
+          <History />
+        </Route>
+        <Route path="/result">
+          <Result />
         </Route>
     </main>
     </div>
