@@ -1,18 +1,34 @@
-.thankText_container{
-    display: flex;
+.history_container{
+    display: block;
     margin-top: 30%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 5%;
-    padding-top: 2%;
     border-radius: 1%;
-    /*box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.2);
 }
 
-.thankText{
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-    color: green;
-    font-size: 2em;
+.history_tag{
+    text-align:center;
+}
+
+.history_date{
+    text-align:center;
+}
+
+.history_time{
+    text-align:center;
+}
+
+.history_event{
+    text-align:center;
+}
+
+.history_ProfileContainer{
+    background-color: rgba(123, 255, 96, 0.5);
+}
+
+.history_QuizContainer{
+    background-color: rgba(243, 240, 79, 0.5);
+}
+
+.history_ShopContainer{
+    background-color: rgba(96, 244, 255, 0.5);
 }
