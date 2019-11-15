@@ -9,10 +9,10 @@ export default class SmallCard extends React.Component {
         return (
             <div className="profileCard1">
                 <h2>{this.props.title}</h2>
-                <ul id="listItems">
-                    <ul>Laitela</ul>
-                    <ul>Shakkikerho</ul>
-                    <ul>Nuorisotalo Jorma</ul>
+                <ul className="profileList">
+                    <p>Laitela</p>
+                    <p>Laitela</p>
+                    <p>Laitela</p>
                 </ul>
             </div>
         );

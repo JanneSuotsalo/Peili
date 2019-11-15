@@ -41,6 +41,16 @@ return(
                 <a onClick={props.closeDraw}>Register</a>
             </li>
             </Link>
+            <Link to="/history">
+            <li>
+                <a onClick={props.closeDraw}>History</a>
+            </li>
+            </Link>
+            <Link to="/result">
+            <li>
+                <a onClick={props.closeDraw}>Result</a>
+            </li>
+            </Link>
 
           </ul>
     </nav>
