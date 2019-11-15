@@ -1,0 +1,39 @@
+
+.taskName {
+    width: 80%;
+    padding: 0 0 0 10%;
+}
+.questionCard {
+    width: 80%;
+    margin: auto;
+}
+.multiChoice {
+    font-size: 1.5em;
+}
+.checkBox {
+    box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.5em 0 0.5em 0;
+    border: #2196F3 groove 3px;
+}
+.textBox {
+    width: 100%;
+    box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    font-size: 1.5em;
+    border: #2196F3 groove 3px;
+    outline: none;
+    resize: none;
+    box-sizing:border-box;
+}
+.radioGroup {
+    width: 80%;
+    padding: 0 0 0 10%;
+    font-size: 1.5em;
+}
+.radio {
+    padding: 0.5em 0 0.5em 0;
+}
+.rangeSlider {
+    width: 100%;
+    padding: 0 0 0 10%;
+}
