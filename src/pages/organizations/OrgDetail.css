@@ -1,0 +1,10 @@
+.OrgDetail {
+    border-radius: 8%;
+    width: 70%;
+    height: 40%;
+    background-color: white;
+    z-index: 200;
+    position: fixed;
+    top: 15%;
+    left: 15%;
+}

@@ -8,17 +8,16 @@ export default class Simplelist extends React.Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         return (
-                <div className="SimplelistCard">
+                <div className="SimplelistCard" onClick={this.props.click}>
                         <img src={this.props.item.image}></img>
                     <div className="SimplelistHeader">
                         <h4>{this.props.item.name.fi}</h4>
                     </div>
                     <div className="SimplelistBody">
-                    <p>kohtaus</p>
-                    <p>kohtaus</p>
-                    <p>kohtaus</p>
+                    <p>Liirum laarum here lii</p>
                     <div className="SimpleListSpacer"></div>                    
                     </div>
                 </div>

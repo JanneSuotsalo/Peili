@@ -15,7 +15,6 @@ export default class TestCard extends React.Component {
                 </div>
                 <div className="detailBody">
                     <div 
-                    onClick={this.props.close}
                     class="button_cont" 
                     align="center"><a 
                     class="example_c">Aloita!</a></div>

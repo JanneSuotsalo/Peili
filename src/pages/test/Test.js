@@ -5,16 +5,6 @@ import TestDetail from '../../pages/testDetail/TestDetail';
 
 import './Test.css'
 
-
-
-/*
-Chatbot layout  
-History
-quiz start - end
-quiz content
-
-
-*/
 export default class Test extends React.Component {
     constructor(props) {
         super(props)
@@ -26,9 +16,8 @@ export default class Test extends React.Component {
     }
 
     testClicked = () => {
-        this.setState((prevState) => {
-            return { show: !prevState.show };
-        });
+        
+        this.props.popPopup();
         this.props.popHandler();
     };
 
@@ -38,7 +27,7 @@ export default class Test extends React.Component {
 
     render() {
         let popup
-        if (this.state.show) {
+        if (this.props.showPopup) {
             popup = <TestDetail close={this.testClicked} />
         }
         return (

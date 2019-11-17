@@ -16,16 +16,18 @@ import TestDetail from './pages/testDetail/TestDetail';
 import BackDrop from './components/BackDrop/Backdrop';
 import History from "./pages/history/History";
 import Result from "./pages/result/Result";
+import { FaLessThanEqual } from "react-icons/fa";
 
 
 function handleTestClick (){
-  console.log("here")
 } 
 
 class App extends React.Component {
   state = {
     sideDrawer: false,
-    popup: false
+    popup: false,
+    showPopup: false,
+    orgPopup: false
   };
 
   drawerToggleClickHandler = () => {
@@ -33,11 +35,25 @@ class App extends React.Component {
       return {sideDrawer: !prevState.sideDrawer};
     }); 
   };
+  organizationHandler = () => {
+    this.setState((prevState) => {
+      return {orgPopup: !prevState.orgPopup};
+    });
+  }
+
   popupClickHandler = () => {
     this.setState((prevState) => {
       return {popup: !prevState.popup};
     }); 
   };
+
+  popPopUp = () => {
+    this.setState((prevState) => {
+      return {showPopup: !prevState.showPopup};
+    }); 
+
+  };
+
   render(){
     let backDrop;
     let backDrop1;
@@ -45,7 +61,7 @@ class App extends React.Component {
       backDrop = <BackDrop drawerToggleClickHandler={this.drawerToggleClickHandler}/>;
     }
     if(this.state.popup){
-      backDrop1 = <BackDrop popupClickHandler={this.popupClickHandler}/>;
+      backDrop1 = <BackDrop popupClickHandler={this.popupClickHandler} organizationHandler={this.organizationHandler} popPopUp={this.popPopUp}/>;
     }
 
   return (
@@ -67,13 +83,13 @@ class App extends React.Component {
           <Register />
         </Route>
         <Route path="/organization">
-          <Organization />
+          <Organization popPopup={this.popupClickHandler} orgHandler1={this.organizationHandler} orgHandler={this.state.orgPopup}/>
         </Route>
         <Route path="/profile">
           <Profile />
         </Route>
         <Route exact path="/test">
-          <Test popHandler={this.popupClickHandler}/>
+          <Test popHandler={this.popupClickHandler} popPopup={this.popPopUp} showPopup={this.state.showPopup}/>
         </Route>
         <Route path="/settings">
           <Settings />

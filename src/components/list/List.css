@@ -2,19 +2,34 @@
 @media only screen and (max-width: 600px) {
    
     .listCard img{        
-        border-top-left-radius: 5%;
-        border-top-right-radius: 5%;
+        border-radius: 10%;
         float: left;
     }
     .listCard {
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
+        width: 90%;
+        border-radius: 10%;
+        margin-left: 5%;
+        margin-right: 5%;
         text-align: center;
     }
     .listHeader{
         padding-bottom: 10px;
+    }
+    .listHeader h2 {
+        margin-right: 70%;
+        font-size: 18px;
+        text-decoration: underline;
+    }
+    .listHeader p {
+        margin-left: -50%;
+        margin-top: 4%;
+    }
+    .listHeader #open {
+        margin-left: 27%;
+        margin-top: -22%;
+        margin-bottom: 12%;
+        
     }
     .listCard h4{
         margin: 0;

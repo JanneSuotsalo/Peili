@@ -21,7 +21,7 @@
         text-align: center;
     }
     .SimplelistHeader h4{
-        padding-top: 1rem;        
+        padding-top: 1rem;
         margin-bottom: 0;
     }
     .SimplelistBody{
@@ -30,10 +30,11 @@
     }
     .SimplelistBody p{
         margin: 0;
+        margin-left: -35%;
         padding: 0;
     }
     .SimpleListSpacer{
         margin: 0;
-        padding: 0;
+        padding-bottom: 10%;
     }
   }
