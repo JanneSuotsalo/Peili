@@ -8,7 +8,6 @@ export default class CellList extends React.Component {
     }
     render() {
         return (
-            <div className="listCard">
                 <div className="innerCard">
                     <img src={this.props.item.image} />
                     <div className="cardHeader">
@@ -18,11 +17,9 @@ export default class CellList extends React.Component {
                         <p>{this.props.item.description.body}</p>
                     </div>
                     <div className="cardFooter">
-                        <h4 className="footerItem">{this.props.item.datetype.type}</h4>
-                        <h4 className="footerItem">{this.props.item.datetype.date}</h4>
+                        <h4 className="footerItem">{this.props.item.datetype.type} {this.props.item.datetype.date}</h4>
                     </div>
                 </div>
-            </div>
         );
     }
 }
