@@ -14,7 +14,6 @@
 .TestCircle1{
     width: 35px;
     height: 35px;
-    background-color: rgb(67, 177, 4);
     border-radius: 50% 50%;
     margin: auto;
 }
@@ -37,6 +36,19 @@
     margin-top: 2%;
 }
 .TestCard h2{
+    margin-bottom: 0;
 }
+.TestInfo {
+    background-color: rgba(255, 255, 255, 0.329);
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 0;
+    border-radius: 5% 5%;
+}
+
+.TestCard p{
+    margin-top: 0;
+}
+
 @media only screen and (max-width: 600px) {
 }
