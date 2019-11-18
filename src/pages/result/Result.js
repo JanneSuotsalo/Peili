@@ -4,8 +4,10 @@ export default function Result(props) {
 
 
     return (
-        <div>
-            Result
+        <div className="thankText_container">
+            <div className="thankText">
+                Thank you for finishing the quiz!
+            </div>
         </div>
     );
 }
