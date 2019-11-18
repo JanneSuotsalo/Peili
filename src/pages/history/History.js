@@ -1,27 +1,35 @@
 import React, { useState } from "react";
 import "./History.css"
 //import history from "./History.json"
+import sideImg from "./historySide.png"
+import sideImgEnd from "./historySideEnd.png"
+import sideImgEnd2 from "./Ellipse.png"
 
 export default function History(props) {
     let buffer = []
-    var historyData = require("./History.json")
+    let historyData = require("./History.json")
 
     // Sorting the json file to be ordered by date
-    historyData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    historyData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    console.log(historyData);
     for (var i = 0; i < historyData.length; i++)
     {
         var obj = historyData[i];
-        console.log(obj.tag);
         
         let container = []
-        buffer.push(<div className={'history_' + obj.tag.toString() +"Container"}>{container}</div>)
-        container.push(<div className="history_tag">{obj.tag}</div>)
-        container.push(<div className="history_event">{obj.event}</div>)
-        container.push(<div className="history_date">{obj.date}</div>)
+        buffer.push(<div className={'history_' + obj.tag.toString() +"Container"}>{container}</div>);
+        //buffer.push(<div className="history_tag">{obj.tag}</div>)
 
+        // uses the right image on the left
+        if(i+1 === historyData.length){
+        container.push(<img className="history_sideImgEnd" src={sideImgEnd2}/>);
+        } else {
+        container.push(<img className="history_sideImg" src={sideImg}/>);
+        }
+        container.push(<div className="history_date">{obj.date}</div>);
+        container.push(<div className="history_event">{obj.event}</div>);
     }
+
 
     return (
         <div className="history_container">

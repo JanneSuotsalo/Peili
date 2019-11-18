@@ -1,10 +1,51 @@
 .OrgDetail {
     border-radius: 8%;
     width: 70%;
-    height: 40%;
+    height: 60%;
     background-color: white;
     z-index: 200;
     position: fixed;
     top: 15%;
     left: 15%;
+}
+
+.OrgDetail h3{
+    text-align: center;
+    margin-top: 0%;
+    text-decoration: underline;
+    margin-bottom: -5%;
+}
+.OrgDetail p{
+    text-align: center;   
+}
+
+.OrgBody{
+    width: 100%;
+}
+
+.OrgBody .OrgButton {
+    width: 80%;
+    text-align: center;
+}
+.OrgButton{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 20px;
+    border-radius: 3px;
+    border-style: none;
+    font-size: 1.2em;
+    background-color: #04bfbf;
+    color: white;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+    margin-left: 10%;
+    margin-bottom: 3%;
+}
+
+.OrgBody .a{
+    background-color: #04bf23;
+}
+
+
+.OrgBody .c{
+    background-color: #bf0433;
 }

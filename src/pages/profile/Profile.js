@@ -4,6 +4,7 @@ import './Profile.css';
 import SmallCard from '../../components/card/SmallCard';
 import ProfileCard from '../../components/card/ProfileCard';
 import I18n from '../../components/Element/LanguageSwticher/I18n';
+import GasMeter from '../../components/card/GasMeter';
 
 
 var data = require('../../example.json');
@@ -23,6 +24,7 @@ export default class Profile extends React.Component {
         return (
             <div className="profileMain">
                 <ProfileCard user={this.state.user}/>
+                <GasMeter title={I18n.t('profilePage.favoriteOrganizations')}/>            
                 <SmallCard title={I18n.t('profilePage.favoriteOrganizations')}/>
                 <SmallCard title={I18n.t('profilePage.statistic')}/>
                 <SmallCard title={I18n.t('profilePage.Achievements')}/>                

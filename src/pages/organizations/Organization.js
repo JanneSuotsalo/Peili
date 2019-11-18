@@ -20,7 +20,7 @@ export default class Organization extends React.Component {
         let item;
         //now only one item but will be changed to a list
         if(this.props.orgHandler){
-            item = <OrgDetail />
+            item = <OrgDetail item={data}/>
         }
 
         return (
