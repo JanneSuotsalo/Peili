@@ -57,11 +57,15 @@ class App extends React.Component {
   render(){
     let backDrop;
     let backDrop1;
+    let backDrop2;
     if(this.state.sideDrawer){
       backDrop = <BackDrop drawerToggleClickHandler={this.drawerToggleClickHandler}/>;
     }
     if(this.state.popup){
-      backDrop1 = <BackDrop popupClickHandler={this.popupClickHandler} organizationHandler={this.organizationHandler} popPopUp={this.popPopUp}/>;
+      backDrop1 = <BackDrop popupClickHandler={this.popupClickHandler} popPopUp={this.popPopUp}/>;
+    }
+    if(this.state.orgPopup){
+      backDrop2 = <BackDrop organizationHandler={this.organizationHandler} popPopUp={this.popPopUp}/>;
     }
 
   return (
@@ -72,6 +76,7 @@ class App extends React.Component {
         
         {backDrop}
         {backDrop1}
+        {backDrop2}
       <main style={{marginTop: '64px'}}>
         <Route exact path="/">
           <Login />
@@ -83,7 +88,7 @@ class App extends React.Component {
           <Register />
         </Route>
         <Route path="/organization">
-          <Organization popPopup={this.popupClickHandler} orgHandler1={this.organizationHandler} orgHandler={this.state.orgPopup}/>
+          <Organization orgHandler1={this.organizationHandler} orgHandler={this.state.orgPopup}/>
         </Route>
         <Route path="/profile">
           <Profile />

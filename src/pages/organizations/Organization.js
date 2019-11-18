@@ -13,7 +13,6 @@ export default class Organization extends React.Component {
     
     handleClick = () => {
         this.props.orgHandler1();
-        this.props.popPopup();
     }
 
     render() {
