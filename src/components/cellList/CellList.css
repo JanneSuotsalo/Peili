@@ -10,9 +10,6 @@
         border-radius: 10%;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
     }
-    .cardHeader {
-        padding: 0 1em 0 1em;
-    }
     .cardBody {
         padding: 0 1em 0 1em;
     }
