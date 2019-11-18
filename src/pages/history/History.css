@@ -1,8 +1,9 @@
 .history_container{
-    display: block;
-    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
     border-radius: 1%;
-    box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.2);*/
 }
 
 .history_tag{
@@ -10,18 +11,30 @@
 }
 
 .history_date{
-    text-align:center;
-}
-
-.history_time{
+    padding-top: 8px;
+    margin-right: 15%;
     text-align:center;
 }
 
 .history_event{
+    margin-right: 15%;
     text-align:center;
 }
 
-.history_ProfileContainer{
+.history_sideImg{
+    margin-left: 10%;
+    float: left;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.history_sideImgEnd{
+    padding-bottom: 10px;
+    margin-left: 10%;
+    float: left;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/*.history_ProfileContainer{
     background-color: rgba(123, 255, 96, 0.5);
 }
 
@@ -31,4 +44,4 @@
 
 .history_ShopContainer{
     background-color: rgba(96, 244, 255, 0.5);
-}
+}*/
