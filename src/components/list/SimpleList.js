@@ -17,7 +17,7 @@ export default class Simplelist extends React.Component {
                         <h4>{this.props.item.name.fi}</h4>
                     </div>
                     <div className="SimplelistBody">
-                    <p>Liirum laarum here lii</p>
+                    <p>{this.props.item.description.body}</p>
                     <div className="SimpleListSpacer"></div>                    
                     </div>
                 </div>
