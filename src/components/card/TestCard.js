@@ -21,7 +21,9 @@ export default class TestCard extends React.Component {
         }
         return (
             <div className="TestCard" style={{backgroundImage: 'linear-gradient(' +this.style() +',' +this.style()+')',width:width1}} onClick={this.handleClick}>
-                <div className="TestCircle"></div>                            
+                <div className="TestCircle">
+                <div className="TestCircle1"></div>                            
+                    </div>                            
                 <h2>Testi {this.props.title}</h2> 
                 <div className="TestWindow"></div>            
             </div>

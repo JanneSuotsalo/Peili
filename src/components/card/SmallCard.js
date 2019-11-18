@@ -14,6 +14,7 @@ export default class SmallCard extends React.Component {
                     <p>Laitela</p>
                     <p>Laitela</p>
                 </ul>
+                <div className="spacerProf"></div>
             </div>
         );
     }

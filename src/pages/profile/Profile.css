@@ -40,5 +40,10 @@
     }
     .profileList p{
         padding: 0;
+        margin: 0;
+        margin-right: 80%;
+    }
+    .spacerProf {
+        padding-bottom:  5%;
     }
 }
