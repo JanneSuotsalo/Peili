@@ -13,10 +13,30 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.cellTitle {
+.sectionTitle {
     padding: 0 0 0 10%;
     text-decoration: underline;
 }
+
+.taskList {
+}
+
+.taskItem {
+    padding: 0.5em 10% 0.5em 10%;
+    width: 80%;
+}
+.taskInner {
+    box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    border: orangered groove;
+    border-width: 3px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+.taskText {
+    margin: 0.5em 0 0.5em 0;
+}
+
 
 @media only screen and (max-width: 600px) {
     ::-webkit-scrollbar {

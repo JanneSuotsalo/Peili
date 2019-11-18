@@ -3,6 +3,9 @@
         max-width: 100%;
         background-color: black;
     }
+    .card {
+        width: 100%;
+    }
     .listCard {
         width: 40%;
         height: fit-content;

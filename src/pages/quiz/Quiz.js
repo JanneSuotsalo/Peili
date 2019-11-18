@@ -11,6 +11,7 @@ export default class Quiz extends React.Component {
                 <div className="questionCard">
                 <Title question ="Tunnetko itsesi yksinäiseksi?"/>
                 <MultiChoice options="5" />
+                <Opentext rows="7" maxLength="200" />
                 </div>
             </div>
         )
@@ -66,9 +67,11 @@ class MultiChoice extends React.Component {
         var values = ["random", "test", "dummy", "data", "and", "stuff"];
         for (var i = 0; i < this.props.options; i++) {
             options.push(<div className="checkBox">
-                            <input type="checkbox" key={i} />
-                            <label>{values[i]}</label>
-                        </div> 
+                            <label className="checkBoxLabel">
+                                <input type="checkbox" key={i} />
+                                {values[i]}
+                            </label>
+                        </div>
                         )
         }
         return options;

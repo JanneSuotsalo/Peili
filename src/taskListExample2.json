@@ -1,0 +1,52 @@
+{
+    "taskId": "skaalatesti",
+    "priority": "100",
+    "taskName": "Temperamenttitesti",
+    "description": "Oletko tulistuva hutjapää vai lunki viilipytty?",
+    "introText": "Kuinka samaa tai eri mieltä olet seuraavista väittämistä?",
+    "reward": 100,
+    "scores": [
+        {
+            "scoreId": "tempo",
+            "formula": "q1+q2",
+            "description": "Nopeatahtisuus",
+            "interpretation": "Nopean henkilön arvo on 7 tai korkeampi."
+        },
+        {
+            "scoreId": "nega",
+            "formula": "",
+            "description": "Negatiiviset asenteet",
+            "interpretation": "Negatiivisen henkilön arvo on 8 tai korkeampi."
+        }
+    ],
+    "scales": [
+        {
+            "scaleId": "mielipide",
+            "ansType": "rangeValue",
+            "minValue": 1,
+            "maxValue": 5,
+            "step": 1,
+            "minLabel": "Täysin eri mieltä",
+            "maxLabel": "Täysin samaa mieltä"
+        }
+    ],
+    "questions": [
+        {
+            "questionId": "q1",
+            "prompt": "Turhaudun istuessani kulkuvälineessä.",
+            "scale": "mielipide"
+        },            {
+            "questionId": "q2",
+            "prompt": "Pidän aktiivisesta ja nopeatempoisesta työstä.",
+            "scale": "mielipide"
+        },            {
+            "questionId": "q3",
+            "prompt": "Minulla on laaja ystäväpiiri.",
+            "scale": "mielipide"
+        },            {
+            "questionId": "q4",
+            "prompt": "Uppoudun syvälle TV-sarjoihin.",
+            "scale": "mielipide"
+        }
+    ]
+}
