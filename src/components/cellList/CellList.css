@@ -2,12 +2,12 @@
     img{
         max-width: 100%;
         background-color: black;
-        border-radius: 10%;
+        border-radius: 2% 2%;
     }
     .innerCard {
         width: 90%;
         margin: 0 5% 10px 5%;
-        border-radius: 10%;
+        border-radius: 2% 2%;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
     }
     .cardTitle {
