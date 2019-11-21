@@ -48,7 +48,7 @@
   border-style: none;
   font-size: 1.2em;
   padding-left: 3%;
-  box-shadow: 0 5px 6px -6px rgba(13, 13, 13, 0.5);
+  box-shadow: 0 5px 6px -6px rgba(13, 13, 13, 0.8);
 }
 
 .register_btnContainer {
@@ -57,14 +57,20 @@
 }
 
 .register_btn {
-  width: 45%;
+  width: 80%;
   height: 50px;
-  border-radius: 3px;
+  border-radius: 30px;
   border-style: none;
   font-size: 1.2em;
   background-color: #04bfbf;
   color: white;
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+}
+
+.register_btn:active{
+  vertical-align: top;
+  background-color: #00b6b6;
+  padding: 8px 13px 6px;
 }
 
 .register_inputErrorMsgs {
@@ -93,9 +99,5 @@
   .register_box {
     box-shadow: none;
     background-color: rgb(255, 255, 255);
-  }
-
-  .register_inputs {
-    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }

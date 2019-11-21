@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import "./Register.css";
 
 export default function Register(props) {
@@ -15,6 +16,9 @@ export default function Register(props) {
 
     const [validUsername, setValidUsername] = useState(false);
     const [validEmail, setValidEmail] = useState(false);
+
+    const [redirectFeed, changeRedirectFeed] = useState(false);
+    const [redirectLogin, changeRedirectLogin] = useState(false);
 
     function onUsernameChange(username){
         setUsername(username.target.value);
@@ -66,11 +70,26 @@ export default function Register(props) {
         console.log("password: " + passwordCheck())
         console.log("username: " + validUsername)
         console.log("email: " + validEmail)
+        validUsernameCheck()
+        validEmailCheck()
         if( validEmail === true && passwordCheck() === true && validUsername === true){
             console.log("Valid: True")
+            changeRedirectFeed(true)
         } else {
             console.log("Valid: False")
         }
+    }
+
+    function redirectToLogin(){
+        changeRedirectLogin(true);
+    }
+
+    if(redirectFeed){
+        return <Redirect push to="/feed" />;
+    }
+
+    if(redirectLogin){
+        return <Redirect push to="/login" />;
     }
 
     return (
@@ -154,6 +173,7 @@ export default function Register(props) {
             <button
                     type="button"
                     className="register_haveAccountBtn"
+                    onClick={() => redirectToLogin()}
                     >
                     already registered?
                 </button>

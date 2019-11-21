@@ -7,6 +7,7 @@ export default function Login(props) {
     const [password, setPassword] = useState("");
     const [loginErrorMsg, setLoginErrorMsg] = useState("");
     const [redirect, changeRedirect] = useState(false);
+    const [redirectRegister, changeRedirectRegister] = useState(false);
 
     function onUsernameChange(username) {
         setUsername(username.target.value);
@@ -21,10 +22,19 @@ export default function Login(props) {
             changeRedirect(true);
         }
     }
+
+    function redirectRegistering(){
+        changeRedirectRegister(true);
+    }
     
     if(redirect){
         return <Redirect push to="/feed" />;
     }
+
+    if(redirectRegister){
+        return <Redirect push to="/register" />;
+    }
+
     return (
         <div className="login_container">
             <div className="login_box">
@@ -76,6 +86,7 @@ export default function Login(props) {
                     <button
                         type="button"
                         className="login_noAccountBtn"
+                        onClick={() => redirectRegistering()}
                     >
                         Not registered?
                 </button>

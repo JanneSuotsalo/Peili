@@ -48,23 +48,29 @@
   border-style: none;
   font-size: 1.2em;
   padding-left: 3%;
-  box-shadow: 0 5px 6px -6px rgba(13, 13, 13, 0.5);
+  box-shadow: 0 5px 6px -6px rgba(13, 13, 13, 0.8);
 }
 
 .login_btnContainer {
-  margin-top: 8%;
+  margin-top: 10%;
   text-align: center;
 }
 
 .login_btn {
-  width: 45%;
+  width: 80%;
   height: 50px;
-  border-radius: 3px;
+  border-radius: 30px;
   border-style: none;
   font-size: 1.2em;
   background-color: #04bfbf;
   color: white;
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+}
+
+.login_btn:active{
+  vertical-align: top;
+  background-color: #00b6b6;
+  padding: 8px 13px 6px;
 }
 
 .login_errorMsg {
