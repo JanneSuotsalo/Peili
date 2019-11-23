@@ -24,14 +24,9 @@ export default class ProfileCard extends React.Component {
     }
     
     render() {
-        if(this.state.scrolled){
-            var img = <img className="imageBig" src={exampleIcon}></img>
-        } else{
-            var img = <img className="imageSmall" src={exampleIcon}></img>
-        }
         return (
             <div className="profileHeader">
-                        {img}
+                        <img className={this.state.scrolled ?'imageBig':'imageSmall'} src={exampleIcon}></img>
                         <div className="profileHeaderBody">
                         <h3>{this.props.user.name}</h3>
                         <p>{this.props.user.birth}</p>

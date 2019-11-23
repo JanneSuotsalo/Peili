@@ -14,7 +14,7 @@
     }
     .SimplelistCard {
         border-radius: 5% 5%;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;

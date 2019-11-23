@@ -8,7 +8,7 @@ export default class OrgDetail extends React.Component {
     }
     render() {
         return (
-            <div className="OrgDetail">
+            <div className="OrgDetail anim">
                     <img src={this.props.item.image}></img>
                     <h3>{this.props.item.name.fi}</h3>
                     <p>{this.props.item.description.body}</p>

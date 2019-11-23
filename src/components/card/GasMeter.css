@@ -2,12 +2,23 @@
     border-radius: 2% 2%;
     box-shadow: 0 2px 8px 1px rgba(0,0,0,0.5);
     width: 80%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     margin-right: 10%;
     margin-left: 10%;        
     margin-bottom: 4%;
     margin-top: 5%;
 }
  
+.cardBig{
+    transform: scale(1);
+    transition: transform 0.4s;
+}
+.cardSmall{
+    transform: scale(0.7);
+    transition: transform 0.4s;
+}
+
 .progress-circle {
     font-size: 20px;
     margin: 20px;
@@ -22,19 +33,20 @@
  }
 
  .gauge0 {
+    margin-left: 10%;
 }
 
  .gauge1 {
-    margin-left: 60%;
-    margin-top: -36%;        
+    margin-left: 55%;
+    margin-top: -37%;        
 }
 
 .gauge2 {
-
+    margin-left: 10%;
 }
 .gauge3 {
-    margin-left: 60%;        
-    margin-top: -36%;        
+    margin-left: 55%;        
+    margin-top: -37%;        
 
 }
  .progress-circle:after{

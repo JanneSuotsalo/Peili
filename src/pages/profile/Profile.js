@@ -19,16 +19,18 @@ export default class Profile extends React.Component {
             city:"Espoo"
         }
     }
+
     render() {
         //now only one item but will be changed to a list
         return (
             <div className="profileMain">
                 <ProfileCard user={this.state.user}/>
-                <GasMeter title={I18n.t('profilePage.favoriteOrganizations')}/>            
+                <GasMeter highlight={this.state.scrolled1} title={I18n.t('profilePage.favoriteOrganizations')}/>            
                 <SmallCard title={I18n.t('profilePage.favoriteOrganizations')}/>
                 <SmallCard title={I18n.t('profilePage.statistic')}/>
                 <SmallCard title={I18n.t('profilePage.Achievements')}/>                
                 </div>
         );
     }
+
 }
