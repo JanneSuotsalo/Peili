@@ -17,7 +17,23 @@ export default class Profile extends React.Component {
             birth: "20.4.1999",
             email: "JohnDoe@gmail.com",
             city:"Espoo"
-        }
+        },
+        card1: false,
+        card2: false,
+        card3: false,
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', () => {
+            console.log(window.scrollY)
+            if(window.scrollY > 300 && window.scrollY < 400){
+                this.handleCardChange(1);
+            } else if(window.scrollY > 400 && window.scrollY < 500) {
+                this.handleCardChange(2);
+            } else if(window.scrollY > 527) {
+                this.handleCardChange(3);
+            }
+        })
     }
 
     render() {
@@ -25,12 +41,34 @@ export default class Profile extends React.Component {
         return (
             <div className="profileMain">
                 <ProfileCard user={this.state.user}/>
-                <GasMeter highlight={this.state.scrolled1} title={I18n.t('profilePage.favoriteOrganizations')}/>            
-                <SmallCard title={I18n.t('profilePage.favoriteOrganizations')}/>
-                <SmallCard title={I18n.t('profilePage.statistic')}/>
-                <SmallCard title={I18n.t('profilePage.Achievements')}/>                
+                <GasMeter title={I18n.t('profilePage.favoriteOrganizations')}/>            
+                <SmallCard highlight={this.state.card1} title={I18n.t('profilePage.favoriteOrganizations')}/>
+                <SmallCard highlight={this.state.card2} title={I18n.t('profilePage.statistic')}/>
+                <SmallCard highlight={this.state.card3} title={I18n.t('profilePage.Achievements')}/>                
                 </div>
         );
     }
 
+    handleCardChange(id){
+
+        if(id == 1){
+            this.setState({
+                card1:true,
+                card2:false,
+                card3:false
+            })
+        } else if(id == 2){
+            this.setState({
+                card1:false,
+                card2:true,
+                card3:false
+            })
+        } else if(id == 3){
+            this.setState({
+                card1:false,
+                card2:false,
+                card3:true
+            })
+        }
+    }
 }

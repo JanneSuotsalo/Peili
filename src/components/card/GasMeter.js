@@ -13,7 +13,7 @@ export default class GasMeter extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', () => {
-            if(window.scrollY > 100 && window.scrollY < 400){
+            if(window.scrollY >= 100 && window.scrollY < 400){
                 this.setState({scrolled: true})
             } else {
                 this.setState({scrolled: false})

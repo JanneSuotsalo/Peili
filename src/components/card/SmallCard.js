@@ -6,8 +6,9 @@ export default class SmallCard extends React.Component {
     }
     render() {
         //now only one item but will be changed to a list
+          
         return (
-            <div className="profileCard1">
+            <div className={this.props.highlight ? 'cardBig profileCard1' : 'cardSmall profileCard1'}>
                 <h2>{this.props.title}</h2>
                 <ul className="profileList">
                     <p>Laitela</p>
