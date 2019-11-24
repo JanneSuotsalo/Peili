@@ -40,6 +40,10 @@
     margin-left: 10%;
     margin-bottom: 3%;
 }
+.OrgButton a{
+    text-decoration: none;
+    color: beige;
+}
 
 .OrgBody .a{
     background-color: #04bf23;
