@@ -5,15 +5,15 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 47%;
+    width: 50%;
     max-width: 350px;
     z-index: 200;
-    transform: translateX(-100%);
+    transform: translateX(200%);
     transition: transform 0.3s ease-out;
 }
 
 .sideDrawer.open{
-    transform: translateX(0);
+    transform: translateX(120%);
 }
 .sideDrawer ul{
     height: 100%;
