@@ -11,12 +11,7 @@ export default class ListView extends React.Component {
     }
     render() {
         return (
-            <Spring
-                from={{ transform: 'translate3d(-600px, 0, 0)' }}
-                to={{ transform: 'translate3d(0, 0, 0)' }}
-                config={{ duration: 200 }}>
-                {props =>
-                    <div style={props} className="listCard" onClick={this.props.click}>
+                    <div style={this.props.style} className="listCard" onClick={this.props.click}>
                         <img src={this.props.item.image}></img>
                         <div className="listHeader">
                             <h2 id="head">{this.props.item.name.fi}</h2>
@@ -25,8 +20,6 @@ export default class ListView extends React.Component {
 
                         </div>
                     </div>
-                }
-            </Spring>
         );
     }
 }

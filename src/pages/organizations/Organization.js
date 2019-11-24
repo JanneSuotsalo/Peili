@@ -3,13 +3,15 @@ import ListView from '../../components/list/ListView';
 import './Organization.css'
 import Simplelist from '../../components/list/SimpleList';
 import OrgDetail from './OrgDetail';
-import { Spring } from 'react-spring/renderprops'
+import { Spring, Trail } from 'react-spring/renderprops'
+import ListItemHandler from '../../components/list/ListItemHandler';
 
 var data = require('../../example2.json');
 
 export default class Organization extends React.Component {
     state = {
-        loading: true
+        loading: true,
+        item: [data, data, data, data,data, data, data, data]
     }
 
 
@@ -26,8 +28,8 @@ export default class Organization extends React.Component {
 
         return (
             <Spring
-                from={{ opacity: 0}}
-                to={{ opacity: 1}}
+                from={{ opacity: 0 }}
+                to={{ opacity: 1 }}
                 config={{ duration: 2000 }}>
                 {props =>
                     <div>
@@ -37,18 +39,24 @@ export default class Organization extends React.Component {
                             <p style={props}>Tästä löydät Applikaation kaikki Järjestöt</p>
                         </div>
 
-                        <ListView item={data} click={this.handleClick} />
-                        <Simplelist item={data} click={this.handleClick} />
-                        <Simplelist item={data} click={this.handleClick} />
-                        <Simplelist item={data} click={this.handleClick} />
-                        <ListView item={data} click={this.handleClick} />
-                        <Simplelist item={data} click={this.handleClick} />
-                        <Simplelist item={data} click={this.handleClick} />
-                        <Simplelist item={data} click={this.handleClick} />
+                        <Trail items={this.state.item} from={{ transform: 'translate3d(400px,400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
+                            {(item, i) => props => <ListItemHandler item={item} style={props} index={i} click={this.handleClick}/>}
+                        </Trail>
                     </div>
                 }
+
             </Spring>
 
         );
     }
 }
+/*
+                             />
+
+<Simplelist item={data} click={this.handleClick} />
+                        <Simplelist item={data} click={this.handleClick} />
+                        <ListView item={data} click={this.handleClick} />
+                        <Simplelist item={data} click={this.handleClick} />
+                        <Simplelist item={data} click={this.handleClick} />
+                        <Simplelist item={data} click={this.handleClick} />
+                    */
