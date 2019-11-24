@@ -27,7 +27,8 @@ class App extends React.Component {
     sideDrawer: false,
     popup: false,
     showPopup: false,
-    orgPopup: false
+    orgPopup: false,
+    image: {},
   };
 
   drawerToggleClickHandler = () => {
@@ -35,9 +36,10 @@ class App extends React.Component {
       return {sideDrawer: !prevState.sideDrawer};
     }); 
   };
-  organizationHandler = () => {
+  organizationHandler = (image) => {
     this.setState((prevState) => {
-      return {orgPopup: !prevState.orgPopup};
+      return {orgPopup: !prevState.orgPopup,
+              image: image};
     });
   }
 
@@ -88,7 +90,7 @@ class App extends React.Component {
           <Register />
         </Route>
         <Route path="/organization">
-          <Organization orgHandler1={this.organizationHandler} orgHandler={this.state.orgPopup}/>
+          <Organization orgHandler1={this.organizationHandler} image={this.state.image} orgHandler={this.state.orgPopup}/>
         </Route>
         <Route path="/profile">
           <Profile />

@@ -1,10 +1,11 @@
 import React from 'react';
+import { Spring, Donut } from 'react-spring/renderprops'
 
 import './GasMeter.css';
 
 export default class GasMeter extends React.Component {
     state = {
-        scrolled:false 
+        scrolled: false
     }
 
     constructor(props) {
@@ -13,10 +14,10 @@ export default class GasMeter extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', () => {
-            if(window.scrollY >= 100 && window.scrollY < 400){
-                this.setState({scrolled: true})
+            if (window.scrollY >= 100 && window.scrollY < 400) {
+                this.setState({ scrolled: true })
             } else {
-                this.setState({scrolled: false})
+                this.setState({ scrolled: false })
             }
         })
     }
@@ -24,6 +25,7 @@ export default class GasMeter extends React.Component {
     render() {
         //now only one item but will be changed to a list
         return (
+            
             <div className={this.state.scrolled ? 'cardBig GasCard' : 'cardSmall GasCard'}>
                 <div class="progress-circle p50 gauge0">
                     <span>mittari 1</span>

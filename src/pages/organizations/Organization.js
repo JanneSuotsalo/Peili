@@ -7,23 +7,24 @@ import { Spring, Trail } from 'react-spring/renderprops'
 import ListItemHandler from '../../components/list/ListItemHandler';
 
 var data = require('../../example2.json');
+var data1 = require('../../example.json');
 
 export default class Organization extends React.Component {
     state = {
         loading: true,
-        item: [data, data, data, data,data, data, data, data]
+        item: [data, data, data, data]
     }
 
 
-    handleClick = () => {
-        this.props.orgHandler1();
+    handleClick = (image) => {
+        this.props.orgHandler1(image);
     }
 
     render() {
         let item;
         //now only one item but will be changed to a list
         if (this.props.orgHandler) {
-            item = <OrgDetail item={data} />
+            item = <OrgDetail image={this.props.image} item={data} />
         }
 
         return (
@@ -35,8 +36,8 @@ export default class Organization extends React.Component {
                     <div>
                         {item}
                         <div className="orgName">
-                            <h1 style={props}>Organisaatio</h1>
-                            <p style={props}>Tästä löydät Applikaation kaikki Järjestöt</p>
+                            <h1 style={props}>Paikat</h1>
+                            <p style={props}></p>
                         </div>
 
                         <Trail items={this.state.item} from={{ transform: 'translate3d(400px,400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>

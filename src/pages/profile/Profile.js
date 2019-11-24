@@ -25,13 +25,10 @@ export default class Profile extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', () => {
-            console.log(window.scrollY)
             if(window.scrollY > 300 && window.scrollY < 400){
                 this.handleCardChange(1);
-            } else if(window.scrollY > 400 && window.scrollY < 500) {
+            } else {
                 this.handleCardChange(2);
-            } else if(window.scrollY > 527) {
-                this.handleCardChange(3);
             }
         })
     }
@@ -59,14 +56,8 @@ export default class Profile extends React.Component {
             })
         } else if(id == 2){
             this.setState({
-                card1:false,
+                card1:true,
                 card2:true,
-                card3:false
-            })
-        } else if(id == 3){
-            this.setState({
-                card1:false,
-                card2:false,
                 card3:true
             })
         }

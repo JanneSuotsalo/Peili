@@ -1,7 +1,7 @@
 .OrgDetail {
     border-radius: 8%;
     width: 70%;
-    height: 60%;
+    height: 70%;
     background-color: white;
     z-index: 200;
     position: fixed;
@@ -42,14 +42,24 @@
 }
 .OrgButton a{
     text-decoration: none;
-    color: beige;
+    color: inherit;
 }
 
 .OrgBody .a{
     background-color: #04bf23;
+    color: white;
 }
 
+.OrgBody .b{
+    color: white !important;
+}
+
+.OrgBody .d{
+    background-color: red !important;
+}
 
 .OrgBody .c{
-    background-color: #bf0433;
+    background-image: url('../../Capture.PNG');
+    background-size: 100%;
+    color: black;
 }

@@ -1,28 +1,31 @@
 @media only screen and (max-width: 600px) {
    
-    .SimplelistCard img{
-        margin-top: 1rem;
-        margin-left: 1rem;
-        border-radius: 50% 50%;        
-        width: 60px;
-        height: 60px;
-        float: left;
-
-    }
-    .SimpleListBody{
-        display: flex;
-    }
+    
     .SimplelistCard {
         border-radius: 5% 5%;
         box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
         width: 80%;
+        height: 100px;
         margin-left: 10%;
-        margin-right: 10%;
+        padding-bottom: 3%;
+        margin-bottom: 5%;
+        padding-top: 5%;
         text-align: center;
     }
+    
+    .SimplelistCard img{
+        margin: 0;
+        padding: 0;
+        margin-top: -20px;
+        border-top-right-radius: 5%;
+        border-bottom-right-radius: 5%;
+        height: 133px;
+        float: right;
+
+    }
+    
     .SimplelistHeader h4{
-        padding-top: 1rem;
-        margin-bottom: 0;
+        margin-top: -10px;
     }
     .SimplelistBody{
         display: flex;
@@ -34,6 +37,15 @@
     }
     .SimpleListSpacer{
         margin: 0;
-        padding-bottom: 10%;
+    }
+    button {
+            padding-top: 2%;
+            padding-bottom: 2%;
+            border-radius: 3px;
+            border-style: none;
+            background-color: #4d4216c2;
+            color: white;
+            margin-bottom: 3%;
+            margin-top: 5%;        
     }
   }
