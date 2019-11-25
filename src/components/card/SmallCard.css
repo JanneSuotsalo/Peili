@@ -1,0 +1,17 @@
+.smallCardMain {
+    background-image: linear-gradient(#f2f2f2, white,white,#f2f2f2);
+    background-color: white;
+    margin-top: -30px;
+    padding: 0;
+    height: 650px;
+}
+.smallCard {
+    background-image: linear-gradient(#f2f2f2, white,white,#f2f2f2);
+    border-radius: 5% 5%;
+    box-shadow: 0 2px 8px 1px rgba(0,0,0,0.5);
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;        
+    margin-bottom: 4%;
+    margin-top: 5%;
+}

@@ -1,42 +1,88 @@
 import React from 'react';
-import { Spring, Donut } from 'react-spring/renderprops'
-import Gauge from 'react-radial-gauge';
+import ReactSpeedometer from "react-d3-speedometer"
 import './GasMeter.css';
 
 export default class GasMeter extends React.Component {
-    state = {
-        scrolled: false
-    }
-
     constructor(props) {
         super(props)
     }
-    
+
 
     componentDidMount() {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY >= 100 && window.scrollY < 400) {
-                this.setState({ scrolled: true })
-            } else {
-                this.setState({ scrolled: false })
-            }
-        })
+
     }
 
     render() {
         //now only one item but will be changed to a list
-        let opts = { size: 140, needleBaseColor:"#ffa500", currentValue: 10, progressColor: "#f00" }
-        let opts1 = { size: 140, currentValue: 50, progressColor: "#0900ff" }
-        let opts2 = { size: 140, currentValue: 45, progressColor: "#0900ff" }
-        let opts3 = { size: 140, currentValue: 90, progressColor: "#00ff00" }
-        
+
         return (
-            <div className={this.state.scrolled ? 'cardBig GasCard' : 'cardSmall GasCard'}>
-                <Gauge {...opts} />
-                <Gauge {...opts1} />
-                <Gauge {...opts2} />
-                <Gauge {...opts3} />
+            <div className={this.props.min ? 'scrolling-wrap small1' : 'scrolling-wrap big1'}>
+                <div className={!this.props.min ? 'cardBig GasCard marginOn first' : 'cardSmall GasCard marginOff first'}>
+                    <div style={{
+                        width: "330px",
+                        height: "200px"
+                    }}>
+                        <ReactSpeedometer maxValue={100}
+                            maxSegmentLabels={0}
+                            fluidWidth
+                            value={90}
+                            needleColor="red"
+                            startColor="red"
+                            currentValueText="Mittari 1"
+                            segments={3}
+                            endColor="green" />
+                    </div>
+                </div>
+                <div className={this.props.highlight ? 'cardBig GasCard' : 'cardSmall GasCard'}>
+                    <div style={{
+                        width: "330px",
+                        height: "200px",
+                    }}>
+                        <ReactSpeedometer maxValue={100}
+                            maxSegmentLabels={0}
+                            fluidWidth
+                            value={40}
+                            needleColor="red"
+                            startColor="red"
+                            currentValueText="Mittari 2"
+                            segments={3}
+                            endColor="green" />
+                    </div>
+                </div>
+                <div className={this.props.highlight ? 'cardBig GasCard' : 'cardSmall GasCard'}>
+                    <div style={{
+                        width: "330px",
+                        height: "200px",
+                    }}>
+                        <ReactSpeedometer maxValue={100}
+                            maxSegmentLabels={0}
+                            fluidWidth
+                            value={10}
+                            needleColor="red"
+                            startColor="red"
+                            currentValueText="Mittari 3"
+                            segments={3}
+                            endColor="green" />
+                    </div>
+                </div>
+                <div className={this.props.highlight ? 'cardBig GasCard' : 'cardSmall GasCard'}>
+                    <div style={{
+                        width: "330px",
+                        height: "200px",
+                    }}>
+                        <ReactSpeedometer maxValue={100}
+                            maxSegmentLabels={0}
+                            fluidWidth
+                            value={650}
+                            needleColor="red"
+                            startColor="red"
+                            currentValueText="Mittari 4"
+                            segments={3}
+                            endColor="green" />
+                    </div>
+                </div>
             </div>
+
         );
     }
 }

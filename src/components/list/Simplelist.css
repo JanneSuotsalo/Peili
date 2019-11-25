@@ -1,6 +1,8 @@
 @media only screen and (max-width: 600px) {
    
-    
+    .smallCardMain{
+        height: 650px;
+    }
     .SimplelistCard {
         border-radius: 5% 5%;
         box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */

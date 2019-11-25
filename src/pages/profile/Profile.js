@@ -18,17 +18,20 @@ export default class Profile extends React.Component {
             email: "JohnDoe@gmail.com",
             city:"Espoo"
         },
-        card1: false,
-        card2: false,
-        card3: false,
+        scroll: false,
+        scroll1: false,
+        zoom: false,
     }
 
     componentDidMount() {
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 300 && window.scrollY < 400){
+       window.addEventListener('scroll', () => {
+
+            if(window.scrollY >= 0 && window.scrollY < 200){
                 this.handleCardChange(1);
-            } else {
+            } else if (window.scrollY >= 200 && window.scrollY < 400) {
                 this.handleCardChange(2);
+            } else if (window.scrollY >= 400 && window.scrollY < 600) {
+                this.handleCardChange(3);
             }
         })
     }
@@ -37,28 +40,40 @@ export default class Profile extends React.Component {
         //now only one item but will be changed to a list
         return (
             <div className="profileMain">
-                <ProfileCard user={this.state.user}/>
-                <GasMeter title={I18n.t('profilePage.favoriteOrganizations')}/>            
-                <SmallCard highlight={this.state.card1} title={I18n.t('profilePage.favoriteOrganizations')}/>
-                <SmallCard highlight={this.state.card2} title={I18n.t('profilePage.statistic')}/>
-                <SmallCard highlight={this.state.card3} title={I18n.t('profilePage.Achievements')}/>                
+                <ProfileCard highlight={this.state.scroll} user={this.state.user}/>
+                <GasMeter highlight={this.state.zoom} min={this.state.scroll1} title={I18n.t('profilePage.favoriteOrganizations')}/>            
+                <SmallCard title={I18n.t('profilePage.favoriteOrganizations')}/>
+                <SmallCard title={I18n.t('profilePage.statistic')}/>
+
                 </div>
         );
     }
 
+    /*
+
+                <SmallCard highlight={this.state.card2} title={I18n.t('profilePage.statistic')}/>
+                <SmallCard highlight={this.state.card3} title={I18n.t('profilePage.Achievements')}/>                
+               
+    */
     handleCardChange(id){
 
         if(id == 1){
             this.setState({
-                card1:true,
-                card2:false,
-                card3:false
+                scroll:true,
+                scroll1:false,
+                zoom:false
             })
         } else if(id == 2){
             this.setState({
-                card1:true,
-                card2:true,
-                card3:true
+                scroll:false,
+                scroll1:false,
+                zoom:true
+            })
+        } else if(id == 3){
+            this.setState({
+                scroll:false,
+                scroll1:true,
+                zoom:false
             })
         }
     }
