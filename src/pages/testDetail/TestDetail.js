@@ -7,6 +7,7 @@ export default class TestCard extends React.Component {
     constructor(props) {
         super(props)
     }
+
     render() {
         return (
             <div className="detailPopup">
@@ -14,13 +15,11 @@ export default class TestCard extends React.Component {
                     <h1>Testi</h1>
                     <p>Tähän tulee testin kuvaus</p>
                 </div>
-                    <div className="detailBody">
-                    <div 
-                    class="button_cont" 
-                    align="center">   
-                    <Link to="/quiz" />
-                </div>
-            </div>
+                <Link to="/Feed">
+                    <div onClick={this.props.click} className="buttoni">
+                        Aloita testi
+                     </div>
+                     </Link>
             </div>
         );
     }

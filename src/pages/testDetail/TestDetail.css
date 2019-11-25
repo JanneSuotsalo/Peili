@@ -18,14 +18,16 @@
 .detailBody {
     margin-top: 40%;
 }
-.detailBody a{
-    color: #000000 !important;
-    text-transform: uppercase;
-    background: #ffffff;
-    padding: 6%;
-    padding-left: 30%;
-    padding-right: 30%;
-    border-radius: 10% 10%;
-    border: 2px solid #000000 !important;
-    display: inline-block;
+
+.buttoni {
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 1.2em;
+    background-color: #04bfbf;
+    color: white;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+    margin-top: 40%;
+    margin-left: 10%;
+    margin-right: 10%;
 }

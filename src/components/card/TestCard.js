@@ -6,9 +6,6 @@ export default class TestCard extends React.Component {
     constructor(props) {
         super(props)
     }
-    style() {
-        return '#' + Math.random().toString(16).substr(-6);
-    }
     handleClick = () => {
         this.props.clicked(this.props.title);
     }
@@ -19,8 +16,11 @@ export default class TestCard extends React.Component {
         } else {
             width1 = "45%"
         }
+        let anim = this.props.style
+        
         return (
-            <div className="TestCard" style={{ backgroundImage: 'linear-gradient(' + this.style() + ',' + this.style() + ')', width: width1 }} onClick={this.handleClick}>
+            //style={{ backgroundImage: 'linear-gradient(' + this.style() + ',' + this.style() + ')', width: width1 }
+            <div className="TestCard"  style={{...anim, width:width1}} onClick={this.handleClick}>
                 <div className="TestCircle">
                     <div className="TestCircle1"></div>
                 </div>
