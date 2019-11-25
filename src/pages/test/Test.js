@@ -29,7 +29,7 @@ export default class Test extends React.Component {
     render() {
         let popup
         if (this.props.showPopup) {
-            popup = <TestDetail close={this.testClicked} />
+            popup = <TestDetail click={this.onclick} close={this.testClicked} />
         }
         return (
             <div className="TestBody">

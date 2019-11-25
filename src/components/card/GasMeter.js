@@ -1,6 +1,6 @@
 import React from 'react';
 import { Spring, Donut } from 'react-spring/renderprops'
-
+import Gauge from 'react-radial-gauge';
 import './GasMeter.css';
 
 export default class GasMeter extends React.Component {
@@ -11,6 +11,7 @@ export default class GasMeter extends React.Component {
     constructor(props) {
         super(props)
     }
+    
 
     componentDidMount() {
         window.addEventListener('scroll', () => {
@@ -24,10 +25,23 @@ export default class GasMeter extends React.Component {
 
     render() {
         //now only one item but will be changed to a list
+        let opts = { size: 140, needleBaseColor:"#ffa500", currentValue: 10, progressColor: "#f00" }
+        let opts1 = { size: 140, currentValue: 50, progressColor: "#0900ff" }
+        let opts2 = { size: 140, currentValue: 45, progressColor: "#0900ff" }
+        let opts3 = { size: 140, currentValue: 90, progressColor: "#00ff00" }
+        
         return (
-            
             <div className={this.state.scrolled ? 'cardBig GasCard' : 'cardSmall GasCard'}>
-                <div class="progress-circle p50 gauge0">
+                <Gauge {...opts} />
+                <Gauge {...opts1} />
+                <Gauge {...opts2} />
+                <Gauge {...opts3} />
+            </div>
+        );
+    }
+}
+/*
+ <div class="progress-circle p50 gauge0">
                     <span>mittari 1</span>
                     <div class="left-half-clipper">
                         <div class="first50-bar"></div>
@@ -58,8 +72,4 @@ export default class GasMeter extends React.Component {
                     </div>
 
                 </div>
-
-            </div>
-        );
-    }
-}
+*/
