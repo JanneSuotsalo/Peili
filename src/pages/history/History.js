@@ -4,34 +4,33 @@ import sideImgEnd from "./historySideEnd.png"
 import sideImgStart from "./Ellipse.png"
 import sideImg from "./historySideImg.png"
 
-
-
 export default function History() {
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(0);
     const [historyData, setHistoryData] = useState([]);
-    const [lastIndex, setLastIndex] = useState([-1])
+    const [indexArray, setIndexArray] = useState([-1])
     const [visible, setVisible] = useState(true)
 
-    let historyDatajson = require("./History.json")
-    let lastIndexNumber = lastIndex.pop();
+    let historyDataJson = require("./History.json")
+    let lastIndexNumber = indexArray.pop();
     let historyDataArray  = [];
 
     function changeLastIndex(index){
-        lastIndex.push(index)
+        indexArray.push(index)
 
         // hides the button if there is no more history to show
-        if(lastIndexNumber+5 === historyDatajson.length){
+        if(lastIndexNumber+5 === historyDataJson.length){
             setVisible(false)
         }
     }
 
-    console.log("Lastindex: " + lastIndex + " Visibility: " + visible + " Count: " + count)
+    console.log("Lastindex: " + indexArray + " Visibility: " + visible + " Count: " + count)
 
     historyData.push(AddElement(lastIndexNumber, visible, changeLastIndex))
-
+    
     historyData.forEach(el => {
         historyDataArray.push(el)
     });
+
 
     return (
         <div>
@@ -54,13 +53,10 @@ const AddElement = (lastIndex, visible, changevalue) => {
     for (var i = 0; i < historyData.length && timesToRun < 4 ; i++)
         {
             var obj = historyData[i];
-
             let container = []
 
             if(i > lastIndex){
-
                 data.push(<div className={'history_' + obj.tag.toString() +"Container"}>{container}</div>);
-
                 if(i === 0){
                     container.push(<img className="history_sideImgStart" src={sideImgStart}/>);
                     container.push(<div className="history_dateStart">{obj.date}</div>);
