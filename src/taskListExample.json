@@ -1,8 +1,8 @@
 
     {
-        "taskId": "perustaidot",
+        "taskId": "perustiedot",
         "priority": "1000",
-        "taskName": "Perustaidot",
+        "taskName": "Perustiedot",
         "description": "Opeta PEILI-sovellus tuntemaan sinut.",
         "mandatory": true,
         "introText": "Kerro ensin pari juttua itsestäsi",
@@ -45,7 +45,7 @@
                 "minValue": 1,
                 "maxValue": 10,
                 "minLabel": "Erittäin tyytymätön",
-                "maxLabel": "Erittäin tyytyäinen",
+                "maxLabel": "Erittäin tyytyväinen",
                 "step": 1
             },
             {
