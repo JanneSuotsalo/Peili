@@ -39,7 +39,21 @@ class TestQuiz1 extends React.Component {
     }
 
     render() {
+        
+        /*
+        //LAITA QUESTIONCOUNT STATEE JA lISÄÄ AINA NOIHIN COMPONENTTEIHIN
+        let questionCount = 0;
+        let questionLayout1;
+
+        //Tsekkaa aina mikä question countti ja laittaa sen mukaan kyssärin
+        if(questionCount == 1) {
+            questionLayout1 = <RadioGroup qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />;
+        } else if(questionCount == 2) {
+            questionLayout1 = <RadioGroup qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />;
+        }*/
+
         return(
+            
             <div>
                 <div className="taskName">
                     <h1>{taskData.taskName}</h1>
