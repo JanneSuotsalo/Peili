@@ -1,24 +1,33 @@
 import React from 'react';
 import './Quiz.css';
 import { pipelineTopicExpression } from '@babel/types';
+import { Link } from "react-router-dom";
+import Result from '../result/Result';
 
 var taskData = require('../../taskListExample.json');
 var taskData2 = require('../../taskListExample2.json');
 
 export default class Quiz extends React.Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
-        return <TestQuiz1 questions="6" />
+        return <TestQuiz1 questionNumber={this.props.questionNumber} questions="6" />
     }
 }
 
 class TestQuiz1 extends React.Component {
+    state = {
+        sex: ""
+    }
     constructor(props) {
         super(props)
         this.props = {questions: "null"}
         }
-
+/*
     optionCount() {
         var number = [];
+
         var questions = [
             <RadioGroup qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />,
             <RangeSlider qTitle={taskData.questions[1].prompt} min={taskData.questions[1].minValue} max={taskData.questions[1].maxValue} minLabel={taskData.questions[1].minLabel} maxLabel={taskData.questions[1].maxLabel} />,
@@ -36,21 +45,23 @@ class TestQuiz1 extends React.Component {
             )
         }
         return number;
+    }*/
+    changeQuestion = () => {
+        console.log("changeQuestion")
     }
 
     render() {
-        
-        /*
-        //LAITA QUESTIONCOUNT STATEE JA lISÄÄ AINA NOIHIN COMPONENTTEIHIN
-        let questionCount = 0;
+                
         let questionLayout1;
+        console.log(this.props.questionNumber)
 
-        //Tsekkaa aina mikä question countti ja laittaa sen mukaan kyssärin
-        if(questionCount == 1) {
+        if(this.props.questionNumber == 1) {
+            questionLayout1 = <RadioGroup subscribe={this.changeQuestion} qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />;
+        } else if(this.props.questionNumber == 2) {
             questionLayout1 = <RadioGroup qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />;
-        } else if(questionCount == 2) {
-            questionLayout1 = <RadioGroup qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />;
-        }*/
+        } else if(this.props.questionNumber == 3){
+            questionLayout1 = <Result />
+        }
 
         return(
             
@@ -58,7 +69,7 @@ class TestQuiz1 extends React.Component {
                 <div className="taskName">
                     <h1>{taskData.taskName}</h1>
                 </div>
-                {this.optionCount()}
+                {questionLayout1}
                 <div className="quizFooter">
                     <button id="nextButton">Seuraava</button>
                 </div>

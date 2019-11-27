@@ -29,6 +29,7 @@ class App extends React.Component {
     showPopup: false,
     orgPopup: false,
     image: {},
+    questionNumber: 1,
   };
 
   drawerToggleClickHandler = () => {
@@ -102,7 +103,7 @@ class App extends React.Component {
           <Settings />
         </Route>        
         <Route path="/quiz">
-          <Quiz />
+          <Quiz  questionNumber={this.state.questionNumber} />
         </Route>
         <Route path="/feed">
           <Feed />
