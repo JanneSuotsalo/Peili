@@ -18,7 +18,9 @@ export default class Quiz extends React.Component {
 
 class TestQuiz1 extends React.Component {
     state = {
-        sex: ""
+        questionNumber: 1,
+        answer1: "",
+        answer2: ""
     }
     constructor(props) {
         super(props)
@@ -46,20 +48,24 @@ class TestQuiz1 extends React.Component {
         }
         return number;
     }*/
-    changeQuestion = () => {
-        console.log("changeQuestion")
+    changeQuestion = (answer) => {
+        this.setState(prevState =>  {
+            return {
+                answer1: answer,
+                questionNumber: prevState.questionNumber + 1
+            }  
+        })
     }
 
     render() {
                 
         let questionLayout1;
-        console.log(this.props.questionNumber)
 
-        if(this.props.questionNumber == 1) {
-            questionLayout1 = <RadioGroup subscribe={this.changeQuestion} qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />;
-        } else if(this.props.questionNumber == 2) {
-            questionLayout1 = <RadioGroup qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />;
-        } else if(this.props.questionNumber == 3){
+        if(this.state.questionNumber == 1) {
+            questionLayout1 = <RadioGroup subscribe={this.changeQuestion} answer={this.state.answer1} qTitle={taskData.questions[0].prompt} value1={taskData.questions[0].ansType[0]} value2={taskData.questions[0].ansType[1]} />;
+        } else if(this.state.questionNumber == 2) {
+            questionLayout1 = <RangeSlider qTitle={taskData.questions[3].prompt} min={taskData.questions[3].minValue} max={taskData.questions[3].maxValue} minLabel={taskData.questions[3].minLabel} maxLabel={taskData.questions[3].maxLabel} />
+        } else if(this.state.questionNumber == 3){
             questionLayout1 = <Result />
         }
 
@@ -175,6 +181,10 @@ class RadioGroup extends React.Component {
         this.props = {qTitle: "null", value1: "null", value2: "null"}
     }
 
+    onChange = (ev) =>{
+        this.props.subscribe(ev.target.value)
+    }
+
     render() {
         return (            
             <div>
@@ -182,8 +192,8 @@ class RadioGroup extends React.Component {
                     <h2>{this.props.qTitle}</h2>
                 </div>
                 <div className="radioGroup">
-                    <input className="radio" type="radio" name="radio" value={this.props.value1} />{this.props.value1}<br/>
-                    <input className="radio" type="radio" name="radio" value={this.props.value2} />{this.props.value2}<br/>
+                    <input className="radio" onChange={this.onChange} type="radio" name="radio" value={this.props.value1} />{this.props.value1}<br/>
+                    <input className="radio" onChange={this.onChange} type="radio" name="radio" value={this.props.value2} />{this.props.value2}<br/>
                 </div>
             </div>
         )
