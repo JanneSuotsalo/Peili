@@ -39,16 +39,6 @@
                 "placeholder": "Millainen olet? Mikä kiinnostaa?"
             },
             {
-                "questionId": "tyytyväisyysElämään",
-                "prompt": "Kuinka tyytyväinen olet elämääsi?",
-                "ansType": "rangeValue",
-                "minValue": 1,
-                "maxValue": 10,
-                "minLabel": "Erittäin tyytymätön",
-                "maxLabel": "Erittäin tyytyväinen",
-                "step": 1
-            },
-            {
                 "questionId": "ilmoitukset",
                 "prompt": "Haluan sovellusilmoituksia",
                 "ansType": "boolean",
