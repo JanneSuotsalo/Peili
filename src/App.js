@@ -73,7 +73,7 @@ class App extends React.Component {
   return (
     <Router>    
     <div style={{height: '100%'}}>
-        <Toolbar drawClickHandler={this.drawerToggleClickHandler}/>
+        <Toolbar showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
          <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
         
         {backDrop}

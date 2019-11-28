@@ -7,13 +7,24 @@
     background: transparent;
     border: none;
     box-sizing: border-box;
-    cursor: pointer;
-}
-.toggleButton:focus{
     outline: none;
- }
- .menuLine{
+}
+
+.bar1, .bar2, .bar3 {
+    transition: 0.4s;
+  }
+
+.menuLine{
     width: 30px;
     height: 3px;
     background: #F27127;
  }
+ .x .bar1 {
+    transform: rotate(-45deg) translate(-8px, 1px);}
+
+
+ .x .bar2 {opacity: 0;}
+
+ .x .bar3 {
+    transform: rotate(45deg) translate(-8px, -2px);
+}
