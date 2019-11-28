@@ -3,6 +3,7 @@ import './Quiz.css';
 import { pipelineTopicExpression } from '@babel/types';
 import { Link } from "react-router-dom";
 import Result from '../result/Result';
+import { Spring, Trail } from 'react-spring/renderprops';
 
 var taskData = require('../../taskListExample.json');
 var taskData2 = require('../../taskListExample2.json');
@@ -24,7 +25,8 @@ class TestQuiz1 extends React.Component {
     }
     constructor(props) {
         super(props)
-        this.props = {questions: "null"}
+        this.state = {questionCount: 0}
+        this.handleClick = this.handleClick.bind(this);
         }
 /*
     optionCount() {
@@ -57,7 +59,7 @@ class TestQuiz1 extends React.Component {
         })
     }
 
-    render() {
+  /*  render() {
                 
         let questionLayout1;
 
@@ -69,16 +71,66 @@ class TestQuiz1 extends React.Component {
             questionLayout1 = <Result />
         }
 
+        handleClick = () => {
+            this.setState({questionCount: this.state.questionCount + 1}, () => {
+                console.log(this.state.questionCount)
+            });
+        }
+*/
+    render() {
+        
+        //LAITA QUESTIONCOUNT STATEE JA lISÄÄ AINA NOIHIN COMPONENTTEIHIN
+        let questionCount = this.state.questionCount;
+        let index = questionCount - 1;
+        let questionLayout;
+
+        //Tsekkaa aina mikä question countti ja laittaa sen mukaan kyssärin
+        if (questionCount == 0) {
+            questionLayout =                     
+            <div className="questionCard">
+                <QuizInfo taskName={taskData.taskName} desc={taskData.description} intro={taskData.introText} reward={taskData.reward} />
+                <button onClick={this.handleClick} className="next_btn">Seuraava</button>    
+            </div>
+
+        } else if(questionCount == 1) {
+            questionLayout =                     
+            <div className="questionCard">
+                <RadioGroup qTitle={taskData.questions[index].prompt} value1={taskData.questions[index].ansType[0]} value2={taskData.questions[index].ansType[1]} />
+                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 2) {
+            questionLayout =
+            <div className="questionCard">
+                <RangeSlider qTitle={taskData.questions[index].prompt}min={taskData.questions[index].minValue} max={taskData.questions[index].maxValue} minLabel={taskData.questions[index].minLabel} maxLabel={taskData.questions[index].maxLabel} />
+                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 3) {
+            questionLayout =
+            <div className="questionCard">
+                <Opentext qTitle={taskData.questions[2].prompt} maxLength={taskData.questions[2].maxLen} />
+                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 4) {
+            questionLayout =
+            <div className="questionCard">
+                <RadioGroup qTitle={taskData.questions[3].prompt} value1="Tosi" value2="Epätosi" />,
+                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 5) {
+            questionLayout =
+            <div className="questionCard">
+                <RadioGroup qTitle={taskData.questions[4].prompt} value1="Tosi" value2="Epätosi" />
+                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+        } // Should go to completion page after
+
         return(
-            
             <div>
-                <div className="taskName">
-                    <h1>{taskData.taskName}</h1>
-                </div>
-                {questionLayout1}
-                <div className="quizFooter">
-                    <button id="nextButton">Seuraava</button>
-                </div>
+                {questionLayout}
             </div>
         )
     }
@@ -93,16 +145,13 @@ class QuizInfo extends React.Component {
     render() {
         return(
             <div>
-                <div>
+                <div id="infoTitle">
                     <h1>{this.props.taskName}</h1>
                     <h2>{this.props.desc}</h2>
                 </div>
-                <div>
+                <div id="infoExtra">
                     <h3>{this.props.intro}</h3>
-                    <h3>{this.props.reward} points</h3>
-                </div>
-                <div>
-                    <button></button>
+                    <h3>Suoritus palkinto {this.props.reward} pistettä</h3>
                 </div>
             </div>
         )
@@ -215,8 +264,8 @@ class RangeSlider extends React.Component {
 
     rangeValue() {
         console.log("range change");
-        const value = document.querySelector('#rangeSlider').value;
-        //document.querySelector('#rangeValue').innerHTML = value;
+        const value = document.querySelector('.rangeSlider').value;
+        document.querySelector('#rangeValue').innerHTML = value;
         console.log(document.querySelector('#rangeValue').innerHTML)
         console.log(value)
     }
@@ -227,9 +276,11 @@ class RangeSlider extends React.Component {
                 <div className="qTitle">
                     <h2>{this.props.qTitle} ({this.props.min} - {this.props.max})</h2>
                 </div>
-                    <p id="rangeValue">he</p>
-                <div className="rangeSlider">
-                    <input id="rangeSlider" onInput={this.rangeValue} name="range" type="range" min={this.props.min} max={this.props.max} step="1"/>
+                <div className="rangeDiv">
+                    <h1 id="rangeValue">{this.props.min}</h1>
+                </div>
+                <div className="rangeSliderDiv">
+                    <input className="rangeSlider" onInput={this.rangeValue} name="range" type="range" min={this.props.min} max={this.props.max} step="1"/>
                     <div className="numberLabel">
                         <label className="valueLabel min" >{this.props.min}</label>
                         <label className="valueLabel max" >{this.props.max}</label>
