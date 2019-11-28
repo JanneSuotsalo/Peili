@@ -56,22 +56,95 @@ class TestQuiz1 extends React.Component {
         } else if(questionCount == 3) {
             questionLayout =
             <div className="questionCard">
-                <Opentext qTitle={taskData.questions[2].prompt} maxLength={taskData.questions[2].maxLen} />
+                <Opentext qTitle={taskData.questions[index].prompt} maxLength={taskData.questions[index].maxLen} />
                 <button onClick={this.handleClick} className="next_btn">Seuraava</button>
             </div>
 
         } else if(questionCount == 4) {
             questionLayout =
             <div className="questionCard">
-                <RadioGroup qTitle={taskData.questions[3].prompt} value1="Tosi" value2="Epätosi" />,
+                <MultiChoice qTitle={taskData.questions[index].prompt} options={taskData.questions[index].choices}  />
                 <button onClick={this.handleClick} className="next_btn">Seuraava</button>
             </div>
 
         } else if(questionCount == 5) {
             questionLayout =
             <div className="questionCard">
-                <RadioGroup qTitle={taskData.questions[4].prompt} value1="Tosi" value2="Epätosi" />
+                <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />,
                 <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 6) {
+            questionLayout =
+            <div className="questionCard">
+                <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />
+                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+        } // Should go to completion page after
+
+        return(
+            <div>
+                {questionLayout}
+            </div>
+        )
+    }
+}
+
+class TestQuiz12 extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {questionCount: 0}
+        this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick = () => {
+            this.setState({questionCount: this.state.questionCount + 1}, () => {
+                console.log(this.state.questionCount)
+            });
+        }
+
+    render() {
+        
+        //LAITA QUESTIONCOUNT STATEE JA lISÄÄ AINA NOIHIN COMPONENTTEIHIN
+        let questionCount = this.state.questionCount;
+        let index = questionCount - 1;
+        let questionLayout;
+
+        //Tsekkaa aina mikä question countti ja laittaa sen mukaan kyssärin
+        if (questionCount == 0) {
+            questionLayout =                     
+            <div className="questionCard">
+               <button onClick={this.handleClick} className="next_btn">Seuraava</button>    
+            </div>
+
+        } else if(questionCount == 1) {
+            questionLayout =                     
+            <div className="questionCard">
+               <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 2) {
+            questionLayout =
+            <div className="questionCard">
+                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 3) {
+            questionLayout =
+            <div className="questionCard">
+               <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 4) {
+            questionLayout =
+            <div className="questionCard">
+               <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+            </div>
+
+        } else if(questionCount == 5) {
+            questionLayout =
+            <div className="questionCard">
+               <button onClick={this.handleClick} className="next_btn">Seuraava</button>
             </div>
         } // Should go to completion page after
 
@@ -129,7 +202,7 @@ class Opentext extends React.Component {
                 </div>
                 <div className="textArea">
                     <label>
-                        <textarea placeholder={this.checkProp()} className="textBox" rows="12" maxLength={this.props.maxLength}></textarea>
+                        <textarea placeholder={this.checkProp()} className="textBox" rows="8" maxLength={this.props.maxLength}></textarea>
                     </label>
                 </div>
             </div>
@@ -145,7 +218,7 @@ class MultiChoice extends React.Component {
 
     optionCount() {
         var options = [];
-        var values = ["random", "test", "dummy", "data", "and", "stuff"];
+        var values = ["Iloiseksi", "Rohkeaksi", "Vihaiseksi", "Tunteikkaaksi", "and", "stuff"];
         for (var i = 0; i < this.props.options; i++) {
             var id = "cb" + i
             console.log(id);
@@ -154,7 +227,6 @@ class MultiChoice extends React.Component {
                             <label for={id}>
                                 <span></span>
                                 {values[i]}
-                                <ins><i>{values[i]}</i></ins>
                             </label>
                         </div>
                         )
@@ -165,6 +237,9 @@ class MultiChoice extends React.Component {
     render() {
         return (
             <div className="multiChoice">
+                <div className="qTitle">
+                    <h2>{this.props.qTitle}</h2>
+                </div>
                 {this.optionCount()}
             </div>
         )

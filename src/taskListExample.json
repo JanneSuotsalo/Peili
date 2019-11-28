@@ -39,6 +39,14 @@
                 "placeholder": "Millainen olet? Mikä kiinnostaa?"
             },
             {
+                "questionId": "omakuva",
+                "prompt": "Kuvailisin itseäni:",
+                "public": true,
+                "ansType": "multi",
+                "choices": 4,
+                "placeholder": "Millainen olet? Mikä kiinnostaa?"
+            },
+            {
                 "questionId": "ilmoitukset",
                 "prompt": "Haluan sovellusilmoituksia",
                 "ansType": "boolean",
@@ -46,7 +54,7 @@
             },
             {
                 "questionId": "näkyvyys",
-                "prompt": "Muut käyttäjät voivat löytää minut. Vain julkiset tiedot näytetään",
+                "prompt": "Muut käyttäjät voivat löytää minut? Vain julkiset tiedot näytetään",
                 "ansType": "boolean",
                 "default": true
             }
