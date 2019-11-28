@@ -43,7 +43,7 @@ return(
             <img src={exampleIcon}></img>
             <p>John Doe</p>
             <Link to="/login">
-            <button>Kirjaudu ulos</button>
+            <button onClick={props.closeDraw}>Kirjaudu ulos</button>
             </Link>            
 
             </div>

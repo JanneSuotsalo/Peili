@@ -23,7 +23,9 @@
     transform: rotate(-45deg) translate(-8px, 1px);}
 
 
- .x .bar2 {opacity: 0;}
+ .x .bar2 {
+    transform: translateX(200%);
+ }
 
  .x .bar3 {
     transform: rotate(45deg) translate(-8px, -2px);
