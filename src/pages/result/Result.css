@@ -15,4 +15,11 @@
     text-align: center;
     color: green;
     font-size: 2em;
+
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

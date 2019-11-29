@@ -1,67 +1,105 @@
-import React, { useState } from "react";
-import "./History.css"
-//import history from "./History.json"
-import sideImg from "./historySide.png"
-import sideImgEnd from "./historySideEnd.png"
-import sideImgEnd2 from "./Ellipse.png"
+import React, { useState, useEffect } from "react";
+import "./History.css";
+import sideImgStart from "./Ellipse.png";
+import sideImg from "./historySideImg.png";
 
-export default function History(props) {
-    let buffer = []
-    let historyData = require("./History.json")
+export default function History() {
+  const [count, setCount] = useState(0);
+  const [historyData, setHistoryData] = useState([]);
+  const [indexArray, setIndexArray] = useState([-1]);
+  const [visible, setVisible] = useState(true);
+  const [runOnce, setRunOnce] = useState([0]);
 
-    // Sorting the json file to be ordered by date
-    historyData.sort((a, b) => new Date(b.date) - new Date(a.date));
+  let historyDataJson = require("./History.json");
+  let lastIndexNumber;
+  let historyDataArray = [];
+  let runOnceCheck = runOnce.pop();
 
-    for (var i = 0; i < historyData.length; i++)
-    {
-        var obj = historyData[i];
-        
-        let container = []
-        buffer.push(<div className={'history_' + obj.tag.toString() +"Container"}>{container}</div>);
-        //buffer.push(<div className="history_tag">{obj.tag}</div>)
+  if (runOnceCheck <= 0) {
+    runOnce.push(1);
+    historyData.push(AddElement(-1, changeLastIndex));
+    console.log(runOnceCheck);
+  }
 
-        // uses the right image on the left
-        if(i+1 === historyData.length){
-        container.push(<img className="history_sideImgEnd" src={sideImgEnd2}/>);
-        } else {
-        container.push(<img className="history_sideImg" src={sideImg}/>);
-        }
-        container.push(<div className="history_date">{obj.date}</div>);
-        container.push(<div className="history_event">{obj.event}</div>);
+  console.log(
+    "Lastindex: " +
+      lastIndexNumber +
+      " Visibility: " +
+      visible +
+      " Count: " +
+      count
+  );
+
+  function render() {
+    lastIndexNumber = indexArray.pop();
+    setCount(count + 1);
+    historyData.push(AddElement(lastIndexNumber, changeLastIndex));
+  }
+
+  function changeLastIndex(index) {
+    indexArray.push(index);
+
+    // hides the button if there is no more history to show
+    if (lastIndexNumber + 5 === historyDataJson.length) {
+      setVisible(false);
     }
+  }
 
+  historyData.forEach(el => {
+    historyDataArray.push(el);
+  });
 
-    return (
-        <div className="history_container">
-            {buffer}
+  return (
+    <div>
+      {historyDataArray}
+      {visible && (
+        <div className="history_buttonContainer">
+          <button className="history_ShowMoreButton" onClick={() => render()}>
+            Show more
+          </button>
         </div>
-    );
+      )}
+      <div className="history_emptySpace"></div>
+    </div>
+  );
 }
 
+const AddElement = (lastIndex, changevalue) => {
+  let historyData = require("./History.json");
+  let timesToRun = 0;
+  let data = [];
 
-/*if(obj.tag == "Profile"){
-            let profile = []
-            buffer.push(<div className="history_profileContainer">{profile}</div>)
-            profile.push(<div className="history_tag">{obj.tag}</div>)
-            profile.push(<div className="history_date">{obj.date}</div>)
-            profile.push(<div className="history_time">{obj.time}</div>)
-            profile.push(<div className="history_time">{obj.event}</div>)
-        }
+  // Sorting the json file to be ordered by date
+  historyData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        if(obj.tag == "Quiz"){
-            let quiz = []
-            buffer.push(<div className="history_quizContainer">{quiz}</div>)
-            quiz.push(<div className="history_tag">{obj.tag}</div>)
-            quiz.push(<div className="history_date">{obj.date}</div>)
-            quiz.push(<div className="history_time">{obj.time}</div>)
-            quiz.push(<div className="history_time">{obj.event}</div>)
-        }
+  for (var i = 0; i < historyData.length && timesToRun < 4; i++) {
+    var obj = historyData[i];
+    let container = [];
 
-        if(obj.tag == "Shop"){
-            let shop = []
-            buffer.push(<div className="history_shopContainer">{shop}</div>)
-            shop.push(<div className="history_tag">{obj.tag}</div>)
-            shop.push(<div className="history_date">{obj.date}</div>)
-            shop.push(<div className="history_time">{obj.time}</div>)
-            shop.push(<div className="history_time">{obj.event}</div>)
-        }*/
+    if (i > lastIndex) {
+      data.push(
+        <div className={"history_" + obj.tag.toString() + "Container"}>
+          {container}
+        </div>
+      );
+      if (i === 0) {
+        container.push(
+          <img className="history_sideImgStart" src={sideImgStart} />
+        );
+        container.push(<div className="history_dateStart">{new Date(obj.date).toLocaleString()}</div>);
+        container.push(<div className="history_eventStart">{obj.event}</div>);
+      } else {
+        container.push(<img className="history_sideImg" src={sideImg} />);
+        container.push(<div className="history_date">{new Date(obj.date).toLocaleString()}</div>);
+        container.push(<div className="history_event">{obj.event}</div>);
+      }
+
+      lastIndex = i;
+      changevalue(lastIndex);
+
+      timesToRun += 1;
+    }
+  }
+
+  return <div className="history_container">{data}</div>;
+};
