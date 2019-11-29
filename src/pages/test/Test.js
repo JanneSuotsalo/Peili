@@ -39,12 +39,15 @@ export default class Test extends React.Component {
                     <p>{I18n.t('testpage.headerText')}</p>
                 </div>
                 <div className="testList">
-                    <Trail items={this.state.item} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{  transform: 'translate3d(0, 0, 0)',background: 'linear-gradient('+this.style()+','+this.style()+')', }}>
+                    <Trail items={this.state.item} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{  transform: 'translate3d(0, 0, 0)',background: 'linear-gradient(to right, '+this.white()+','+this.white()+','+this.style()+')', }}>
                         {item => props =><TestCard style={props} clicked={this.onclick} title={item} />}
                     </Trail>
                 </div>
             </div>
         );
+    }
+    white() {
+        return '#FFFF';
     }
     style() {
         return '#' + Math.random().toString(16).substr(-6);

@@ -28,6 +28,7 @@ class App extends React.Component {
     popup: false,
     showPopup: false,
     orgPopup: false,
+    noNav: true,
     image: {},
   };
 
@@ -56,10 +57,18 @@ class App extends React.Component {
 
   };
 
+  setNav = () => {
+    this.setState((prevState) => {
+      return {noNav: !prevState.noNav};
+    }); 
+
+  };
+
   render(){
     let backDrop;
     let backDrop1;
     let backDrop2;
+
     if(this.state.sideDrawer){
       backDrop = <BackDrop drawerToggleClickHandler={this.drawerToggleClickHandler}/>;
     }
@@ -73,7 +82,7 @@ class App extends React.Component {
   return (
     <Router>    
     <div style={{height: '100%'}}>
-        <Toolbar showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
+        <Toolbar show={this.state.noNav} showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
          <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
         
         {backDrop}

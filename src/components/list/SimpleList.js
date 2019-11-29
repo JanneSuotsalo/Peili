@@ -13,7 +13,6 @@ export default class Simplelist extends React.Component {
         super(props);
     }
     componentWillMount() {
-        console.log(`https://source.unsplash.com/random/800x600/?house?sig=` + this.props.index);
         fetch(`https://source.unsplash.com/random/800x600/?house?sig=` + this.props.index).then((response) => {
             this.setState({
                 image: response.url

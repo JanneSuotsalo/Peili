@@ -1,0 +1,46 @@
+
+.TestCard{
+    border-radius: 5% 5%;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    width: 45%;
+    height: 135px;
+    max-width: 400px;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+.TestCard h2{
+    margin-bottom: 0;
+}
+.TestInfo {
+    background-color: rgba(255, 255, 255, 0.329);
+    margin-right: 45%;
+    margin-bottom: 0;
+    border-radius: 5% 5%;
+}
+
+.TestCard p{
+    margin-top: 0;
+}
+.TestWindow{
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: -24%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    height: 133px;
+    float: right;
+}
+.color {
+    animation: colourItem 2s ease-in-out;
+    animation-delay: 0.4s;
+}
+@keyframes colourItem {
+    0% {background: linear-gradient(to right, #FFFFFF,#FFFFFF, #FFFFFF);}
+    25% {background: linear-gradient(to right, #FFFFFF,#FFFFFF, #68f168);}
+    50% {background: linear-gradient(to right, #FFFFFF,#FFFFFF, #3df03d);}
+    75% {background: linear-gradient(to right, #FFFFFF, #24fc24);}
+    100% {background: linear-gradient(to right, #FFFFFF, #00ff00);}
+}
