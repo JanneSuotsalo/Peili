@@ -86,11 +86,11 @@ const AddElement = (lastIndex, changevalue) => {
         container.push(
           <img className="history_sideImgStart" src={sideImgStart} />
         );
-        container.push(<div className="history_dateStart">{obj.date}</div>);
+        container.push(<div className="history_dateStart">{new Date(obj.date).toLocaleString()}</div>);
         container.push(<div className="history_eventStart">{obj.event}</div>);
       } else {
         container.push(<img className="history_sideImg" src={sideImg} />);
-        container.push(<div className="history_date">{obj.date}</div>);
+        container.push(<div className="history_date">{new Date(obj.date).toLocaleString()}</div>);
         container.push(<div className="history_event">{obj.event}</div>);
       }
 
