@@ -1,6 +1,7 @@
 import React from 'react';
 import './Quiz.css';
 import { Spring, Trail } from 'react-spring/renderprops'
+import { Link } from "react-router-dom";
 
 var taskData = require('../../taskListExample.json');
 var taskData2 = require('../../taskListExample2.json');
@@ -18,11 +19,17 @@ class TestQuiz1 extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         }
 
-        handleClick = () => {
-            this.setState({questionCount: this.state.questionCount + 1}, () => {
-                console.log(this.state.questionCount)
-            });
-        }
+    handleClick = () => {
+        this.setState({questionCount: this.state.questionCount + 1}, () => {
+            console.log(this.state.questionCount)
+        });
+    }
+
+    handleBackClick = () => {
+        this.setState({questionCount: this.state.questionCount - 1}, () => {
+            console.log(this.state.questionCount)
+        });
+    }
 
     render() {
         
@@ -36,49 +43,75 @@ class TestQuiz1 extends React.Component {
             questionLayout =                     
             <div className="questionCard">
                 <QuizInfo taskName={taskData.taskName} desc={taskData.description} intro={taskData.introText} reward={taskData.reward} />
-                <button onClick={this.handleClick} className="next_btn">Seuraava</button>    
+                <button onClick={this.handleClick} className="start_btn">Aloita</button>
             </div>
 
         } else if(questionCount == 1) {
             questionLayout =                     
             <div className="questionCard">
                 <RadioGroup qTitle={taskData.questions[index].prompt} value1={taskData.questions[index].ansType[0]} value2={taskData.questions[index].ansType[1]} />
-                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                <div className="quizButtons">
+                    <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                        <Link to="/test">
+                            <button className="abort_btn">Poistu</button>
+                        </Link>
+                </div>
             </div>
 
         } else if(questionCount == 2) {
             questionLayout =
             <div className="questionCard">
                 <RangeSlider qTitle={taskData.questions[index].prompt}min={taskData.questions[index].minValue} max={taskData.questions[index].maxValue} minLabel={taskData.questions[index].minLabel} maxLabel={taskData.questions[index].maxLabel} />
+                <div className="quizButtons">
+                    <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
                     <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                </div>
             </div>
 
         } else if(questionCount == 3) {
             questionLayout =
             <div className="questionCard">
                 <Opentext qTitle={taskData.questions[index].prompt} maxLength={taskData.questions[index].maxLen} />
-                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                <div className="quizButtons">
+                    <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                </div>
             </div>
 
         } else if(questionCount == 4) {
             questionLayout =
             <div className="questionCard">
                 <MultiChoice qTitle={taskData.questions[index].prompt} options={taskData.questions[index].choices}  />
-                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                <div className="quizButtons">
+                    <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                </div>
             </div>
 
         } else if(questionCount == 5) {
             questionLayout =
             <div className="questionCard">
-                <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />,
-                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />
+                <div className="quizButtons">
+                    <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                </div>
             </div>
 
         } else if(questionCount == 6) {
             questionLayout =
             <div className="questionCard">
                 <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />
-                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                <div className="quizButtons">
+                    <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                </div>
             </div>
         } // Should go to completion page after
 
