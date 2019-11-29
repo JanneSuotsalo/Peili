@@ -15,7 +15,7 @@ export default class TestCard extends React.Component {
                     <h1>Testi</h1>
                     <p>Tähän tulee testin kuvaus</p>
                 </div>
-                <Link to="/Feed">
+                <Link to="/quiz">
                     <div onClick={this.props.click} className="buttoni">
                         Aloita testi
                      </div>

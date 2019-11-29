@@ -13,16 +13,20 @@
 }
 
 .sideDrawer.open{
-    transform: translateX(120%);
+    transform: translateX(100%);
 }
 .sideDrawer ul{
-    height: 100%;
+    height: 80%;
+    margin-top: 4rem;
     list-style: none;
     display: flex;
     flex-direction: column;
 }
 .sideDrawer li{
     margin: 1.2rem 0;
+}
+.first {
+    margin-top: 10rem;
 }
 .sideDrawer a{
     font-size: 1.2rem;
@@ -31,4 +35,12 @@
 }
 .sideDrawer a:active{
     color: red;
+}
+.profileCorner img{
+    margin-top: 80%;
+    width: 70%;
+
+}
+.profileCorner p{
+    margin-left: 10%;
 }
