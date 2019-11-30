@@ -4,7 +4,6 @@ import { Spring, Trail } from 'react-spring/renderprops'
 import { Link } from "react-router-dom";
 
 var taskData = require('../../taskListExample.json');
-var taskData2 = require('../../taskListExample2.json');
 
 export default class Quiz extends React.Component {
     render() {
@@ -12,33 +11,61 @@ export default class Quiz extends React.Component {
     }
 }
 
+// This component is for testing purposes when there is no database
 class TestQuiz1 extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {questionCount: 0}
+        this.state = {questionCount: 0, value: "", status: false, warning: ""}
         this.handleClick = this.handleClick.bind(this);
-        }
+    }
 
     handleClick = () => {
         this.setState({questionCount: this.state.questionCount + 1}, () => {
             console.log(this.state.questionCount)
+            this.setState({warning: ""});
         });
     }
 
     handleBackClick = () => {
         this.setState({questionCount: this.state.questionCount - 1}, () => {
             console.log(this.state.questionCount)
+            this.setState({warning: ""});
         });
     }
 
+    // Handle forward click from <OpenText/> component, checks for input
+    handleTextClick = () => {
+        this.setState({value: document.querySelector("#textArea").value}, () => {
+            console.log(this.state.value, this.state.value.length);
+            if (this.state.value.length > 3 ) {
+                //this.setState({status: true}, () => {
+                    this.handleClick()
+                //});
+            } else {
+                //this.setState({status: false}, () => {
+                    this.setState({warning: "Vastaus tarvitaan jatkamiseen"});
+                //});
+            };
+        });
+    }
+
+    // Handle forward click from <RadioGroup/> component, checks for input
+    handleRadioClick = () => {
+        var radioButtons = document.getElementsByName("radio");
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                this.handleClick()
+            } else {
+                this.setState({warning: "Vastaus tarvitaan jatkamiseen"});
+            }
+        }
+    }
+
     render() {
-        
-        //LAITA QUESTIONCOUNT STATEE JA lISÄÄ AINA NOIHIN COMPONENTTEIHIN
         let questionCount = this.state.questionCount;
         let index = questionCount - 1;
         let questionLayout;
 
-        //Tsekkaa aina mikä question countti ja laittaa sen mukaan kyssärin
         if (questionCount == 0) {
             questionLayout =                     
             <div className="questionCard">
@@ -46,138 +73,87 @@ class TestQuiz1 extends React.Component {
                 <button onClick={this.handleClick} className="start_btn">Aloita</button>
             </div>
 
-        } else if(questionCount == 1) {
+        } else if (questionCount == 1) {
             questionLayout =                     
             <div className="questionCard">
                 <RadioGroup qTitle={taskData.questions[index].prompt} value1={taskData.questions[index].ansType[0]} value2={taskData.questions[index].ansType[1]} />
+                <h3 className="warning">{this.state.warning}</h3>
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
-                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                    <button onClick={this.handleRadioClick} className="next_btn">Seuraava</button>
                         <Link to="/test">
                             <button className="abort_btn">Poistu</button>
                         </Link>
                 </div>
             </div>
 
-        } else if(questionCount == 2) {
+        } else if (questionCount == 2) {
             questionLayout =
             <div className="questionCard">
                 <RangeSlider qTitle={taskData.questions[index].prompt}min={taskData.questions[index].minValue} max={taskData.questions[index].maxValue} minLabel={taskData.questions[index].minLabel} maxLabel={taskData.questions[index].maxLabel} />
+                <h3 className="warning">{this.state.warning}</h3>
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
                     <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                    <Link to="/test">
+                            <button className="abort_btn">Poistu</button>
+                    </Link>
                 </div>
             </div>
 
-        } else if(questionCount == 3) {
+        } else if (questionCount == 3) {
             questionLayout =
             <div className="questionCard">
-                <Opentext qTitle={taskData.questions[index].prompt} maxLength={taskData.questions[index].maxLen} />
+                <Opentext onChange={this.handleEvent} status={this.state.status} qTitle={taskData.questions[index].prompt} maxLength={taskData.questions[index].maxLen} />
+                <h3 className="warning">{this.state.warning}</h3>
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
-                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                    <button onClick={this.handleTextClick} className="next_btn">Seuraava</button>
+                    <Link to="/test">
+                        <button className="abort_btn">Poistu</button>
+                    </Link>
                 </div>
             </div>
 
-        } else if(questionCount == 4) {
+        } else if (questionCount == 4) {
             questionLayout =
             <div className="questionCard">
                 <MultiChoice qTitle={taskData.questions[index].prompt} options={taskData.questions[index].choices}  />
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
                     <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                    <Link to="/test">
+                        <button className="abort_btn">Poistu</button>
+                    </Link>
                 </div>
             </div>
 
-        } else if(questionCount == 5) {
+        } else if (questionCount == 5) {
             questionLayout =
             <div className="questionCard">
                 <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />
+                <h3 className="warning">{this.state.warning}</h3>
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
-                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                    <button onClick={this.handleRadioClick} className="next_btn">Seuraava</button>
+                    <Link to="/test">
+                        <button className="abort_btn">Poistu</button>
+                    </Link>
                 </div>
             </div>
 
-        } else if(questionCount == 6) {
+        } else if (questionCount == 6) {
             questionLayout =
             <div className="questionCard">
                 <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />
+                <h3 className="warning">{this.state.warning}</h3>
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
-                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-                    <button onClick={this.handleClick} className="abort_btn">Poistu</button>
+                    <button onClick={this.handleRadioClick} className="next_btn">Seuraava</button>
+                    <Link to="/test">
+                        <button className="abort_btn">Poistu</button>
+                    </Link>
                 </div>
-            </div>
-        } // Should go to completion page after
-
-        return(
-            <div>
-                {questionLayout}
-            </div>
-        )
-    }
-}
-
-class TestQuiz12 extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {questionCount: 0}
-        this.handleClick = this.handleClick.bind(this);
-        }
-
-        handleClick = () => {
-            this.setState({questionCount: this.state.questionCount + 1}, () => {
-                console.log(this.state.questionCount)
-            });
-        }
-
-    render() {
-        
-        //LAITA QUESTIONCOUNT STATEE JA lISÄÄ AINA NOIHIN COMPONENTTEIHIN
-        let questionCount = this.state.questionCount;
-        let index = questionCount - 1;
-        let questionLayout;
-
-        //Tsekkaa aina mikä question countti ja laittaa sen mukaan kyssärin
-        if (questionCount == 0) {
-            questionLayout =                     
-            <div className="questionCard">
-               <button onClick={this.handleClick} className="next_btn">Seuraava</button>    
-            </div>
-
-        } else if(questionCount == 1) {
-            questionLayout =                     
-            <div className="questionCard">
-               <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-            </div>
-
-        } else if(questionCount == 2) {
-            questionLayout =
-            <div className="questionCard">
-                <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-            </div>
-
-        } else if(questionCount == 3) {
-            questionLayout =
-            <div className="questionCard">
-               <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-            </div>
-
-        } else if(questionCount == 4) {
-            questionLayout =
-            <div className="questionCard">
-               <button onClick={this.handleClick} className="next_btn">Seuraava</button>
-            </div>
-
-        } else if(questionCount == 5) {
-            questionLayout =
-            <div className="questionCard">
-               <button onClick={this.handleClick} className="next_btn">Seuraava</button>
             </div>
         } // Should go to completion page after
 
@@ -193,7 +169,7 @@ class QuizInfo extends React.Component {
     constructor(props) {
         super(props)
         this.props = {taskName: "Quiz", desc: "null", intro: "null", reward: "null"}
-        }
+    }
 
     render() {
         return(
@@ -211,10 +187,11 @@ class QuizInfo extends React.Component {
     }
 }
 
+// Textarea question component
 class Opentext extends React.Component {    
     constructor(props) {
-    super(props)
-    this.props = {maxLength: "250", qTitle: "null"}
+        super(props)
+        this.props = {maxLength: "250", qTitle: "null"}
     }
 
     checkProp() {
@@ -235,7 +212,7 @@ class Opentext extends React.Component {
                 </div>
                 <div className="textArea">
                     <label>
-                        <textarea placeholder={this.checkProp()} className="textBox" rows="8" maxLength={this.props.maxLength}></textarea>
+                        <textarea onChange={this.handleEvent} id="textArea" placeholder={this.checkProp()} className="textBox" rows="8" maxLength={this.props.maxLength}></textarea>
                     </label>
                 </div>
             </div>
@@ -243,10 +220,11 @@ class Opentext extends React.Component {
     }
 }
 
+// Multiple choice question component
 class MultiChoice extends React.Component {    
     constructor(props) {
-    super(props)
-    this.props = {options: "3", qTitle: "null"}
+        super(props)
+        this.props = {options: "3", qTitle: "null"}
     }
 
     optionCount() {
@@ -254,7 +232,7 @@ class MultiChoice extends React.Component {
         var values = ["Iloiseksi", "Rohkeaksi", "Vihaiseksi", "Tunteikkaaksi", "and", "stuff"];
         for (var i = 0; i < this.props.options; i++) {
             var id = "cb" + i
-            console.log(id);
+            //console.log(id);
             options.push(<div className="checkBoxDiv">
                             <input id={id} type='checkbox' />
                             <label for={id}>
@@ -279,6 +257,7 @@ class MultiChoice extends React.Component {
     }
 }
 
+// Component for true/false type questions
 class RadioGroup extends React.Component {
     constructor(props) {
         super(props);
@@ -300,11 +279,11 @@ class RadioGroup extends React.Component {
     }
 }
 
+// Range slider component for choosing value from range
 class RangeSlider extends React.Component {
     constructor(props) {
         super(props);
         this.props = {qTitle: "null", min: "1", max: "5", minLabel: "null", maxLabel: "null"};
-
         this.handleChange = this.handleChange.bind(this);
         this.rangeValue = this.rangeValue.bind(this);
     }
@@ -314,10 +293,10 @@ class RangeSlider extends React.Component {
     }
 
     rangeValue() {
-        console.log("range change");
+        //console.log("range change");
         const value = document.querySelector('.rangeSlider').value;
         document.querySelector('#rangeValue').innerHTML = value;
-        console.log(document.querySelector('#rangeValue').innerHTML)
+        //console.log(document.querySelector('#rangeValue').innerHTML)
         console.log(value)
     }
 
