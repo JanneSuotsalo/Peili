@@ -14,24 +14,27 @@ export default class Test extends React.Component {
     }
     state = {
         item: [data.tasks[0].task, data.tasks[0].task1, data.tasks[0].task2, data.tasks[0].task3],
-        show: false
+        show: false,
+        itemToShow: {}
     }
 
-    testClicked = () => {
+    testClicked = (item) => {
 
         this.props.popPopup();
         this.props.popHandler();
     };
 
-    onclick = () => {
+    onclick = (item) => {
+        this.setState({
+            itemToShow: item
+        })
         this.testClicked();
     }
 
     render() {
         let popup
-        console.log(this.state.item)
         if (this.props.showPopup) {
-            popup = <TestDetail click={this.onclick} close={this.testClicked} />
+            popup = <TestDetail item={this.state.itemToShow} click={this.onclick} close={this.testClicked} />
         }
         return (
             <div className="TestBody">

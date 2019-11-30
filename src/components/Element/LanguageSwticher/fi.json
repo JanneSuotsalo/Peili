@@ -13,6 +13,15 @@
     "testpage":{
         "header":"Testejä",
         "headerText":"Tässä osiossa voit suorittaa erilaisia tehtäviä"
+    },
+    "navBar":{
+        "profile":"Profiili",
+        "mainFeed":"Syöte",
+        "organisations":"Järjestöt",
+        "test":"Testit",
+        "history":"Historia"
+    },
+    "generic":{
+        "logOut":"Kirjaudu Ulos"
     }
-
 }

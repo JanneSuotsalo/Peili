@@ -13,6 +13,16 @@
     "testpage":{
         "header":"Tests",
         "headerText":"Here you can do different kind of tests"
+    },
+    "navBar":{
+        "profile":"Profile",
+        "mainFeed":"Feed",
+        "organisations":"Organizations",
+        "test":"Quizes",
+        "history":"History"
+    },
+    "generic":{
+        "logOut":"Log out"
     }
 
 }
