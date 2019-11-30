@@ -30,3 +30,12 @@
  .x .bar3 {
     transform: rotate(45deg) translate(-8px, -2px);
 }
+.y .bar1 {
+   transform: translateX(200%);
+}
+.y .bar2 {
+   transform: translateX(300%);
+}
+.y .bar3 {
+   transform: translateX(400%);
+}

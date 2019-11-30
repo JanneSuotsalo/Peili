@@ -40,13 +40,15 @@ class App extends React.Component {
   organizationHandler = (image) => {
     this.setState((prevState) => {
       return {orgPopup: !prevState.orgPopup,
+              noNav:!prevState.noNav,
               image: image};
     });
   }
 
   popupClickHandler = () => {
     this.setState((prevState) => {
-      return {popup: !prevState.popup};
+      return {popup: !prevState.popup,
+              noNav:!prevState.noNav};
     }); 
   };
 

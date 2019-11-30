@@ -40,7 +40,7 @@ export default class Organization extends React.Component {
                             <p style={props}></p>
                         </div>
 
-                        <Trail items={this.state.item} from={{ transform: 'translate3d(400px,400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
+                        <Trail items={this.state.item} from={{ transform: 'translate3d(-400px, 200px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
                             {(item, i) => props => <ListItemHandler item={item} style={props} index={i} click={this.handleClick}/>}
                         </Trail>
                     </div>
