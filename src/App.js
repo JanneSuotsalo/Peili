@@ -55,8 +55,8 @@ class App extends React.Component {
   }
   handleUnsubscribe = (item) => {
       this.setState({
-        subscribedOrgz: this.state.subscribedOrgz.filter((_, i) => i.name !== item.name)
-      });    
+        subscribedOrgz: this.state.subscribedOrgz.filter((i) => i !== item)
+      })
   }
 
   popupClickHandler = () => {
@@ -115,7 +115,14 @@ class App extends React.Component {
           <Register />
         </Route>
         <Route path="/organization">
-          <Organization orgHandler1={this.organizationHandler} subscribed={this.state.subscribedOrgz} image={this.state.image} data={this.state.data} handleSubscribe={this.handleSubscribe} orgHandler={this.state.orgPopup}/>
+          <Organization 
+            orgHandler1={this.organizationHandler} 
+            subscribed={this.state.subscribedOrgz} 
+            image={this.state.image} 
+            data={this.state.data} 
+            handleSubscribe={this.handleSubscribe} 
+            handleUnsubscribe={this.handleUnsubscribe} 
+            orgHandler={this.state.orgPopup}/>
         </Route>
         <Route path="/profile">
           <Profile />

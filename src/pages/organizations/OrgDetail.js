@@ -5,7 +5,6 @@ import Map from '../../components/GoogleMap/GoogleMap';
 
 export default class OrgDetail extends React.Component {
     state = {
-        subscribed: false,
         map: false
     }
     constructor(props) {
@@ -16,10 +15,8 @@ export default class OrgDetail extends React.Component {
     subscribe = () => {
         if(this.props.subscribed){
            this.props.handleSubscribe(this.props.data);
-           this.setState((prevState) => {
-            return { subscribed: !prevState.subscribed }
-        })
         } else {
+            this.props.handleUnsubscribe(this.props.data);
         }
     }
 
@@ -32,7 +29,6 @@ export default class OrgDetail extends React.Component {
     render() {
         let subscribe;
         let picOrMap;
-        console.log(this.props.subscribed)
         if (this.props.subscribed) {
             subscribe = <div className="OrgButton a" onClick={this.subscribe} ><a>Tilaa</a></div>
         } else {
