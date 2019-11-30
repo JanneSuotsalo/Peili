@@ -1,6 +1,6 @@
 import React from 'react';
 import "./OrgDetail.css";
-import { Spring } from 'react-spring/renderprops';
+import { Spring, Transition } from 'react-spring/renderprops';
 import Map from '../../components/GoogleMap/GoogleMap';
 
 export default class OrgDetail extends React.Component {
@@ -40,12 +40,15 @@ export default class OrgDetail extends React.Component {
         } else {
             picOrMap =  <Map />
         }
+        let show = true;
+
         return (
-            <Spring
-                from={{ opacity: 0.2 }}
-                to={{ opacity: 1 }}
-                config={{ duration: 1000 }}>
-                {props =>
+            <Transition
+            items={show}
+            from={{ opacity: 0 }}
+            enter={{ opacity: 1 }}
+            leave={{ opacity: 0 }}>
+                {show => show && (props =>
                     <div style={props} className="OrgDetail anim">
                         {picOrMap}
                         <h3>{this.props.item.name.fi}</h3>
@@ -58,8 +61,8 @@ export default class OrgDetail extends React.Component {
                             <div className="OrgButton c" onClick={this.showMap}><a>katso kartalta</a></div>
                         </div>
                     </div>
-                }
-            </Spring>
+                )}
+            </Transition>
 
         );
     }

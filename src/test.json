@@ -1,0 +1,40 @@
+{
+    "tasks": [{
+        "task": {
+            "id": "1234-dsad-1tre-odsal",
+            "header":"hupitesti",
+            "status": "NEW",
+            "createdAt": "2019-11-30T05:17:30+03:00",
+            "reward": 5,
+            "questionID": "dsakl"
+        },
+        "task1": {
+            "id": "1234-dsad-1tre-odsal",
+            "header":"Tunne itsesi",
+            "status": "PAUSED",
+            "createdAt": "2019-11-27T05:17:30+03:00",
+            "reward": 7,
+            "questionID": "dsakl"
+        },
+        "task2": {
+            "id": "1234-dsad-1tre-odsal",
+            "header":"Lempiväri testi",
+            "status": "NEW",
+            "createdAt": "2019-11-26T05:17:30+03:00",
+            "reward": 8,
+            "questionID": "dsakl"
+        },
+        "task3": {
+            "id": "1234-dsad-1tre-odsal",
+            "header":"Kuka olet",
+            "status": "COMPLETED",
+            "createdAt": "2019-11-25T05:17:30+03:00",
+            "reward": 3,
+            "questionID": "dsakl"
+        }
+    }]
+}
+
+
+
+
