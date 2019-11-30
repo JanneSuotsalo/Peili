@@ -115,7 +115,7 @@ class App extends React.Component {
           <Register />
         </Route>
         <Route path="/organization">
-          <Organization orgHandler1={this.organizationHandler} image={this.state.image} data={this.state.data} handleSubscribe={this.handleSubscribe} orgHandler={this.state.orgPopup}/>
+          <Organization orgHandler1={this.organizationHandler} subscribed={this.state.subscribedOrgz} image={this.state.image} data={this.state.data} handleSubscribe={this.handleSubscribe} orgHandler={this.state.orgPopup}/>
         </Route>
         <Route path="/profile">
           <Profile />
@@ -130,7 +130,7 @@ class App extends React.Component {
           <Quiz />
         </Route>
         <Route path="/feed">
-          <Feed subscribed={this.state.subscribedOrgz} image={this.state.image} data={this.state.data} orgHandler={this.state.orgPopup} orgHandler1={this.organizationHandler}/>
+          <Feed popHandler={this.popupClickHandler} popPopup={this.popPopUp} showPopup={this.state.showPopup} subscribed={this.state.subscribedOrgz} image={this.state.image} data={this.state.data} orgHandler={this.state.orgPopup} orgHandler1={this.organizationHandler}/>
         </Route>
         <Route path="/history">
           <History />

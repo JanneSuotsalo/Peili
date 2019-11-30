@@ -14,7 +14,7 @@ export default class ListItemHandler extends React.Component {
     render() {
         return (
             <div>
-               <Simplelist style={this.props.style} item={this.props.item} index={this.props.index} click={this.onClick} />
+               <Simplelist style={this.props.style} item={this.props.item} index={this.props.index} subscribed={this.props.subscribed} click={this.onClick} />
             </div>
         );
 }

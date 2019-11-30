@@ -36,7 +36,11 @@ export default class Organization extends React.Component {
         let item;
         //now only one item but will be changed to a list
         if (this.props.orgHandler) {
-            item = <OrgDetail image={this.props.image} handleSubscribe={this.handleSubscribe} data={this.props.data} />
+            if(!this.props.subscribed.some(subItems => subItems.id === this.props.data.id)) {               
+                item = <OrgDetail image={this.props.image} handleSubscribe={this.handleSubscribe} subscribed={true} data={this.props.data} />
+            } else {
+               item = <OrgDetail image={this.props.image} handleSubscribe={this.handleSubscribe} subscribed={false} data={this.props.data} />
+            }
         }
 
         return (
@@ -53,7 +57,8 @@ export default class Organization extends React.Component {
                         </div>
 
                         <Trail items={this.state.item} from={{ transform: 'translate3d(-400px, 200px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
-                            {(item, i) => props => <ListItemHandler item={item} style={props} index={i} click={this.handleClick}/>}
+                            {(item, i) => props =>
+                            <ListItemHandler item={item} style={props} index={i} click={this.handleClick}/>}
                         </Trail>
                     </div>
                 }

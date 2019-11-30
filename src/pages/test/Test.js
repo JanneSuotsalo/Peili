@@ -18,7 +18,7 @@ export default class Test extends React.Component {
         itemToShow: {}
     }
 
-    testClicked = (item) => {
+    testClicked = () => {
 
         this.props.popPopup();
         this.props.popHandler();

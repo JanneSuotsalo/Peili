@@ -1,7 +1,7 @@
 {
     "tasks": [
         {
-            "id": "1234-dsad-1tre-odsal",
+            "id": "1",
             "header": "hupitesti",
             "description": "Tee tästä hupitesti",
             "status": "NEW",
@@ -10,7 +10,7 @@
             "questionID": "dsakl"
         },
         {
-            "id": "1234-dsad-1tre-odsal",
+            "id": "2",
             "header": "Tunne itsesi",
             "description": "Tunnetko itsesi? Tee tämä testi selvittääksesi sen",
             "status": "PAUSED",
@@ -19,7 +19,7 @@
             "questionID": "dsakl"
         },
         {
-            "id": "1234-dsad-1tre-odsal",
+            "id": "3",
             "header": "Lempiväri testi",
             "description": "Tee testi selvittääksesi lempivärisi",
             "status": "NEW",
@@ -28,7 +28,7 @@
             "questionID": "dsakl"
         },
         {
-            "id": "1234-dsad-1tre-odsal",
+            "id": "4",
             "header": "Kuka olet",
             "description": "Tee testi selvittääksesi kuka olet",
             "status": "COMPLETED",

@@ -14,13 +14,13 @@ export default class OrgDetail extends React.Component {
     
 
     subscribe = () => {
-        if(!this.state.subscribed){
+        if(this.props.subscribed){
            this.props.handleSubscribe(this.props.data);
-        } else {
-        }
-        this.setState((prevState) => {
+           this.setState((prevState) => {
             return { subscribed: !prevState.subscribed }
         })
+        } else {
+        }
     }
 
     showMap = () => {
@@ -32,8 +32,8 @@ export default class OrgDetail extends React.Component {
     render() {
         let subscribe;
         let picOrMap;
-
-        if (!this.state.subscribed) {
+        console.log(this.props.subscribed)
+        if (this.props.subscribed) {
             subscribe = <div className="OrgButton a" onClick={this.subscribe} ><a>Tilaa</a></div>
         } else {
             subscribe = <div className="OrgButton d" onClick={this.subscribe} ><a>Lopeta tilaus</a></div>

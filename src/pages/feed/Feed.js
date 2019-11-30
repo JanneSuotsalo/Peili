@@ -3,74 +3,115 @@ import './Feed.css';
 import CellListView from '../../components/cellList/CellList';
 import Simplelist from '../../components/list/SimpleList';
 import OrgDetail from '../../pages/organizations/OrgDetail';
+import TestCard from '../../components/card/TestCard';
+import { Trail } from 'react-spring/renderprops'
+import TestDetail from '../../pages/testDetail/TestDetail';
 
 var data = require('../../example2.json');
-var taskData = require('../../taskListExample.json');
-var taskData2 = require('../../taskListExample2.json');
+var data1 = require('../../test.json');
 
 export default class Feed extends React.Component {
-    constructor (props) {
+    state = {
+        item: [],
+        quiz: []
+    }
+    constructor(props) {
         super(props);
     }
 
-    handleClick = (image,data) => {
+    handleClick = (image, data) => {
         this.props.orgHandler1(image, data);
     }
+
+    componentWillMount() {
+        for (var i = 0; i < 1; i++) {
+            this.setState(prevState => ({
+                quiz: [data1.tasks[i], ...prevState.quiz]
+            }));
+        }
+    }
+
+    onclick = (item) => {
+        this.setState({
+            itemToShow: item
+        })
+        this.testClicked();
+    }
+    testClicked = () => {
+        this.props.popPopup();
+        this.props.popHandler();
+    };
+
     render() {
         let item;
+        let popup;
+
         if (this.props.orgHandler) {
             item = <OrgDetail image={this.props.image} handleSubscribe={this.handleSubscribe} data={this.props.data} />
+        }
+        if (this.props.showPopup) {
+            popup = <TestDetail item={this.state.itemToShow} click={this.onclick} close={this.testClicked} />
         }
 
         return (
             <div>
-                 {item}
-                <Cell title="Suositellut" recommend={true}/>
-                <Tasks />
-                <Cell title="Tilatut" click={this.handleClick} recommend={false} subOrgz={this.props.subscribed}/>
+                {item}
+                {popup}
+                <Cell title="Suositellut" recommend={true} />
+                <div className="cardHeader">
+                    <h2 className="sectionTitle">Kyselyt</h2>
+                </div>
+                <div className="mainFeed">
+                    <Trail items={this.state.quiz} keys={item => item} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
+                        {item => props => <TestCard style={props} clicked={this.onclick} title={item} />}
+                    </Trail>
+                </div>
+                <Cell title="Tilatut" click={this.handleClick} recommend={false} subOrgz={this.props.subscribed} />
             </div>
         )
     };
 };
 
 class Container extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
-        this.props = {title: "null"}
+        this.props = { title: "null" }
     }
     onClick = (image, data) => {
         this.props.click(image, data)
     }
 
     render() {
-        if(this.props.recommend){
+        if (this.props.recommend) {
             return (
                 <div class="scrolling-wrapper">
-                    <div class="card"><CellListView item={data}/></div>
+                    <div class="card"><CellListView item={data} /></div>
                 </div>
             )
         }
-        if(this.props.subOrgz.length > 0){
+        if (this.props.subOrgz.length > 0) {
             return (
                 <div class="scrolling-wrapper">
-                    <div class="card"><Simplelist click={this.onClick} item={this.props.subOrgz[0]}/></div>
+                    <Trail items={this.props.subOrgz} keys={item => item} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
+                        {item => props => <div class="card"><Simplelist style={props} click={this.onClick} item={item} /></div>}
+                    </Trail>
                 </div>
             )
         } else {
-           return(  
-            <h3>Oops... this is empty</h3>
-           )
+            return (
+                <h3>Oops... this is empty</h3>
+            )
         }
     };
 };
 
 class Cell extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
-        this.props = {title: "null"}
+        this.props = { title: "null" }
     }
 
-    handleClick = (image,data) => {
+    handleClick = (image, data) => {
         this.props.click(image, data);
     }
 
@@ -81,12 +122,12 @@ class Cell extends React.Component {
                 <div className="cardHeader">
                     <h2 className="sectionTitle">{this.props.title}</h2>
                 </div>
-                <Container recommend={this.props.recommend}  click={this.handleClick} subOrgz={this.props.subOrgz}/>
+                <Container recommend={this.props.recommend} click={this.handleClick} subOrgz={this.props.subOrgz} />
             </div>
         )
     };
 };
-
+/*
 class Tasks extends React.Component {
     constructor (props) {
         super(props);
@@ -143,4 +184,4 @@ class Tasks extends React.Component {
             </div>
         )
     }
-}
+}*/
