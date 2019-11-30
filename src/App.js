@@ -29,7 +29,9 @@ class App extends React.Component {
     showPopup: false,
     orgPopup: false,
     noNav: true,
+    data: {},
     image: {},
+    subscribedOrgz:[],
   };
 
   drawerToggleClickHandler = () => {
@@ -37,12 +39,24 @@ class App extends React.Component {
       return {sideDrawer: !prevState.sideDrawer};
     }); 
   };
-  organizationHandler = (image) => {
+  organizationHandler = (image, data) => {
     this.setState((prevState) => {
       return {orgPopup: !prevState.orgPopup,
               noNav:!prevState.noNav,
-              image: image};
+              image: image,
+              data: data,
+              };
     });
+  }
+  handleSubscribe = (item) => {
+    this.setState(prevState => ({
+      subscribedOrgz:[item, ...prevState.subscribedOrgz]
+    }));
+  }
+  handleUnsubscribe = (item) => {
+      this.setState({
+        subscribedOrgz: this.state.subscribedOrgz.filter((_, i) => i.name !== item.name)
+      });    
   }
 
   popupClickHandler = () => {
@@ -101,7 +115,7 @@ class App extends React.Component {
           <Register />
         </Route>
         <Route path="/organization">
-          <Organization orgHandler1={this.organizationHandler} image={this.state.image} orgHandler={this.state.orgPopup}/>
+          <Organization orgHandler1={this.organizationHandler} image={this.state.image} data={this.state.data} handleSubscribe={this.handleSubscribe} orgHandler={this.state.orgPopup}/>
         </Route>
         <Route path="/profile">
           <Profile />
@@ -116,7 +130,7 @@ class App extends React.Component {
           <Quiz />
         </Route>
         <Route path="/feed">
-          <Feed />
+          <Feed subscribed={this.state.subscribedOrgz} />
         </Route>
         <Route path="/history">
           <History />

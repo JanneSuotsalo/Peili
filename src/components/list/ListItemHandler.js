@@ -7,8 +7,8 @@ export default class ListItemHandler extends React.Component {
         super(props);
     }
 
-    onClick = (image) => {
-        this.props.click(image)
+    onClick = (image, data) => {
+        this.props.click(image, data)
     }
 
     render() {

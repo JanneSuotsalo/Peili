@@ -8,6 +8,11 @@
     top: 15%;
     left: 15%;
 }
+.OrgDetail img {
+    max-width: 100%;
+    background-color: black;
+    border-radius: 2%;
+}
 
 .OrgDetail h3{
     text-align: center;

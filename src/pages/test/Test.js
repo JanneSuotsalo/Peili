@@ -13,7 +13,7 @@ export default class Test extends React.Component {
         super(props)
     }
     state = {
-        item: [data.tasks[0].task, data.tasks[0].task1, data.tasks[0].task2, data.tasks[0].task3],
+        item: [],
         show: false,
         itemToShow: {}
     }
@@ -30,7 +30,13 @@ export default class Test extends React.Component {
         })
         this.testClicked();
     }
-
+    componentWillMount() {
+        for(let i in data.tasks){
+            this.setState(prevState => ({
+                item: [data.tasks[i], ...prevState.item]
+            }));
+        }
+    }
     render() {
         let popup
         if (this.props.showPopup) {

@@ -1,33 +1,52 @@
 import React from 'react';
 import './Feed.css';
 import CellListView from '../../components/cellList/CellList';
+import Simplelist from '../../components/list/SimpleList';
 
 var data = require('../../example2.json');
 var taskData = require('../../taskListExample.json');
 var taskData2 = require('../../taskListExample2.json');
 
 export default class Feed extends React.Component {
+    constructor (props) {
+        super(props);
+    }
+
     render() {
         return (
             <div>
-                <Cell title="Suositellut" />
+                <Cell title="Suositellut" recommend={true}/>
                 <Tasks />
-                <Cell title="Kohtaus" />
+                <Cell title="Tilatut" recommend={false} subOrgz={this.props.subscribed}/>
             </div>
         )
     };
 };
 
 class Container extends React.Component {
+    constructor (props) {
+        super(props);
+        this.props = {title: "null"}
+    }
     render() {
-        return (
-            <div class="scrolling-wrapper">
-                <div class="card"><CellListView item={data} /></div>
-                <div class="card"><CellListView item={data} /></div>
-                <div class="card"><CellListView item={data} /></div>
-                <div class="card"><CellListView item={data} /></div>
-            </div>
-        )
+        if(this.props.recommend){
+            return (
+                <div class="scrolling-wrapper">
+                    <div class="card"><CellListView item={data}/></div>
+                </div>
+            )
+        }
+        if(this.props.subOrgz.length > 0){
+            return (
+                <div class="scrolling-wrapper">
+                    <div class="card"><Simplelist item={this.props.subOrgz[0]}/></div>
+                </div>
+            )
+        } else {
+           return(  
+            <h3>Oops... this is empty</h3>
+           )
+        }
     };
 };
 
@@ -38,12 +57,13 @@ class Cell extends React.Component {
     }
 
     render() {
+
         return (
             <div>
                 <div className="cardHeader">
                     <h2 className="sectionTitle">{this.props.title}</h2>
                 </div>
-                <Container />
+                <Container recommend={this.props.recommend} subOrgz={this.props.subOrgz}/>
             </div>
         )
     };

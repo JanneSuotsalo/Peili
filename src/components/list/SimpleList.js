@@ -20,7 +20,7 @@ export default class Simplelist extends React.Component {
         })
     }
     click = () => {
-        this.props.click(this.state.image);
+        this.props.click(this.state.image, this.props.item);
     }
 
     render() {
@@ -28,7 +28,7 @@ export default class Simplelist extends React.Component {
             <div style={this.props.style} className="SimplelistCard" onClick={this.click}>
                 <img src={this.state.image}></img>
                 <div className="SimplelistHeader">
-                    <h4>{this.props.item.name.fi}</h4>
+                    <h4>{this.props.item.name}</h4>
                 </div>
                 <div className="SimplelistBody">
                     <p>{this.randomMeter()} metriä</p>

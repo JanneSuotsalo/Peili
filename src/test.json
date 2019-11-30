@@ -1,44 +1,40 @@
 {
-    "tasks": [{
-        "task": {
+    "tasks": [
+        {
             "id": "1234-dsad-1tre-odsal",
-            "header":"hupitesti",
-            "description":"Tee tästä hupitesti",
+            "header": "hupitesti",
+            "description": "Tee tästä hupitesti",
             "status": "NEW",
             "createdAt": "2019-11-30T05:17:30+03:00",
             "reward": 5,
             "questionID": "dsakl"
         },
-        "task1": {
+        {
             "id": "1234-dsad-1tre-odsal",
-            "header":"Tunne itsesi",
-            "description":"Tunnetko itsesi? Tee tämä testi selvittääksesi sen",
+            "header": "Tunne itsesi",
+            "description": "Tunnetko itsesi? Tee tämä testi selvittääksesi sen",
             "status": "PAUSED",
             "createdAt": "2019-11-27T05:17:30+03:00",
             "reward": 7,
             "questionID": "dsakl"
         },
-        "task2": {
+        {
             "id": "1234-dsad-1tre-odsal",
-            "header":"Lempiväri testi",
-            "description":"Tee testi selvittääksesi lempivärisi",
+            "header": "Lempiväri testi",
+            "description": "Tee testi selvittääksesi lempivärisi",
             "status": "NEW",
             "createdAt": "2019-11-26T05:17:30+03:00",
             "reward": 8,
             "questionID": "dsakl"
         },
-        "task3": {
+        {
             "id": "1234-dsad-1tre-odsal",
-            "header":"Kuka olet",
-            "description":"Tee testi selvittääksesi kuka olet",
+            "header": "Kuka olet",
+            "description": "Tee testi selvittääksesi kuka olet",
             "status": "COMPLETED",
             "createdAt": "2019-11-25T05:17:30+03:00",
             "reward": 3,
             "questionID": "dsakl"
         }
-    }]
+    ]
 }
-
-
-
-
