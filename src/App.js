@@ -130,7 +130,7 @@ class App extends React.Component {
           <Quiz />
         </Route>
         <Route path="/feed">
-          <Feed subscribed={this.state.subscribedOrgz} />
+          <Feed subscribed={this.state.subscribedOrgz} image={this.state.image} data={this.state.data} orgHandler={this.state.orgPopup} orgHandler1={this.organizationHandler}/>
         </Route>
         <Route path="/history">
           <History />

@@ -2,6 +2,7 @@ import React from 'react';
 import './Feed.css';
 import CellListView from '../../components/cellList/CellList';
 import Simplelist from '../../components/list/SimpleList';
+import OrgDetail from '../../pages/organizations/OrgDetail';
 
 var data = require('../../example2.json');
 var taskData = require('../../taskListExample.json');
@@ -12,12 +13,21 @@ export default class Feed extends React.Component {
         super(props);
     }
 
+    handleClick = (image,data) => {
+        this.props.orgHandler1(image, data);
+    }
     render() {
+        let item;
+        if (this.props.orgHandler) {
+            item = <OrgDetail image={this.props.image} handleSubscribe={this.handleSubscribe} data={this.props.data} />
+        }
+
         return (
             <div>
+                 {item}
                 <Cell title="Suositellut" recommend={true}/>
                 <Tasks />
-                <Cell title="Tilatut" recommend={false} subOrgz={this.props.subscribed}/>
+                <Cell title="Tilatut" click={this.handleClick} recommend={false} subOrgz={this.props.subscribed}/>
             </div>
         )
     };
@@ -28,6 +38,10 @@ class Container extends React.Component {
         super(props);
         this.props = {title: "null"}
     }
+    onClick = (image, data) => {
+        this.props.click(image, data)
+    }
+
     render() {
         if(this.props.recommend){
             return (
@@ -39,7 +53,7 @@ class Container extends React.Component {
         if(this.props.subOrgz.length > 0){
             return (
                 <div class="scrolling-wrapper">
-                    <div class="card"><Simplelist item={this.props.subOrgz[0]}/></div>
+                    <div class="card"><Simplelist click={this.onClick} item={this.props.subOrgz[0]}/></div>
                 </div>
             )
         } else {
@@ -56,6 +70,10 @@ class Cell extends React.Component {
         this.props = {title: "null"}
     }
 
+    handleClick = (image,data) => {
+        this.props.click(image, data);
+    }
+
     render() {
 
         return (
@@ -63,7 +81,7 @@ class Cell extends React.Component {
                 <div className="cardHeader">
                     <h2 className="sectionTitle">{this.props.title}</h2>
                 </div>
-                <Container recommend={this.props.recommend} subOrgz={this.props.subOrgz}/>
+                <Container recommend={this.props.recommend}  click={this.handleClick} subOrgz={this.props.subOrgz}/>
             </div>
         )
     };
