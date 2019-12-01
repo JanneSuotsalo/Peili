@@ -1,64 +1,56 @@
 
 .profileHeader {
-    background-image: linear-gradient(#f2f2f2, white,white,white);
+    background-image: linear-gradient(#f2f2f2, white,white);
     margin-top: -30px;
     padding: 0;
 }
-.big{
-    height: 650px;
-    transition: height 1s;
-}
-
-.small{
-    height: 240px !important;
-    transition: height 1s;
-
-}
 
 .profileHeader img{
+    margin-top: 10%;
+    margin-bottom: -2%;
+    height: 100px;
     border-radius: 50%;
 }
 
-.profileHeader .imageBig{
-    transform: scale(1);
-    transition: transform 0.4s;
+.profileHeader p{
+    text-align: left;
+    margin-left: 10%;
 }
-.profileHeader .imageSmall{
-    transform: scale(0.4);
-    transition: transform 0.4s;
-}
-.profileHeaderBody{
-
-}
-.profileHeaderBody h3{
-    margin: 0;
-    padding-top: 3%;
-}
-.profileHeaderBody p{
-    margin: 0.8rem;
-    padding-bottom: 2%;
-}
-.profileCardCard{
-    border-radius: 5% 5%;
-    box-shadow: 0 2px 8px 1px rgba(0,0,0,0.5);
-    width: 80%;
-    background-color: white;
-    margin-right: 10%;
-    margin-left: 10%;        
-    margin-bottom: 4%;
-    margin-top: 5%;
-}
-.smallerProfileCardCard{
-    border-radius: 5% 5%;
-    box-shadow: 0 2px 8px 1px rgba(0,0,0,0.5);
-    width: 40%;
-    background-color: white;
-    margin-right: 5%;
-    margin-left: 5%;        
-    margin-bottom: 4%;
-    margin-top: 5%;
-
-}
-.smallBox {
+.accountDetail{
     display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+.accountDetail p {
+    margin-left: 4%;
+    margin-top: 2px;
+
+}
+.buttonProfile {
+    margin-left: 45%;
+}
+.buttonProfileStat {
+    margin-left: 55%;
+}
+.userDetails {
+    padding-bottom: 20px;
+}
+.statisticsDetail{
+    display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+.StatDetails{
+    padding-bottom: 20px;
+}
+
+.statisticsDetail p {
+    margin-left: 4%;
+    margin-top: 2px;
+}
+
+.ReactCollapse--collapse {
+    transition: 0.6s;
+  }
+  .ReactCollapse--content {
 }

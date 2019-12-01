@@ -41,13 +41,18 @@ export default class Feed extends React.Component {
         this.props.popPopup();
         this.props.popHandler();
     };
+    
+    handleUnsubscribe = (item) => {
+        this.props.handleUnsubscribe(item)
+        this.props.popOrgDetail();
+    }
 
     render() {
         let item;
         let popup;
 
         if (this.props.orgHandler) {
-            item = <OrgDetail image={this.props.image} handleSubscribe={this.handleSubscribe} data={this.props.data} />
+            item = <OrgDetail image={this.props.image} handleUnsubscribe={this.handleUnsubscribe} data={this.props.data} />
         }
         if (this.props.showPopup) {
             popup = <TestDetail item={this.state.itemToShow} click={this.onclick} close={this.testClicked} />
@@ -80,7 +85,6 @@ class Container extends React.Component {
     onClick = (image, data) => {
         this.props.click(image, data)
     }
-
     render() {
         if (this.props.recommend) {
             return (

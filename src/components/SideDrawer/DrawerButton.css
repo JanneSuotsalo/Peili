@@ -20,8 +20,8 @@
     background: #F27127;
  }
  .x .bar1 {
-    transform: rotate(-45deg) translate(-8px, 1px);}
-
+    transform: rotate(-45deg) translate(-8px, 1px);
+   }
 
  .x .bar2 {
     transform: translateX(200%);

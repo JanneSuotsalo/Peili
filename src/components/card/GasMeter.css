@@ -1,54 +1,28 @@
-.GasCard{
-    border-radius: 2% 2%;
-    box-shadow: 0 2px 8px 1px rgba(0,0,0,0.5);
+.LifeMeters {
+
+}
+
+.LifeMeterHeader {
+    display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.LifeMeterHeader p{
+    margin-left: 4%;
+    margin-top: 2px;
+}
+.lifeMeterNav {
+    margin-left: 50%;
+}
+.LifeMeterCell {
+    height: 100px;
+}
+.LifeMeterCell p{
+    text-align: left;
+    margin-left: 10%;
+}
+.LifeMeterLine1 {
     width: 80%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin-left: 1%;        
-    margin-bottom: 4%;
-}
-.marginOff {
-    transition: height, width 1s;
-    margin-top: 25%;
-}
 
-.marginOn {
-    transition: height, width 1s;
-    margin-top: 45%;
-}
-.first {
-    margin-left: 10%;        
-}
-.big1{
-    height: 650px;
-    transition: height 1s;
-}
-
-.small1{
-    height: 400px !important;
-    transition: height 1s;
-
-}
- 
-.cardBig{
-    transform: scale(1);
-    transition: transform 0.8s;
-}
-.cardSmall{
-    transform: scale(0.7);
-    transition: transform 0.8s;
-}
-
-.scrolling-wrap {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-}
-.scrolling-wrap {
-    background-image: linear-gradient(#7a7979, white,white,white, #f2f2f2);
-}
-
-.scrolling-wrap div {
-    display: inline-block;
 }

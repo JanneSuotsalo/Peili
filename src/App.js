@@ -48,6 +48,14 @@ class App extends React.Component {
               };
     });
   }
+  popOrgDetailFromFeed = () => {
+    this.setState((prevState) => {
+      return {orgPopup: !prevState.orgPopup,
+              noNav:!prevState.noNav
+              };
+    });
+  }
+
   handleSubscribe = (item) => {
     this.setState(prevState => ({
       subscribedOrgz:[item, ...prevState.subscribedOrgz]
@@ -137,7 +145,17 @@ class App extends React.Component {
           <Quiz />
         </Route>
         <Route path="/feed">
-          <Feed popHandler={this.popupClickHandler} popPopup={this.popPopUp} showPopup={this.state.showPopup} subscribed={this.state.subscribedOrgz} image={this.state.image} data={this.state.data} orgHandler={this.state.orgPopup} orgHandler1={this.organizationHandler}/>
+          <Feed 
+            popHandler={this.popupClickHandler}
+            popPopup={this.popPopUp}
+            showPopup={this.state.showPopup}
+            subscribed={this.state.subscribedOrgz}
+            handleUnsubscribe={this.handleUnsubscribe} 
+            image={this.state.image}
+            data={this.state.data}
+            orgHandler={this.state.orgPopup}
+            popOrgDetail={this.popOrgDetailFromFeed}
+            orgHandler1={this.organizationHandler}/>
         </Route>
         <Route path="/history">
           <History />

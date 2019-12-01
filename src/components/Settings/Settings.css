@@ -1,0 +1,71 @@
+.SettingsDiv {
+
+}
+
+.SettingsDiv p{
+    text-align: left;
+    margin-left: 10%;
+}
+.SettingsDetail {
+    display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.SettingsDetail p {
+    margin-left: 4%;
+    margin-top: 2px;    
+}
+.buttonSettingsDetail {
+    margin-left: 60%;
+}
+.SettingsDark {
+    display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+.SettingsDark p {
+    margin-left: 4%;
+    margin-top: 2px;    
+}
+
+.buttonDarkDetail {
+    margin-left: 50%;
+}
+.DarkMode {
+    display: flex;
+
+}
+.DarkMode p {
+    margin-top: 5%;
+    margin-left: 20%;
+
+}
+.DarkMode label{
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
+.SettingsNotification{
+    display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+.SettingsNotification p{
+    margin-left: 4%;
+    margin-top: 2px;    
+}
+.buttonNotificationDetail {
+    margin-left: 47%;
+}
+.Notification {
+    display: flex;
+}
+.Notification p{
+    margin-top: 5%;
+    margin-left: 20%;
+}
+.Notification label {
+    margin-top: 5%;
+    margin-left: 5%;
+}
