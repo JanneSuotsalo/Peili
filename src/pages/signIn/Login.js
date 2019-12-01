@@ -51,7 +51,7 @@ export default function Login(props) {
                 </hr>
 
                 <div className="login_inputContainers">
-                    <input
+                    <input 
                         className="login_inputs"
                         type="text"
                         name="username"

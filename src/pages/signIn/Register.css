@@ -80,15 +80,16 @@
   position: absolute;
   padding-top: 2px;
   text-align: center;
-  color: black;
+  color: rgb(206, 0, 0);
+  font-weight: 500;
 }
 
 .register_haveAccount {
-  margin-top: 5%;
   text-align: center;
 }
 
 .register_haveAccountBtn {
+  margin-top: 2%;
   color: #f2955e;
   font-size: 1.1em;
   background-color: transparent;

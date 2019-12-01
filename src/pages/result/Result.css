@@ -1,6 +1,5 @@
 .thankText_container{
     display: flex;
-    margin-top: 30%;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 5%;
@@ -12,11 +11,18 @@
 .thankText{
     margin-left: 5%;
     margin-right: 5%;
-    text-align: center;
+}
+
+.ThankTextParts{
+    position: relative;
+    width: 100%;
+    height: 55px;
     color: green;
     font-size: 2em;
-
-    animation: fadein 2s;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    will-change: transform, opacity;
 }
 
 @keyframes fadein {
