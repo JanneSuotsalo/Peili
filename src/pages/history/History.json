@@ -15,38 +15,6 @@
         "tag":"Shop",
         "date":"2016-04-23T18:25:43.511Z",
         "event":"Item XXXX bought"
-    },{
-        "tag":"Shop",
-        "date":"2018-04-23T18:25:43.511Z",
-        "event":"Item XXXX bought"
-    },{
-        "tag":"Profile",
-        "date":"2016-07-23T18:25:43.511Z",
-        "event":"Profile picture changed"
-    },{
-        "tag":"Organization",
-        "date":"2015-04-23T18:25:43.511Z",
-        "event":"Contacted organization XXXX"
-    },{
-        "tag":"Organization",
-        "date":"2015-02-23T18:25:43.511Z",
-        "event":"New recommended organization XXXX"
-    },{
-        "tag":"Quiz",
-        "date":"2019-04-23T18:25:43.511Z",
-        "event":"Quiz XXXX completed"
-    },{
-        "tag":"Quiz",
-        "date":"2019-05-23T18:25:43.511Z",
-        "event":"Quiz XXXX2 completed"
-    },{
-        "tag":"Profile",
-        "date":"2017-04-23T18:25:43.511Z",
-        "event":"Password changed"
-    },{
-        "tag":"Shop",
-        "date":"2017-08-23T18:25:43.511Z",
-        "event":"Item XXXX bought"
     }
 
 

@@ -20,14 +20,15 @@
 
 .taskItem {
     padding: 0.5em 5% 0.5em 5%;
-    width: 100%;
+    width: 90%;
 }
 .taskInner {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-    border: #F27127 groove;
-    border-width: 2px;
-    border-radius: 2%;
+    border: orangered groove;
+    border-width: 2%;
+    border-radius: 2% 2%;
     text-align: center;
+    background-color: lightblue;
 }
 
 .taskText {

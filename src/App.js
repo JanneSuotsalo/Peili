@@ -16,6 +16,8 @@ import TestDetail from './pages/testDetail/TestDetail';
 import BackDrop from './components/BackDrop/Backdrop';
 import History from "./pages/history/History";
 import Result from "./pages/result/Result";
+import Home from "./pages/cart-page/Home";
+
 import { FaLessThanEqual } from "react-icons/fa";
 
 
@@ -73,7 +75,7 @@ class App extends React.Component {
   return (
     <Router>    
     <div style={{height: '100%'}}>
-        <Toolbar showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
+        <Toolbar drawClickHandler={this.drawerToggleClickHandler}/>
          <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
         
         {backDrop}
@@ -109,6 +111,9 @@ class App extends React.Component {
         </Route>
         <Route path="/history">
           <History />
+        </Route>
+        <Route path="/cart">
+          <Home />
         </Route>
         <Route path="/result">
           <Result />

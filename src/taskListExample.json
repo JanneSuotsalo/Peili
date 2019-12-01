@@ -1,8 +1,8 @@
 
     {
-        "taskId": "perustiedot",
+        "taskId": "perustaidot",
         "priority": "1000",
-        "taskName": "Perustiedot",
+        "taskName": "Perustaidot",
         "description": "Opeta PEILI-sovellus tuntemaan sinut.",
         "mandatory": true,
         "introText": "Kerro ensin pari juttua itsestäsi",
@@ -37,6 +37,16 @@
                 "ansType": "freetext",
                 "maxLen": 200,
                 "placeholder": "Millainen olet? Mikä kiinnostaa?"
+            },
+            {
+                "questionId": "tyytyväisyysElämään",
+                "prompt": "Kuinka tyytyväinen olet elämääsi?",
+                "ansType": "rangeValue",
+                "minValue": 1,
+                "maxValue": 10,
+                "minLabel": "Erittäin tyytymätön",
+                "maxLabel": "Erittäin tyytyäinen",
+                "step": 1
             },
             {
                 "questionId": "ilmoitukset",

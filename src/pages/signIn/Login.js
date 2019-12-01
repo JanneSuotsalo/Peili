@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import CustomChatbot from "../chatbot/CustomChatbot";
+
 import "./Login.css";
 
 export default function Login(props) {
@@ -91,6 +93,7 @@ export default function Login(props) {
                         Not registered?
                 </button>
                 </div>
+           <CustomChatbot />
 
             </div>
         </div>

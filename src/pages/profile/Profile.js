@@ -5,6 +5,8 @@ import SmallCard from '../../components/card/SmallCard';
 import ProfileCard from '../../components/card/ProfileCard';
 import I18n from '../../components/Element/LanguageSwticher/I18n';
 import GasMeter from '../../components/card/GasMeter';
+import CustomChatbot from "../chatbot/CustomChatbot";
+
 
 
 var data = require('../../example.json');
@@ -44,6 +46,7 @@ export default class Profile extends React.Component {
                 <GasMeter highlight={this.state.zoom} min={this.state.scroll1} title={I18n.t('profilePage.favoriteOrganizations')}/>            
                 <SmallCard title={I18n.t('profilePage.favoriteOrganizations')}/>
                 <SmallCard title={I18n.t('profilePage.statistic')}/>
+           <CustomChatbot />
 
                 </div>
         );

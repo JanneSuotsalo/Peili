@@ -5,6 +5,8 @@ import Simplelist from '../../components/list/SimpleList';
 import OrgDetail from './OrgDetail';
 import { Spring, Trail } from 'react-spring/renderprops'
 import ListItemHandler from '../../components/list/ListItemHandler';
+import CustomChatbot from "../chatbot/CustomChatbot";
+
 
 var data = require('../../example2.json');
 var data1 = require('../../example.json');
@@ -43,6 +45,8 @@ export default class Organization extends React.Component {
                         <Trail items={this.state.item} from={{ transform: 'translate3d(400px,400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
                             {(item, i) => props => <ListItemHandler item={item} style={props} index={i} click={this.handleClick}/>}
                         </Trail>
+                       <CustomChatbot />
+
                     </div>
                 }
 

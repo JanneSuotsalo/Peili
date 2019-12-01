@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./Result.css"
+import CustomChatbot from "../chatbot/CustomChatbot";
+
 
 export default function Result(props) {
 
@@ -9,6 +10,8 @@ export default function Result(props) {
             <div className="thankText">
                 Thank you for finishing the quiz!
             </div>
+            <CustomChatbot />
+
         </div>
     );
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import './Feed.css';
 import CellListView from '../../components/cellList/CellList';
+import CustomChatbot from "../chatbot/CustomChatbot";
+
 
 var data = require('../../example2.json');
 var taskData = require('../../taskListExample.json');
@@ -102,6 +104,8 @@ class Tasks extends React.Component {
                 </div>
                 {this.listTasks()}
                 {this.listTasks2()}
+                           <CustomChatbot />
+
             </div>
         )
     }

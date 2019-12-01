@@ -3,9 +3,9 @@
     left: 0;
     top: 0;
     position: fixed;
-    z-index: 250;
+    z-index: 200;
     background-color: #f2f2f2;
-    height: 8vh;
+    height: 56px;
 }
 .toolbarLogo {
     margin-left: 1rem;

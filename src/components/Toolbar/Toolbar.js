@@ -9,11 +9,12 @@ const toolbar = props => (
         <div className="toolbarLogo"><img src="PeiliLogo.png"/></div>
         <div className="toolbarLogo"><a></a></div>
         <div className="toolbarLogo"><a></a></div>
+
         <div className="toolbarLogo center"><a></a></div>
 
 
         <div>
-        <DrawerButton showX={props.showX} click={props.drawClickHandler}/>
+        <DrawerButton click={props.drawClickHandler}/>
         </div>
         <div className="toolbarNavItems">
         </div>
