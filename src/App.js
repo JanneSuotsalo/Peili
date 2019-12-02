@@ -108,7 +108,7 @@ class App extends React.Component {
     <div style={{height: '100%'}}>
         <Toolbar show={this.state.noNav} showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
          <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
-         <CustomChatBot className={this.state.sideDrawer ? "show" : "noShow"}/>
+         <CustomChatBot normal={true} className={this.state.sideDrawer ? "show" : "noShow"}/>
         {backDrop}
         {backDrop1}
         {backDrop2}
