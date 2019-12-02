@@ -16,7 +16,7 @@ import TestDetail from './pages/testDetail/TestDetail';
 import BackDrop from './components/BackDrop/Backdrop';
 import History from "./pages/history/History";
 import Result from "./pages/result/Result";
-import { FaLessThanEqual } from "react-icons/fa";
+import CustomChatBot from './components/Chatbot/CustomChatbot';
 
 
 function handleTestClick (){
@@ -108,7 +108,7 @@ class App extends React.Component {
     <div style={{height: '100%'}}>
         <Toolbar show={this.state.noNav} showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
          <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
-        
+         <CustomChatBot className={this.state.sideDrawer ? "show" : "noShow"}/>
         {backDrop}
         {backDrop1}
         {backDrop2}

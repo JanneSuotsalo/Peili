@@ -23,5 +23,8 @@
     },
     "generic":{
         "logOut":"Kirjaudu Ulos"
+    },
+    "chatbot":{
+        "Greet":"Moikka! Miten menee?"
     }
 }

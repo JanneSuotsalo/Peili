@@ -23,6 +23,8 @@
     },
     "generic":{
         "logOut":"Log out"
+    },
+    "chatbot":{
+        "Greet":"Hi!, How is it going?"
     }
-
 }

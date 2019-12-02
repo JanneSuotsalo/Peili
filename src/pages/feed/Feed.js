@@ -41,7 +41,7 @@ export default class Feed extends React.Component {
         this.props.popPopup();
         this.props.popHandler();
     };
-    
+
     handleUnsubscribe = (item) => {
         this.props.handleUnsubscribe(item)
         this.props.popOrgDetail();
