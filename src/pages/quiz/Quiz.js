@@ -6,20 +6,28 @@ import { Link } from "react-router-dom";
 var taskData = require('../../taskListExample.json');
 
 export default class Quiz extends React.Component {
-    render() {
-        return <TestQuiz1 questions="6" />
-    }
-}
-
-// This component is for testing purposes when there is no database
-class TestQuiz1 extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {questionCount: 0, value: "", status: false, warning: ""}
+        this.state = {questionCount: 0, value: "", warning: ""}
         this.handleClick = this.handleClick.bind(this);
     }
 
+    questionStatus = (question) => {
+        this.props.handleQuestionStatus(question)
+    }
+
+    continueQuiz = () => {
+        let value = this.props.questionStatus
+        if (value == 0) {
+            this.setState({warning: "Sinulla ei ole aloitettua tehtävää"})
+        }
+        this.setState({questionCount: value}, () => {
+            console.log("Prop: "+ value, "Count: "+ this.state.questionCount)
+        })
+    }
+
     handleClick = () => {
+        this.questionStatus(this.state.questionCount +1 )
         this.setState({questionCount: this.state.questionCount + 1}, () => {
             console.log(this.state.questionCount)
             this.setState({warning: ""});
@@ -27,6 +35,7 @@ class TestQuiz1 extends React.Component {
     }
 
     handleBackClick = () => {
+        this.questionStatus(this.state.questionCount - 1)
         this.setState({questionCount: this.state.questionCount - 1}, () => {
             console.log(this.state.questionCount)
             this.setState({warning: ""});
@@ -67,15 +76,16 @@ class TestQuiz1 extends React.Component {
         let questionLayout;
 
         if (questionCount == 0) {
-            questionLayout =                     
+            questionLayout =
             <div className="questionCard">
                 <QuizInfo taskName={taskData.taskName} desc={taskData.description} reward={taskData.reward} />
-                <button onClick={this.handleClick} className="start_btn">Aloita</button>
+                <h3 className="warning">{this.state.warning}</h3>
+                <button onClick={this.handleClick} className="info start_btn">Aloita alusta</button>
+                <button onClick={this.continueQuiz} className="info continue_btn">Jatka kyselyä</button>
             </div>
 
         } else if (questionCount == 1) {
-            
-            questionLayout =                     
+            questionLayout =
             <div className="questionCard">
                 <div className="progressDiv">
                     <h3 className="progress">Kysymys {questionCount}/6</h3>
