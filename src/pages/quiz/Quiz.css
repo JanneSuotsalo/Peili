@@ -3,43 +3,43 @@
     width: 90%;
     padding: 0 5% 0 5%;
 }
+
 .questionCard {
     width: 90%;
+    border-radius: 2%;
     margin: 0 5% 0 5%;
-    height: 85vh;
+    height: fit-content;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
     background-color: #f2f2f2;
+    background-image: url("card_bg3.0.PNG");
 }
 
 #infoTitle {
   text-align: center;
-  margin: 0.5em;
-  padding: 1em;
+  padding: 0 5%;
 }
+
 #infoTitle h1 {
-  text-decoration: underline #F27127;
   padding: 1em;
 }
+
 #infoExtra {
   text-align: center;
-  margin: 0.5em;
-  padding: 0.5em;
+  padding: 0.5em 5%;
 }
 
 *{ box-sizing: border-box; user-select: none; }
 .checkBoxDiv {
-    display: flex;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-    margin: 0.5em 0 0.5em 0;
-    background-color: #f2f2f2;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    padding: 0.5em;
+    padding: 0.5em 5%;
+    width: 100%;
     font: 24px/1.4 "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+
 input[type='checkbox']{ height: 0; width: 0; }
 
 input[type='checkbox'] + label{
@@ -49,23 +49,7 @@ input[type='checkbox'] + label{
     color: black;
     transition: color 250ms cubic-bezier(.4,.0,.23,1);
 }
-input[type='checkbox'] + label > ins{
-    position: absolute;
-    display: block;
-    bottom: 0;
-    left: 2em;
-    height: 0;
-    width: 100%;
-    overflow: hidden;
-    text-decoration: none;
-    transition: height 300ms cubic-bezier(.4,.0,.23,1);
-}
-input[type='checkbox'] + label > ins > i{
-    position: absolute;
-    bottom: 0;
-    font-style: normal;
-    color: #F27127;
-}
+
 input[type='checkbox'] + label > span{
     display: flex;
     justify-content: center;
@@ -83,15 +67,18 @@ input[type='checkbox'] + label > span{
 input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
     color: black;
 }
+
 input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
     background: rgba(255,255,255,.1);
 }
+
 input[type='checkbox']:checked + label > ins{ height: 100%; }
 
 input[type='checkbox']:checked + label > span{
     border: .5em solid #F27127;
     animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
 }
+
 input[type='checkbox']:checked + label > span:before{
     content: "";
     position: absolute;
@@ -140,23 +127,86 @@ input[type='checkbox']:checked + label > span:before{
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 0 0 0;
+  padding: 0.5em 0 0 0;
 }
+
+.quizButtons {
+  width: 90%;
+  Margin: 0 5% 2em 5%;
+}
+
 .next_btn {
-  width: 60%;
+  width: 47.5%;
   height: 50px;
+  display: inline-block;
   border-radius: 3px;
   border-style: none;
   font-size: 1.2em;
   background-color: #04bfbf;
   color: white;
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
-  margin: 2em 20% 2em 20%;
+  margin: 0 0 0 2.5%;
+}
+
+.back_btn {
+  width: 47.5%;
+  height: 50px;
+  display: inline-block;
+  border-radius: 3px;
+  border-style: none;
+  font-size: 1.2em;
+  background-color: #04bfbf;
+  color: white;
+  margin: 0 2.5% 0 0;
+}
+
+.abort_btn {
+  width: 100%;
+  height: 40px;
+  display: inline-block;
+  border-radius: 3px;
+  border-style: none;
+  font-size: 1.2em;
+  background-color: #F27127;
+  color: white;
+  margin: 0.5em 0 1em 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.warning {
+  color: red;
+  text-align: center;
+  margin: 0.5em 5%;
+}
+
+.progress {
+  margin: 0 5%;
+  padding: 1em 0 0;
+  vertical-align: middle;
+  line-height: 0.5em;
+}
+
+.progressDiv {
+  border-radius: 2% 2% 0 0;
+  width: 100%;
+  height: 4em;
+}
+
+.start_btn {
+  width: 90%;
+  height: 50px;
+  display: inline-block;
+  border-radius: 3px;
+  border-style: none;
+  font-size: 1.2em;
+  background-color: #04bfbf;
+  color: white;
+  margin: 1em 5% 1em 5%;
 }
 
 .textArea {
     border-radius: 2%;
-    margin: 0.5em 1em 0.5em 1em;
+    padding: 0 5% 0.5em;
     height: 100%;
 }
 .textBox {
@@ -171,27 +221,26 @@ input[type='checkbox']:checked + label > span:before{
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+
 .radioGroup {
     font-size: 1em;
-    padding: 0.5em 1em 0.5em 1em;
+    padding: 0 5% 2em;
 }
-.radio {
-  padding: 0.5em 1em 0.5em 1em;
-}
-
 
 .qTitle {
-  padding: 0.5em 1em 0.5em 1em;
+  padding: 1em 5% 2em 5%;
+}
+.qTitle h2 {
+  margin: 0
 }
 
 .multiChoice {
   width: 100%;
-  padding: 0 5% 0 5%;
+  padding: 0 0 1.5em;
 }
 
-
 .rangeSlider {
-  padding: 0.5em 10% 0.5em 10%;
+  padding: 0.5em 5% 0.5em 5%;
 }
 
 input[type=range] {
@@ -224,11 +273,10 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 2px;
   background: #ffffff;
   cursor: pointer;
-  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  margin-top: -14px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* All the same stuff for Firefox */
 input[type=range]::-moz-range-thumb {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid #000000;
@@ -239,7 +287,6 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-/* All the same stuff for IE */
 input[type=range]::-ms-thumb {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid #000000;
@@ -255,13 +302,13 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-  background: #F27127;
+  background: #04bfbf;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #F27127;
+  background: #04bfbf;
 }
 
 input[type=range]::-moz-range-track {
@@ -269,7 +316,7 @@ input[type=range]::-moz-range-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-  background: #F27127;
+  background: #04bfbf;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -283,28 +330,33 @@ input[type=range]::-ms-track {
   border-width: 16px 0;
   color: transparent;
 }
+
 input[type=range]::-ms-fill-lower {
-  background: #F27127;
+  background: #04bfbf;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
+
 input[type=range]:focus::-ms-fill-lower {
-  background: #F27127;
+  background: #04bfbf;
 }
+
 input[type=range]::-ms-fill-upper {
-  background: #F27127;
+  background: #04bfbf;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
+
 input[type=range]:focus::-ms-fill-upper {
-  background: #F27127;
+  background: #04bfbf;
 }
 
 .numberLabel {
   display: inline-block;
   width: 100%;
+  padding: 0.5em 5% 0.5em 5%;
 }
 
 .infoLabel {
@@ -312,17 +364,16 @@ input[type=range]:focus::-ms-fill-upper {
   width: 100%;
 }
 
-
 .valueLabel.min{
-  padding: 0.5em 10% 0.5em 10%;
   font-size: 24px;
   float: left;
 }
+
 .valueLabel.max{
-  padding: 0.5em 10% 0.5em 10%;
   font-size: 24px;
   float: right;
 }
+
 .txtLabel.min{
   padding: 0 0.5em 0 0.5em;
   font-family: "Segoe UI", "Roboto", "Oxygen",
@@ -331,6 +382,7 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 18px;
   float: left;
 }
+
 .txtLabel.max{
   padding: 0 0.5em 0 0.5em;
   font-family: "Segoe UI", "Roboto", "Oxygen",
@@ -339,12 +391,15 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 18px;
   float: right;
 }
+
 .rangeDiv {
   margin: 1em auto;
   padding: 0.5em;
   width: fit-content;
   border: black groove 2px;
+  background-color: #f2f2f2;
 }
+
 #rangeValue {
   text-align: center;
   margin: 0.5em;
