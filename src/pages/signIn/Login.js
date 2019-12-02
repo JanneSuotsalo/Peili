@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { TextField } from '@material-ui/core';
 import "./Login.css";
 
 export default function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loginErrorMsg, setLoginErrorMsg] = useState("");
+    const [errorMsgBoolean, setErrorMsgBoolean] = useState(false)
     const [redirect, changeRedirect] = useState(false);
     const [redirectRegister, changeRedirectRegister] = useState(false);
 
@@ -13,10 +15,12 @@ export default function Login(props) {
         setUsername(username.target.value);
         console.log(username.target.value);
         setLoginErrorMsg("")
+        setErrorMsgBoolean(false)
     }
 
     function validateForm() {
         if (username === "") {
+            setErrorMsgBoolean(true)
             setLoginErrorMsg("Username can not be empty");
         }else {
             changeRedirect(true);
@@ -35,6 +39,11 @@ export default function Login(props) {
         return <Redirect push to="/register" />;
     }
 
+    /*In case 
+    <div className="login_errorMsg">
+                    <small>{loginErrorMsg}</small>
+                </div>*/
+    
     return (
         <div className="login_container">
             <div className="login_box">
@@ -51,26 +60,28 @@ export default function Login(props) {
                 </hr>
 
                 <div className="login_inputContainers">
-                    <input 
+                    <TextField 
+                        label="Username"
                         className="login_inputs"
                         type="text"
                         name="username"
                         placeholder="Username"
                         maxLength={20}
                         onChange={onUsernameChange}
+                        error = {errorMsgBoolean}
+                        helperText={loginErrorMsg}
+                        InputLabelProps={{style: {fontSize: 20}}}
                     />
                 </div>
 
                 <div className="login_inputContainers">
-                    <input
+                <TextField 
+                        label="Password"
                         className="login_inputs"
                         type="password"
                         name="password"
-                        placeholder="Password" />
-                </div>
-
-                <div className="login_errorMsg">
-                    <small>{loginErrorMsg}</small>
+                        placeholder="Password"
+                        InputLabelProps={{style: {fontSize: 20}}} />
                 </div>
 
                 <div className="login_btnContainer">

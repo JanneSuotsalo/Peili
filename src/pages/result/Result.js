@@ -22,7 +22,7 @@ export default function Result(props) {
                     <animated.div
                         key={thankSentenceArray[index]}
                         className="ThankTextParts"
-                        style={{ ...rest, transform: x.interpolate(x => `translate3d(${x}px,0,0)`) }}>
+                        style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
                         <animated.div style={{ height }}>{thankSentenceArray[index]}</animated.div>
                 </animated.div>
             ))}
