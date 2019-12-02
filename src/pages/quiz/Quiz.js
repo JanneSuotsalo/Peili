@@ -74,6 +74,7 @@ class TestQuiz1 extends React.Component {
             </div>
 
         } else if (questionCount == 1) {
+            
             questionLayout =                     
             <div className="questionCard">
                 <div className="progressDiv">

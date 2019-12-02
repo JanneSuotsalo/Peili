@@ -22,6 +22,12 @@ import CustomChatBot from './components/Chatbot/CustomChatbot';
 function handleTestClick (){
 } 
 
+/*
+Rahapussi toimimaan
+
+Quiz UI paremmiks
+chatbot pois 
+*/
 class App extends React.Component {
   state = {
     sideDrawer: false,
@@ -29,9 +35,10 @@ class App extends React.Component {
     showPopup: false,
     orgPopup: false,
     noNav: true,
+    money: 0,
     data: {},
     image: {},
-    subscribedOrgz:[],
+    subscribedOrgz:[]
   };
 
   drawerToggleClickHandler = () => {
@@ -61,6 +68,7 @@ class App extends React.Component {
       subscribedOrgz:[item, ...prevState.subscribedOrgz]
     }));
   }
+
   handleUnsubscribe = (item) => {
       this.setState({
         subscribedOrgz: this.state.subscribedOrgz.filter((i) => i !== item)
