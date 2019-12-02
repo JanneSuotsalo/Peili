@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./History.css";
-import sideImgStart from "./Ellipse.png";
-import sideImg from "./historySideImg.png";
+import sideImgStart from "./history_sideImgStart.png";
+import sideImg from "./history_sideImg.png";
 
 export default function History() {
   const [count, setCount] = useState(0);
@@ -40,7 +40,7 @@ export default function History() {
     indexArray.push(index);
 
     // hides the button if there is no more history to show
-    if (lastIndexNumber + 5 === historyDataJson.length) {
+    if (lastIndexNumber + 7 === historyDataJson.length) {
       setVisible(false);
     }
   }
@@ -55,7 +55,7 @@ export default function History() {
       {visible && (
         <div className="history_buttonContainer">
           <button className="history_ShowMoreButton" onClick={() => render()}>
-            Show more
+            Näytä lisää
           </button>
         </div>
       )}
@@ -72,7 +72,7 @@ const AddElement = (lastIndex, changevalue) => {
   // Sorting the json file to be ordered by date
   historyData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  for (var i = 0; i < historyData.length && timesToRun < 4; i++) {
+  for (var i = 0; i < historyData.length && timesToRun < 6; i++) {
     var obj = historyData[i];
     let container = [];
 

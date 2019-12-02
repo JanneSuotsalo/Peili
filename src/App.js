@@ -38,7 +38,8 @@ class App extends React.Component {
     money: 0,
     data: {},
     image: {},
-    subscribedOrgz:[]
+    subscribedOrgz:[],
+    resultProps: ""
   };
 
   drawerToggleClickHandler = () => {
@@ -168,8 +169,7 @@ class App extends React.Component {
         <Route path="/history">
           <History />
         </Route>
-        <Route path="/result">
-          <Result />
+          <Route path="/result" render={(props) => <Result {...props} />}>
         </Route>
     </main>
     </div>

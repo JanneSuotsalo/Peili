@@ -2,51 +2,51 @@
     {
         "tag":"Profile",
         "date":"2012-04-23T18:25:43.511Z",
-        "event":"Account created"
+        "event":"Käyttäjätili luotu"
     }, {
         "tag":"Quiz",
         "date":"2019-04-23T18:25:43.511Z",
-        "event":"XXXXX quiz completed"
+        "event":"Teit tehtävän Tunne itsesi"
     }, {
         "tag":"Profile",
         "date":"2020-04-23T18:25:43.511Z",
-        "event":"Password changed"
+        "event":"Vaihdoit salasanan"
     }, {
         "tag":"Shop",
         "date":"2016-04-23T18:25:43.511Z",
-        "event":"Item XXXX bought"
+        "event":"Ostit uuden profiili kuvan"
     },{
         "tag":"Shop",
         "date":"2018-04-23T18:25:43.511Z",
-        "event":"Item XXXX bought"
+        "event":"Ostit uuden chatbot kuvan"
     },{
         "tag":"Profile",
         "date":"2016-07-23T18:25:43.511Z",
-        "event":"Profile picture changed"
+        "event":"Vaihdoit profiili kuvan"
     },{
         "tag":"Organization",
         "date":"2015-04-23T18:25:43.511Z",
-        "event":"Contacted organization XXXX"
+        "event":"Otit yhteyttä organisaatioon Kohtaus"
     },{
         "tag":"Organization",
         "date":"2015-02-23T18:25:43.511Z",
-        "event":"New recommended organization XXXX"
+        "event":"Uusi ehdotettu organisaatio: Kohtaus"
     },{
         "tag":"Quiz",
         "date":"2019-04-23T18:25:43.511Z",
-        "event":"Quiz XXXX completed"
+        "event":"Teit testin Lempiväri testi"
     },{
         "tag":"Quiz",
         "date":"2019-05-23T18:25:43.511Z",
-        "event":"Quiz XXXX2 completed"
+        "event":"Teit testin Kuka olet"
     },{
         "tag":"Profile",
         "date":"2017-04-23T18:25:43.511Z",
-        "event":"Password changed"
+        "event":"Vaidhoit salasanan"
     },{
         "tag":"Shop",
         "date":"2017-08-23T18:25:43.511Z",
-        "event":"Item XXXX bought"
+        "event":"Ostit uuden profiili kuvan"
     }
 
 

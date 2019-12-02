@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { useTrail, animated } from 'react-spring'
+import { useTrail, animated, useSpring } from 'react-spring'
+import { Line, Circle } from 'rc-progress';
 import "./Result.css"
 
 export default function Result(props) {
-
-    const thankSentenceArray = ["Onneksi olkoon", "teit tehtävän", "XXXXXXXX"]
+    const quizData = props.location.state.quizData
+    console.log(quizData)
+    const thankSentenceArray = ["Onneksi olkoon", "teit tehtävän", quizData.taskName]
     const config = { mass: 20, tension: 500, friction: 150 }
+    const numberProps = useSpring({ number: quizData.reward, from: { number: 0 }, delay: 500})
 
     const trail = useTrail(thankSentenceArray.length, {
         config,
@@ -16,17 +19,42 @@ export default function Result(props) {
       })
 
     return (
-        <div className="thankText_container">
-            <div className="thankText">
-                {trail.map(({ x, height, ...rest }, index) => (
-                    <animated.div
-                        key={thankSentenceArray[index]}
-                        className="ThankTextParts"
-                        style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
-                        <animated.div style={{ height }}>{thankSentenceArray[index]}</animated.div>
-                </animated.div>
-            ))}
+        <div>
+            <div className="result_thankText_container">
+                <div className="result_thankText">
+                    {trail.map(({ x, height, ...rest }, index) => (
+                        <animated.div
+                            key={thankSentenceArray[index]}
+                            className="result_thankTextParts"
+                            style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
+                            <animated.div style={{ height }}>{thankSentenceArray[index]}</animated.div>
+                    </animated.div>
+                ))}
+                </div>
+                </div>
+            <h1 className="result_quizReward">Palkinto: &nbsp;
+            <animated.span delay={1000}>{numberProps.number.interpolate(value => Math.floor(value))}</animated.span>
+            GP
+            </h1>
+            
+            <div className="LifeMeterCell">
+                <p className="result_lines">Mittari 1</p>
+                <Line className="LifeMeterLine1" percent="60" strokeWidth="2" strokeColor="#228B22" />
+                <div>+10</div>
             </div>
+            <div className="LifeMeterCell">
+                <p className="result_lines">Mittari 2</p>
+                <Line className="LifeMeterLine1" percent="50" strokeWidth="2" strokeColor="#228B22" />
+            </div>
+            <div className="LifeMeterCell">
+                <p className="result_lines">Mittari 3</p>
+                <Line className="LifeMeterLine1" percent="50" strokeWidth="2" strokeColor="#228B22" />
+            </div>
+            <div className="LifeMeterCell">
+                <p className="result_lines">Mittari 4</p>
+                <Line className="LifeMeterLine1" percent="50" strokeWidth="2" strokeColor="#228B22" />
+            </div>
+            
         </div>
     );
 }
