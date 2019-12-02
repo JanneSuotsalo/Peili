@@ -52,3 +52,10 @@ html{
   background-color: #ffffff;
   color: rgb(107, 148, 224);
 }
+
+.show {
+  transform: translateX(0%);
+}
+.noShow {
+  transform: translateX(200%);
+}

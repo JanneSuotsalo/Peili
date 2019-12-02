@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import './TestCard.css';
+import { Spring } from 'react-spring/renderprops';
 
 
 export default class TestCard extends React.Component {
@@ -10,27 +12,27 @@ export default class TestCard extends React.Component {
         this.props.clicked(this.props.title);
     }
     render() {
-        let width1 = "";
-        if (this.props.title % 3 == 0) {
-            width1 = "90%"
-        } else {
-            width1 = "45%"
-        }
         let anim = this.props.style
-        
-        return (
-            //style={{ backgroundImage: 'linear-gradient(' + this.style() + ',' + this.style() + ')', width: width1 }
-            <div className="TestCard"  style={{...anim, width:width1}} onClick={this.handleClick}>
-                <div className="TestCircle">
-                    <div className="TestCircle1"></div>
-                </div>
-                <div className="TestInfo">
-                    <h2>Testi {this.props.title}</h2>
-                    <p>palkinto: {this.props.title * 100}</p>
-                </div>
+        let color
+        if(this.props.title.status == "NEW"){
+            color = "linear-gradient(to right, rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),rgba(0, 230, 64, 1))"; 
+        } else if (this.props.title.status == "PAUSED"){
+            color = "linear-gradient(to right, rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),rgba(248, 148, 6, 1))"; 
+        } else if (this.props.title.status == "COMPLETED"){
+            color = "linear-gradient(to right, rgba(255, 255, 255, 1),rgba(255, 255, 255, 1),rgba(240, 52, 52, 1))"; 
+        }
 
-                <div className="TestWindow"></div>
+        let style
+        style = {}
+        return (
+            <div className="TestCard" style={{ ...anim, width: "80%" , background: color}} onClick={this.handleClick}>
+                <div className="TestInfo">
+                    <h2>{this.props.title.header}</h2>
+                    <p>palkinto: {this.props.title.reward * 100}</p>
+                    <button>Näytä lisää</button>
+                </div>
             </div>
         );
     }
+
 }

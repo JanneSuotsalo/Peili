@@ -13,7 +13,7 @@ const toolbar = props => (
 
 
         <div>
-        <DrawerButton showX={props.showX} click={props.drawClickHandler}/>
+            <DrawerButton showX={props.showX} show={props.show} click={props.drawClickHandler}/>
         </div>
         <div className="toolbarNavItems">
         </div>

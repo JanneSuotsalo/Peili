@@ -10,15 +10,9 @@ export default class CellList extends React.Component {
         return (
                 <div className="innerCard">
                     <img src={this.props.item.image} />
-                    <div className="cardTitle">
-                        <h2>#{this.props.item.name.fi}</h2>
-                    </div>
-                    <div className="cardBody">
-                        <p>{this.props.item.description.body}</p>
-                    </div>
-                    <div className="cardFooter">
-                        <h4 className="footerItem">{this.props.item.datetype.type} {this.props.item.datetype.date}</h4>
-                    </div>
+                    <h2>#{this.props.item.name.fi}</h2>
+                    <p>{this.props.item.description.body}</p>
+                    <h4>{this.props.item.datetype.type} {this.props.item.datetype.date}</h4>
                 </div>
         );
     }

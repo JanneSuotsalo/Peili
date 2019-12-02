@@ -11,44 +11,5 @@
 
 }
 
-.TestCircle1{
-    width: 35px;
-    height: 35px;
-    border-radius: 50% 50%;
-    margin: auto;
-}
-
-.TestCircle{
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255);
-    border-radius: 50% 50%;
-    margin: auto;
-    margin-top: 10%;
-}
-.TestCard{
-    border-radius: 5% 5%;
-    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
-    text-align: center;
-    width: 45%;
-    max-width: 400px;
-    margin-left: 1%;
-    margin-top: 2%;
-}
-.TestCard h2{
-    margin-bottom: 0;
-}
-.TestInfo {
-    background-color: rgba(255, 255, 255, 0.329);
-    margin-right: 15%;
-    margin-left: 15%;
-    margin-bottom: 0;
-    border-radius: 5% 5%;
-}
-
-.TestCard p{
-    margin-top: 0;
-}
-
 @media only screen and (max-width: 600px) {
 }

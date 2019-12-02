@@ -12,8 +12,8 @@ export default class TestCard extends React.Component {
         return (
             <div className="detailPopup">
                 <div className="detailHeader">
-                    <h1>Testi</h1>
-                    <p>Tähän tulee testin kuvaus</p>
+                    <h1>{this.props.item.header}</h1>
+                    <p>{this.props.item.description}</p>
                 </div>
                 <Link to="/quiz">
                     <div onClick={this.props.click} className="buttoni">

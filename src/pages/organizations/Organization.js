@@ -6,25 +6,53 @@ import OrgDetail from './OrgDetail';
 import { Spring, Trail } from 'react-spring/renderprops'
 import ListItemHandler from '../../components/list/ListItemHandler';
 
-var data = require('../../example2.json');
-var data1 = require('../../example.json');
+var data = require('../../example.json');
 
 export default class Organization extends React.Component {
     state = {
         loading: true,
-        item: [data, data, data, data]
+        item: []
     }
 
 
-    handleClick = (image) => {
-        this.props.orgHandler1(image);
+    handleClick = (image, data) => {
+        this.props.orgHandler1(image, data);
+    }
+    handleSubscribe = (item) => {
+        this.props.handleSubscribe(item)
+    }
+    handleUnsubscribe = (item) => {
+        this.props.handleUnsubscribe(item)
+    }
+    componentWillMount() {
+        for (let i in data.organizations) {
+            this.setState(prevState => ({
+                item: [data.organizations[i], ...prevState.item]
+            }));
+        }
     }
 
     render() {
         let item;
         //now only one item but will be changed to a list
         if (this.props.orgHandler) {
-            item = <OrgDetail image={this.props.image} item={data} />
+            if (!this.props.subscribed.some(subItems => subItems.id === this.props.data.id)) {
+                item =
+                    <OrgDetail
+                        image={this.props.image}
+                        handleSubscribe={this.handleSubscribe}
+                        handleUnsubscribe={this.handleUnsubscribe}
+                        subscribed={true}
+                        data={this.props.data} />
+            } else {
+                item =
+                    <OrgDetail
+                        image={this.props.image}
+                        handleSubscribe={this.handleSubscribe}
+                        handleUnsubscribe={this.handleUnsubscribe}
+                        subscribed={false}
+                        data={this.props.data} />
+            }
         }
 
         return (
@@ -40,8 +68,9 @@ export default class Organization extends React.Component {
                             <p style={props}></p>
                         </div>
 
-                        <Trail items={this.state.item} from={{ transform: 'translate3d(400px,400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
-                            {(item, i) => props => <ListItemHandler item={item} style={props} index={i} click={this.handleClick}/>}
+                        <Trail items={this.state.item} from={{ transform: 'translate3d(-400px, 200px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
+                            {(item, i) => props =>
+                                <ListItemHandler item={item} style={props} index={i} click={this.handleClick} />}
                         </Trail>
                     </div>
                 }

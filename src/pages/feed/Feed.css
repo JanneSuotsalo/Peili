@@ -6,13 +6,12 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.scrolling-wrapper .card {
-    display: inline-block;
-}
-
 .sectionTitle {
     padding: 0 5% 0 5%;
     text-decoration: underline;
+}
+.mainFeed {
+    margin-left: 10%;
 }
 
 .taskList {
