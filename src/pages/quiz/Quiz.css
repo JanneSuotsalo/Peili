@@ -6,10 +6,12 @@
 
 .questionCard {
     width: 90%;
+    border-radius: 2%;
     margin: 0 5% 0 5%;
     height: fit-content;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
     background-color: #f2f2f2;
+    background-image: url("card_bg3.0.PNG");
 }
 
 #infoTitle {
@@ -18,7 +20,6 @@
 }
 
 #infoTitle h1 {
-  text-decoration: underline #F27127;
   padding: 1em;
 }
 
@@ -29,7 +30,6 @@
 
 *{ box-sizing: border-box; user-select: none; }
 .checkBoxDiv {
-    background-color: #f2f2f2;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -132,7 +132,7 @@ input[type='checkbox']:checked + label > span:before{
 
 .quizButtons {
   width: 90%;
-  Margin: 0.5em 5% 2em 5%;
+  Margin: 0 5% 2em 5%;
 }
 
 .next_btn {
@@ -179,6 +179,19 @@ input[type='checkbox']:checked + label > span:before{
   margin: 0.5em 5%;
 }
 
+.progress {
+  margin: 0 5%;
+  padding: 1em 0 0;
+  vertical-align: middle;
+  line-height: 0.5em;
+}
+
+.progressDiv {
+  border-radius: 2% 2% 0 0;
+  width: 100%;
+  height: 4em;
+}
+
 .start_btn {
   width: 90%;
   height: 50px;
@@ -211,16 +224,19 @@ input[type='checkbox']:checked + label > span:before{
 
 .radioGroup {
     font-size: 1em;
-    padding: 0 5% 1.5em;
+    padding: 0 5% 2em;
 }
 
 .qTitle {
-  padding: 0.5em 5% 0.5em 5%;
+  padding: 1em 5% 2em 5%;
+}
+.qTitle h2 {
+  margin: 0
 }
 
 .multiChoice {
   width: 100%;
-  padding: 0 0 0.5em;
+  padding: 0 0 1.5em;
 }
 
 .rangeSlider {
@@ -286,13 +302,13 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-  background: #F27127;
+  background: #04bfbf;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #F27127;
+  background: #04bfbf;
 }
 
 input[type=range]::-moz-range-track {
@@ -300,7 +316,7 @@ input[type=range]::-moz-range-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-  background: #F27127;
+  background: #04bfbf;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -316,25 +332,25 @@ input[type=range]::-ms-track {
 }
 
 input[type=range]::-ms-fill-lower {
-  background: #F27127;
+  background: #04bfbf;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 input[type=range]:focus::-ms-fill-lower {
-  background: #F27127;
+  background: #04bfbf;
 }
 
 input[type=range]::-ms-fill-upper {
-  background: #F27127;
+  background: #04bfbf;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 input[type=range]:focus::-ms-fill-upper {
-  background: #F27127;
+  background: #04bfbf;
 }
 
 .numberLabel {
@@ -381,6 +397,7 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 0.5em;
   width: fit-content;
   border: black groove 2px;
+  background-color: #f2f2f2;
 }
 
 #rangeValue {
