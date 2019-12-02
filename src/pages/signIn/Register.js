@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
+import { TextField } from '@material-ui/core';
 import "./Register.css";
 
 export default function Register(props) {
@@ -9,7 +10,10 @@ export default function Register(props) {
     const [password, setPassword] = useState("");
     const [rePassword, setRePassword] = useState("");
 
-    const [registerErrorMsg, setRegisterErrorMsg] = useState("");
+    const [usernameErrorMsgBoolean, setUsernameErrorMsgBoolean] = useState(false)
+    const [emailErrorMsgBoolean, setEmailErrorMsgBoolean] = useState(false)
+    const [passwordErrorMsgBoolean, setPasswordErrorMsgBoolean] = useState(false)
+
     const [usernameErrorMsg, setUsernameErrorMsg] = useState("");
     const [emailErrorMsg, setEmailErrorMsg] = useState("");
     const [passwordErrorMsg, setPasswordErrorMsg] = useState("");
@@ -24,7 +28,6 @@ export default function Register(props) {
         setUsername(username.target.value);
        // console.log(username.target.value);
        // console.log("test:" + username.target.value.length);
-        setRegisterErrorMsg("")
         if(username.target.value.length >= 3){
             setUsernameErrorMsg("")
         }
@@ -34,8 +37,10 @@ export default function Register(props) {
         if(username.length < 3){
             setUsernameErrorMsg("Username must be over 3 characters")
             setValidUsername(false)
+            setUsernameErrorMsgBoolean(true)
         } else {
             setValidUsername(true)
+            setUsernameErrorMsgBoolean(false)
         }
     }
 
@@ -45,7 +50,9 @@ export default function Register(props) {
         if(regexp.test(email) !== true){
             setEmailErrorMsg("Invalid email")
             setValidEmail(false)
+            setEmailErrorMsgBoolean(true)
         } else {
+            setEmailErrorMsgBoolean(false)
             setEmailErrorMsg("")
             setValidEmail(true)
         }
@@ -54,13 +61,16 @@ export default function Register(props) {
     function passwordCheck(){
         if(password !== rePassword){
             setPasswordErrorMsg("Passwords do not match");
+            setPasswordErrorMsgBoolean(true)
             return false
         } else {
             setPasswordErrorMsg("");
             if(password.length < 8){
+                setPasswordErrorMsgBoolean(true)
                 setPasswordErrorMsg("Password must be over 8 characters");
                 return false
             } else {
+                setPasswordErrorMsgBoolean(false)
                 return true
             }
         }
@@ -108,7 +118,8 @@ export default function Register(props) {
             </hr>
             
             <div className="register_inputContainers">
-                <input
+            <TextField 
+                label="Username"
                 className="register_inputs"
                 type="text"
                 name="username"
@@ -116,48 +127,52 @@ export default function Register(props) {
                 maxLength={20}
                 onBlur={validUsernameCheck}
                 onChange={onUsernameChange}
+                error = {usernameErrorMsgBoolean}
+                helperText={usernameErrorMsg}
+                InputLabelProps={{style: {fontSize: 20}}}
                 />
-            </div>
-            <div className="register_inputErrorMsgs">
-                <small>{usernameErrorMsg}</small>
             </div>
 
             <div className='register_inputContainers'>
-              <input 
-              className="register_inputs"
-              type='email' 
-              name='email'
-              placeholder="Email"
-              value={email}
-              onBlur={validEmailCheck}
-              onChange={(email) => setEmail(email.target.value)}
+            <TextField 
+                label="Email"
+                className="register_inputs"
+                type='email' 
+                name='email'
+                placeholder="Email"
+                value={email}
+                onBlur={validEmailCheck}
+                onChange={(email) => setEmail(email.target.value)}
+                error = {emailErrorMsgBoolean}
+                helperText={emailErrorMsg}
+                InputLabelProps={{style: {fontSize: 20}}}
               />
-            </div>
-            <div className="register_inputErrorMsgs">
-                <small>{emailErrorMsg}</small>
             </div>
 
             <div className="register_inputContainers">
-                <input
+            <TextField 
+                label="Password"
                 className="register_inputs"
                 type="password"
                 name="password"
                 value={password}
                 onChange={(password) => setPassword(password.target.value)}
-                placeholder="Password"/>
+                placeholder="Password"
+                error = {passwordErrorMsgBoolean}
+                helperText={passwordErrorMsg}
+                InputLabelProps={{style: {fontSize: 20}}}/>
             </div>
 
             <div className="register_inputContainers">
-                <input
+            <TextField 
+                label="Retype your password"
                 className="register_inputs"
                 type="password"
                 name="rePassword"
                 value={rePassword}
                 onChange={(rePassword) => setRePassword(rePassword.target.value)}
-                placeholder="Retype your password"/>
-            </div>
-            <div className="register_inputErrorMsgs">
-                <small>{passwordErrorMsg}</small>
+                placeholder="Retype your password"
+                InputLabelProps={{style: {fontSize: 20}}}/>
             </div>
 
             <div className="register_btnContainer">

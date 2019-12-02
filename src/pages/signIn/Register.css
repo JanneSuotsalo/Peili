@@ -48,7 +48,6 @@
   border-style: none;
   font-size: 1.2em;
   padding-left: 3%;
-  box-shadow: 0 5px 6px -6px rgba(13, 13, 13, 0.8);
 }
 
 .register_btnContainer {
@@ -80,15 +79,16 @@
   position: absolute;
   padding-top: 2px;
   text-align: center;
-  color: black;
+  color: rgb(206, 0, 0);
+  font-weight: 500;
 }
 
 .register_haveAccount {
-  margin-top: 5%;
   text-align: center;
 }
 
 .register_haveAccountBtn {
+  margin-top: 2%;
   color: #f2955e;
   font-size: 1.1em;
   background-color: transparent;

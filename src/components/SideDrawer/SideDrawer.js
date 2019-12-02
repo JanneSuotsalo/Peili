@@ -40,6 +40,11 @@ return(
                 <a onClick={props.closeDraw}>{I18n.t('navBar.history')}</a>
             </li>
             </Link>
+            <Link to="/result">
+            <li>
+                <a onClick={props.closeDraw}>Result</a>
+            </li>
+            </Link>
             <div className="profileCorner">
             <img src={exampleIcon}></img>
             <p>John Doe</p>

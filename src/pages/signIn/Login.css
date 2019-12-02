@@ -48,7 +48,6 @@
   border-style: none;
   font-size: 1.2em;
   padding-left: 3%;
-  box-shadow: 0 5px 6px -6px rgba(13, 13, 13, 0.8);
 }
 
 .login_btnContainer {
@@ -77,16 +76,17 @@
   left: 50%;
   transform: translate(-50%);
   position: absolute;
-  color: black;
+  color: rgb(206, 0, 0);
+  font-weight: 500;
   padding-top: 5px;
 }
 
 .login_noAccount {
-  margin-top: 5%;
   text-align: center;
 }
 
 .login_noAccountBtn {
+  margin-top: 2%;
   color: #f2955e;
   font-size: 1.1em;
   background-color: transparent;
