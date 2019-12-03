@@ -6,6 +6,7 @@ import ProfileCard from '../../components/card/ProfileCard';
 import I18n from '../../components/Element/LanguageSwticher/I18n';
 import GasMeter from '../../components/card/GasMeter';
 import Settings from '../../components/Settings/Settings'
+
 export default class Profile extends React.Component {
     //NOW HARD CODED. FETCH IN THE FUTURE
     state = {
@@ -28,7 +29,7 @@ export default class Profile extends React.Component {
         //now only one item but will be changed to a list
         return (
             <div className="profileMain">
-                <ProfileCard title={"user"} highlight={this.state.scroll} user={this.state.user}/>
+                <ProfileCard title={"user"} money={this.props.money} highlight={this.state.scroll} user={this.state.user}/>
                 <GasMeter />
                 <Settings title={"settings"}/>
                 </div>

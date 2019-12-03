@@ -100,6 +100,7 @@ class App extends React.Component {
     let backDrop;
     let backDrop1;
     let backDrop2;
+ö
 
     if(this.state.sideDrawer){
       backDrop = <BackDrop drawerToggleClickHandler={this.drawerToggleClickHandler}/>;
@@ -110,13 +111,13 @@ class App extends React.Component {
     if(this.state.orgPopup){
       backDrop2 = <BackDrop organizationHandler={this.organizationHandler} popPopUp={this.popPopUp}/>;
     }
-
   return (
+    
     <Router>    
     <div style={{height: '100%'}}>
         <Toolbar show={this.state.noNav} showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
          <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
-         <CustomChatBot normal={true} className={this.state.sideDrawer ? "show" : "noShow"}/>
+         <CustomChatBot normal={true} className={this.state.sideDrawer ? "show" : "noShow"}/>      
         {backDrop}
         {backDrop1}
         {backDrop2}
@@ -141,10 +142,10 @@ class App extends React.Component {
             orgHandler={this.state.orgPopup}/>
         </Route>
         <Route path="/profile">
-          <Profile />
+          <Profile money={this.state.money}/>
         </Route>
         <Route exact path="/test">
-          <Test popHandler={this.popupClickHandler} popPopup={this.popPopUp} showPopup={this.state.showPopup}/>
+          <Test popHandler={this.popupClickHandler}  popPopup={this.popPopUp} showPopup={this.state.showPopup}/>
         </Route>
         <Route path="/settings">
           <Settings />
@@ -169,7 +170,7 @@ class App extends React.Component {
           <History />
         </Route>
         <Route path="/result">
-          <Result />
+          <Result money={this.state.money}/>
         </Route>
     </main>
     </div>

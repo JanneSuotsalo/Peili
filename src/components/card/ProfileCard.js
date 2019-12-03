@@ -34,6 +34,7 @@ export default class ProfileCard extends React.Component {
             <div className='profileHeader'>
                 <img src={exampleIcon}></img>
                 <h3>{this.props.user.name}</h3>
+                <h4> Rahaa: {this.props.money}</h4>
                 <p>{this.props.title}</p>
                 <div className="accountDetail" onClick={this.clicked}>
                     <MdPersonOutline size={30} /><p>Account detail</p><div className="buttonProfile"><Arrow anim={this.state.showAnim} /></div>
