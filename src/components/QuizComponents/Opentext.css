@@ -1,0 +1,26 @@
+.textArea {
+    border-radius: 2%;
+    padding: 0 5% 0.5em;
+    height: 100%;
+}
+
+.textBox {
+    width: 100%;
+    font-size: 24px;
+    background-image: url("TABackground.PNG");
+    background-size: 100%;
+    outline: none;
+    resize: none;
+    box-sizing:border-box;
+    font-family: "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.qTitle {
+  padding: 1em 5% 2em 5%;
+}
+
+.qTitle h2 {
+  margin: 0
+}
