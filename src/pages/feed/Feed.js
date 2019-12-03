@@ -7,11 +7,12 @@ import TestCard from '../../components/card/TestCard';
 import { Trail } from 'react-spring/renderprops'
 import TestDetail from '../../pages/testDetail/TestDetail';
 
-var data = require('../../example2.json');
 var data1 = require('../../test.json');
+var data = require('../../example.json');
 
 export default class Feed extends React.Component {
     state = {
+        showCase: [],
         item: [],
         quiz: []
     }
@@ -27,7 +28,7 @@ export default class Feed extends React.Component {
         for (var i = 0; i < 1; i++) {
             this.setState(prevState => ({
                 quiz: [data1.tasks[i], ...prevState.quiz]
-            }));
+            }));            
         }
     }
 
@@ -89,7 +90,7 @@ class Container extends React.Component {
         if (this.props.recommend) {
             return (
                 <div class="scrolling-wrapper">
-                    <div class="card"><CellListView item={data} /></div>
+                    <div class="card"><Simplelist click={this.onClick} item={data.organizations[0]} /></div>
                 </div>
             )
         }
@@ -104,8 +105,8 @@ class Container extends React.Component {
         } else {
             return (
                 <div className="EmptyCard">
-                <h3>Hups...</h3>
-                <h3> Kokeile tilata järjestösivulta mieleisesi järjestö</h3>
+                    <h3>Hups...</h3>
+                    <h3> Kokeile tilata järjestösivulta mieleisesi järjestö</h3>
                 </div>
             )
         }
