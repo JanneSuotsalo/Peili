@@ -1,31 +1,49 @@
-.thankText_container{
+.result_thankText_container{
     display: flex;
     margin-left: 10%;
     margin-right: 10%;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
     padding-top: 2%;
     border-radius: 1%;
     /*box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.2);*/
 }
 
-.thankText{
+.result_thankText{
     margin-left: 5%;
     margin-right: 5%;
 }
 
-.ThankTextParts{
+.result_thankTextParts{
     position: relative;
     width: 100%;
     height: 55px;
-    color: green;
+    color: #f27127;  
     font-size: 2em;
     font-weight: 800;
     text-transform: uppercase;
     text-align: center;
-    will-change: transform, opacity;
 }
 
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+.result_quizReward{
+    text-align: center;
+    color: #04bfbf;
+    font-size: 1.5em;
+    font-weight: bold;
+    animation: glow 1s ease-in-out infinite alternate;
 }
+
+@keyframes glow {
+    from { text-shadow: 0 0 0px #04bfbfaf; }
+    to { text-shadow: 0 0 8px #75ffff; }
+}
+
+.LifeMeterCell{
+    padding-top: 1%;
+    text-align: center;
+    height: 80px;
+}
+
+.result_lines{
+    margin-bottom: 5px;
+}
+

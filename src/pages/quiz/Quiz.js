@@ -185,7 +185,13 @@ export default class Quiz extends React.Component {
                 <h3 className="warning">{this.state.warning}</h3>
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                    <Link to={{
+                        pathname:"/Result",
+                        state:{
+                            quizData: taskData
+                        }}}>
                     <button onClick={this.handleRadioClick} className="next_btn">Seuraava</button>
+                    </Link>
                     <Link to="/test">
                         <button className="abort_btn">Poistu</button>
                     </Link>

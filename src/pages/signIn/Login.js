@@ -21,7 +21,7 @@ export default function Login(props) {
     function validateForm() {
         if (username === "") {
             setErrorMsgBoolean(true)
-            setLoginErrorMsg("Username can not be empty");
+            setLoginErrorMsg("Käyttäjänimi ei voi olla tyhjä");
         }else {
             changeRedirect(true);
         }
@@ -53,7 +53,7 @@ export default function Login(props) {
                 </div>
 
                 <div className="login_signInText">
-                    Sign in
+                    Kirjautuminen
             </div>
 
                 <hr className="login_line">
@@ -61,11 +61,11 @@ export default function Login(props) {
 
                 <div className="login_inputContainers">
                     <TextField 
-                        label="Username"
+                        label="Käyttäjänimi"
                         className="login_inputs"
                         type="text"
                         name="username"
-                        placeholder="Username"
+                        placeholder="Käyttäjänimi"
                         maxLength={20}
                         onChange={onUsernameChange}
                         error = {errorMsgBoolean}
@@ -76,11 +76,11 @@ export default function Login(props) {
 
                 <div className="login_inputContainers">
                 <TextField 
-                        label="Password"
+                        label="Salasana"
                         className="login_inputs"
                         type="password"
                         name="password"
-                        placeholder="Password"
+                        placeholder="Salasana"
                         InputLabelProps={{style: {fontSize: 20}}} />
                 </div>
 
@@ -89,7 +89,7 @@ export default function Login(props) {
                         type="button"
                         className="login_btn"
                         onClick={() => validateForm()}>
-                        Login
+                        Kirjaudu
                 </button>
                 </div>
 
@@ -99,7 +99,7 @@ export default function Login(props) {
                         className="login_noAccountBtn"
                         onClick={() => redirectRegistering()}
                     >
-                        Not registered?
+                        Rekisteröidy klikkaamlla tästä
                 </button>
                 </div>
 

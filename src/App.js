@@ -177,8 +177,7 @@ class App extends React.Component {
         <Route path="/history">
           <History />
         </Route>
-        <Route path="/result">
-          <Result money={this.state.money}/>
+        <Route path="/result" render={(props) => <Result {...props} money={this.state.money}/>}>
         </Route>
     </main>
     </div>

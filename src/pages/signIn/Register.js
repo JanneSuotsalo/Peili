@@ -35,7 +35,7 @@ export default function Register(props) {
 
     function validUsernameCheck(){
         if(username.length < 3){
-            setUsernameErrorMsg("Username must be over 3 characters")
+            setUsernameErrorMsg("Käyttäjänimen pitää olla vähintään 3 merkkiä")
             setValidUsername(false)
             setUsernameErrorMsgBoolean(true)
         } else {
@@ -48,7 +48,7 @@ export default function Register(props) {
         const regexp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
        // console.log("reg:" + regexp.test(email));
         if(regexp.test(email) !== true){
-            setEmailErrorMsg("Invalid email")
+            setEmailErrorMsg("Kelpaamaton sähköposti")
             setValidEmail(false)
             setEmailErrorMsgBoolean(true)
         } else {
@@ -60,14 +60,14 @@ export default function Register(props) {
 
     function passwordCheck(){
         if(password !== rePassword){
-            setPasswordErrorMsg("Passwords do not match");
+            setPasswordErrorMsg("Salasanat eivät täsmää");
             setPasswordErrorMsgBoolean(true)
             return false
         } else {
             setPasswordErrorMsg("");
             if(password.length < 8){
                 setPasswordErrorMsgBoolean(true)
-                setPasswordErrorMsg("Password must be over 8 characters");
+                setPasswordErrorMsg("Salasanan pitää olla yli 8 merkkiä pitkä");
                 return false
             } else {
                 setPasswordErrorMsgBoolean(false)
@@ -111,7 +111,7 @@ export default function Register(props) {
             </div>
 
             <div className="register_signUpText">
-                Sign up
+                Rekisteröityminen
             </div>
 
             <hr className="register_line">
@@ -119,11 +119,11 @@ export default function Register(props) {
             
             <div className="register_inputContainers">
             <TextField 
-                label="Username"
+                label="Käyttäjänimi"
                 className="register_inputs"
                 type="text"
                 name="username"
-                placeholder="Username"
+                placeholder="Käyttäjänimi"
                 maxLength={20}
                 onBlur={validUsernameCheck}
                 onChange={onUsernameChange}
@@ -135,11 +135,11 @@ export default function Register(props) {
 
             <div className='register_inputContainers'>
             <TextField 
-                label="Email"
+                label="Sähköposti"
                 className="register_inputs"
                 type='email' 
                 name='email'
-                placeholder="Email"
+                placeholder="Sähköposti"
                 value={email}
                 onBlur={validEmailCheck}
                 onChange={(email) => setEmail(email.target.value)}
@@ -151,13 +151,13 @@ export default function Register(props) {
 
             <div className="register_inputContainers">
             <TextField 
-                label="Password"
+                label="Salasana"
                 className="register_inputs"
                 type="password"
                 name="password"
                 value={password}
                 onChange={(password) => setPassword(password.target.value)}
-                placeholder="Password"
+                placeholder="Salasana"
                 error = {passwordErrorMsgBoolean}
                 helperText={passwordErrorMsg}
                 InputLabelProps={{style: {fontSize: 20}}}/>
@@ -165,13 +165,13 @@ export default function Register(props) {
 
             <div className="register_inputContainers">
             <TextField 
-                label="Retype your password"
+                label="Kirjoita salasana uudelleen"
                 className="register_inputs"
                 type="password"
                 name="rePassword"
                 value={rePassword}
                 onChange={(rePassword) => setRePassword(rePassword.target.value)}
-                placeholder="Retype your password"
+                placeholder="Kirjoita salasana uudelleen"
                 InputLabelProps={{style: {fontSize: 20}}}/>
             </div>
 
@@ -180,7 +180,7 @@ export default function Register(props) {
                     type="button"
                     className="register_btn"
                     onClick={() => validateForm()}>
-                    Register
+                    Rekisteröidy
                 </button>
             </div>
 
@@ -190,7 +190,7 @@ export default function Register(props) {
                     className="register_haveAccountBtn"
                     onClick={() => redirectToLogin()}
                     >
-                    already registered?
+                    Jos sinulla on jo käyttäjä, klikkaa tästä
                 </button>
             </div>
 
