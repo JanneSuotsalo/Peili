@@ -1,0 +1,12 @@
+.radioGroup {
+    font-size: 1em;
+    padding: 0 5% 2em;
+}
+
+.qTitle {
+  padding: 1em 5% 2em 5%;
+}
+
+.qTitle h2 {
+  margin: 0
+}

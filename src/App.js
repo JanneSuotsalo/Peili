@@ -38,7 +38,8 @@ class App extends React.Component {
     money: 0,
     data: {},
     image: {},
-    subscribedOrgz:[]
+    subscribedOrgz:[],
+    questionStatus: 0
   };
 
   drawerToggleClickHandler = () => {
@@ -67,6 +68,12 @@ class App extends React.Component {
     this.setState(prevState => ({
       subscribedOrgz:[item, ...prevState.subscribedOrgz]
     }));
+  }
+
+  // HEEY
+  handleQuestionStatus = (item) => {
+    this.setState({questionStatus: item});
+    console.log(this.state.questionStatus)
   }
 
   handleUnsubscribe = (item) => {
@@ -150,7 +157,9 @@ class App extends React.Component {
           <Settings />
         </Route>        
         <Route path="/quiz">
-          <Quiz />
+          <Quiz 
+            handleQuestionStatus={this.handleQuestionStatus}
+            questionStatus={this.state.questionStatus}/>
         </Route>
         <Route path="/feed">
           <Feed 

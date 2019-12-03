@@ -1,0 +1,34 @@
+#infoTitle {
+  text-align: center;
+  padding: 0 5%;
+}
+
+#infoTitle h1 {
+  padding: 1em;
+}
+
+#infoExtra {
+  text-align: center;
+  padding: 0.5em 5%;
+}
+
+
+.info {
+  width: 90%;
+  height: 50px;
+  display: inline-block;
+  border-radius: 3px;
+  border-style: none;
+  font-size: 1.2em;
+  border-radius: 3px;
+  background-color: #F27127;
+  color: black;
+}
+
+.qTitle {
+  padding: 1em 5% 2em 5%;
+}
+
+.qTitle h2 {
+  margin: 0
+}
