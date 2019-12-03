@@ -100,7 +100,6 @@ class App extends React.Component {
     let backDrop;
     let backDrop1;
     let backDrop2;
-ö
 
     if(this.state.sideDrawer){
       backDrop = <BackDrop drawerToggleClickHandler={this.drawerToggleClickHandler}/>;
