@@ -103,7 +103,10 @@ class Container extends React.Component {
             )
         } else {
             return (
-                <h3>Oops... this is empty</h3>
+                <div className="EmptyCard">
+                <h3>Hups...</h3>
+                <h3> Kokeile tilata järjestösivulta mieleisesi järjestö</h3>
+                </div>
             )
         }
     };
