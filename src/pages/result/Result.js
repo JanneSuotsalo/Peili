@@ -6,12 +6,21 @@ import "./Result.css"
 
 export default function Result(props) {
     const [redirect, changeRedirect] = useState(false);
+
+    // Quiz data (name, reward) that is received from quiz
     const quizData = props.location.state.quizData
     console.log(quizData)
+
+    // Gongratulation text array
     const thankSentenceArray = ["Onneksi olkoon", "teit tehtävän", quizData.taskName]
+
+    // Config for gongratulation text
     const config = { mass: 20, tension: 500, friction: 150 }
+
+    // Display animation for money
     const numberProps = useSpring({ number: quizData.reward, from: { number: 0 }, delay: 500})
 
+    // Display animation for gongratulation text
     const trail = useTrail(thankSentenceArray.length, {
         config,
         opacity: 1,
@@ -20,14 +29,14 @@ export default function Result(props) {
         from: { opacity: 0, x: -60, height: 0 },
       })
 
+    // Redirects back to the feed page
     function redirectBack(){
         changeRedirect(true)
     }
-
     if(redirect){
         return <Redirect push to="/feed" />;
     }
-
+    
     return (
         <div>
             <div className="result_thankText_container">

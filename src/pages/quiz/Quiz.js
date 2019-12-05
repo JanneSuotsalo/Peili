@@ -7,13 +7,14 @@ import RadioGroup from '../../components/QuizComponents/RadioGroup';
 import RangeSlider from '../../components/QuizComponents/RangeSlider';
 import { Spring } from 'react-spring/renderprops';
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 var taskData = require('../../taskListExample.json');
 
 export default class Quiz extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {questionCount: 0, value: "", warning: ""}
+        this.state = {questionCount: 0, value: "", warning: "", redirectResult: false}
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -70,6 +71,31 @@ export default class Quiz extends React.Component {
             }
         }
     }
+
+    // Checks if radiobutton is checked or not and if it is, handles redirection for result page. Also gives the reward money for the user.
+    handleResultRedirection = () => {
+        var radioButtons = document.getElementsByName("radio");
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                this.props.setMoney(taskData.reward)
+                this.setState({redirectResult: true})
+            } else {
+                this.setState({warning: "Vastaus tarvitaan jatkamiseen"});
+            }
+        }
+    }
+
+    // Redirects to result page and gives it quiz data
+    redict = () => {
+        if(this.state.redirectResult){
+            return <Redirect push to={{
+                pathname:"/Result",
+                state:{
+                    quizData: taskData
+                }}}/>
+        }
+    }
+
 
     render() {
         let questionCount = this.state.questionCount;
@@ -185,13 +211,8 @@ export default class Quiz extends React.Component {
                 <h3 className="warning">{this.state.warning}</h3>
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
-                    <Link to={{
-                        pathname:"/Result",
-                        state:{
-                            quizData: taskData
-                        }}}>
-                    <button onClick={this.handleRadioClick} className="next_btn">Seuraava</button>
-                    </Link>
+                    {this.redict()}
+                    <button onClick={this.handleResultRedirection} className="next_btn">Seuraava</button>
                     <Link to="/test">
                         <button className="abort_btn">Poistu</button>
                     </Link>

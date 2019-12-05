@@ -18,7 +18,6 @@ import History from "./pages/history/History";
 import Result from "./pages/result/Result";
 import CustomChatBot from './components/Chatbot/CustomChatbot';
 
-
 function handleTestClick (){
 } 
 
@@ -103,6 +102,10 @@ class App extends React.Component {
 
   };
 
+  setMoneyAmount = (amount) => {
+    this.setState({money: this.state.money + amount })
+  }
+
   render(){
     let backDrop;
     let backDrop1;
@@ -159,7 +162,9 @@ class App extends React.Component {
         <Route path="/quiz">
           <Quiz 
             handleQuestionStatus={this.handleQuestionStatus}
-            questionStatus={this.state.questionStatus}/>
+            questionStatus={this.state.questionStatus}
+            setMoney = {this.setMoneyAmount}
+            money={this.state.money}/>
         </Route>
         <Route path="/feed">
           <Feed 
@@ -177,7 +182,7 @@ class App extends React.Component {
         <Route path="/history">
           <History />
         </Route>
-        <Route path="/result" render={(props) => <Result {...props} money={this.state.money}/>}>
+        <Route path="/result" render={(props) => <Result {...props}/>}>
         </Route>
     </main>
     </div>
