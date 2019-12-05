@@ -82,7 +82,7 @@ export default class Quiz extends React.Component {
                 <QuizInfo taskName={taskData.taskName} desc={taskData.description} reward={taskData.reward} />
                 <h3 className="warning">{this.state.warning}</h3>
                 <button onClick={this.handleClick} className="info start_btn">Aloita alusta</button>
-                <button onClick={this.continueQuiz} id="continue_btn" className="info continue_btn">Jatka kyselyä</button>
+                <button onClick={this.continueQuiz} className="info continue_btn">Jatka kyselyä</button>
             </div>
 
         } else if (questionCount == 1) {
