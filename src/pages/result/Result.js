@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useTrail, animated, useSpring } from 'react-spring'
-import { Line, Circle } from 'rc-progress';
+import { Line } from 'rc-progress';
+import { Redirect } from "react-router-dom";
 import "./Result.css"
 
 export default function Result(props) {
+    const [redirect, changeRedirect] = useState(false);
     const quizData = props.location.state.quizData
     console.log(quizData)
     const thankSentenceArray = ["Onneksi olkoon", "teit tehtävän", quizData.taskName]
@@ -17,6 +19,14 @@ export default function Result(props) {
         height: 80,
         from: { opacity: 0, x: -60, height: 0 },
       })
+
+    function redirectBack(){
+        changeRedirect(true)
+    }
+
+    if(redirect){
+        return <Redirect push to="/feed" />;
+    }
 
     return (
         <div>
@@ -54,6 +64,16 @@ export default function Result(props) {
                 <p className="result_lines">Mittari 4</p>
                 <Line className="LifeMeterLine1" percent="50" strokeWidth="2" strokeColor="#228B22" />
             </div>
+
+            <div className="result_goBackBtnContainer">
+                    <button
+                        type="button"
+                        className="result_goBacktBtn"
+                        onClick={() => redirectBack()}
+                    >
+                        Takaisin etusivulle
+                </button>
+                </div>
             
         </div>
     );
