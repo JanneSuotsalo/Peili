@@ -16,28 +16,28 @@ return(
     <nav className={drawAnim}>
        <ul>
             <Link to="/profile">
-            <li className="first">
-                <a onClick={props.closeDraw}>{I18n.t('navBar.profile')}</a>
+            <li onClick={props.closeDraw} className="first">
+                <a>{I18n.t('navBar.profile')}</a>
             </li>
             </Link>
             <Link to="/Feed">
-            <li>
-                <a onClick={props.closeDraw}>{I18n.t('navBar.mainFeed')}</a>
+            <li onClick={props.closeDraw} >
+                <a>{I18n.t('navBar.mainFeed')}</a>
             </li>
             </Link>
             <Link to="/organization">
-            <li>
-                <a onClick={props.closeDraw}>{I18n.t('navBar.organisations')}</a>
+            <li onClick={props.closeDraw} >
+                <a>{I18n.t('navBar.organisations')}</a>
             </li>
             </Link>
             <Link to="/test">
-            <li>
-                <a onClick={props.closeDraw}>{I18n.t('navBar.test')}</a>
+            <li onClick={props.closeDraw} >
+                <a>{I18n.t('navBar.test')}</a>
             </li>
             </Link>
             <Link to="/history">
-            <li>
-                <a onClick={props.closeDraw}>{I18n.t('navBar.history')}</a>
+            <li onClick={props.closeDraw} >
+                <a>{I18n.t('navBar.history')}</a>
             </li>
             </Link>
             <div className="profileCorner">

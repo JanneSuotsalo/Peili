@@ -21,24 +21,32 @@ export default class Quiz extends React.Component {
         this.props.handleQuestionStatus(question)
     }
 
+    // Checks this.props.questionStatus to see if quiz has been started and then if clicked setting the right question
     continueQuiz = () => {
         let value = this.props.questionStatus
-        if (value == 0) {
+        if (value === 0) {
             this.setState({warning: "Sinulla ei ole aloitettua tehtävää"})
+        } else if (value === 6) {
+            this.setState({warning: "Olet tehnyt tehtävän loppuun. Aloita tehtävä alusta tai tarkastele tulosta historia sivulla."})
+        } else {
+            this.setState({questionCount: value}, () => {
+                console.log("Prop: "+ value, "Count: "+ this.state.questionCount)
+            })
         }
-        this.setState({questionCount: value}, () => {
-            console.log("Prop: "+ value, "Count: "+ this.state.questionCount)
-        })
     }
 
+    // Handles forward click by setting state.questionCount up by one
     handleClick = () => {
-        this.questionStatus(this.state.questionCount +1 )
-        this.setState({questionCount: this.state.questionCount + 1}, () => {
-            console.log(this.state.questionCount)
-            this.setState({warning: ""});
-        });
+        if (this.state.questionCount < 6) {
+            this.questionStatus(this.state.questionCount +1 )
+            this.setState({questionCount: this.state.questionCount + 1}, () => {
+                console.log(this.state.questionCount)
+                this.setState({warning: ""});
+            });
+        }
     }
 
+    // Handles backward click by setting state.questionCount down by one
     handleBackClick = () => {
         this.questionStatus(this.state.questionCount - 1)
         this.setState({questionCount: this.state.questionCount - 1}, () => {
@@ -73,10 +81,11 @@ export default class Quiz extends React.Component {
 
     render() {
         let questionCount = this.state.questionCount;
+        //let questionArray = this.handleQuizData();
         let index = questionCount - 1;
         let questionLayout;
 
-        if (questionCount == 0) {
+        if (questionCount === 0) {
             questionLayout =
             <div className="questionCard">
                 <QuizInfo taskName={taskData.taskName} desc={taskData.description} reward={taskData.reward} />
@@ -85,29 +94,29 @@ export default class Quiz extends React.Component {
                 <button onClick={this.continueQuiz} id="continue_btn" className="info continue_btn">Jatka kyselyä</button>
             </div>
 
-        } else if (questionCount == 1) {
-            questionLayout =
+        } else if (questionCount === 1) {
+            questionLayout = 
             <div className="questionCard">
-                <div className="progressDiv">
-                    <h3 className="progress">Kysymys {questionCount}/6</h3>
-                    <h4 className="progress">{taskData.introText}...</h4>
-                </div>
-                <RadioGroup qTitle={taskData.questions[index].prompt} value1={taskData.questions[index].ansType[0]} value2={taskData.questions[index].ansType[1]} />
-                <h3 className="warning">{this.state.warning}</h3>
-                <div className="quizButtons">
-                    <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
-                    <button onClick={this.handleRadioClick} className="next_btn">Seuraava</button>
-                        <Link to="/test">
-                            <button className="abort_btn">Poistu</button>
-                        </Link>
-                </div>
+            <div className="progressDiv">
+                <h3 className="progress">Kysymys {questionCount}/{taskData.questions.length}</h3>
+                <h4 className="progress">{taskData.introText}...</h4>
             </div>
+            <RadioGroup qTitle={taskData.questions[index].prompt} value1={taskData.questions[index].ansType[0]} value2={taskData.questions[index].ansType[1]} />
+            <h3 className="warning">{this.state.warning}</h3>
+            <div className="quizButtons">
+                <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                <button onClick={this.handleRadioClick} className="next_btn">Seuraava</button>
+                <Link to="/test">
+                    <button className="abort_btn">Poistu</button>
+                </Link>
+            </div>
+        </div>
 
-        } else if (questionCount == 2) {
+        } else if (questionCount === 2) {
             questionLayout =
             <div className="questionCard">
                 <div className="progressDiv">
-                    <h3 className="progress">Kysymys {questionCount}/6</h3>
+                    <h3 className="progress">Kysymys {questionCount}/{taskData.questions.length}</h3>
                     <h4 className="progress">{taskData.introText}...</h4>
                 </div>
                 <RangeSlider qTitle={taskData.questions[index].prompt}min={taskData.questions[index].minValue} max={taskData.questions[index].maxValue} minLabel={taskData.questions[index].minLabel} maxLabel={taskData.questions[index].maxLabel} />
@@ -121,29 +130,29 @@ export default class Quiz extends React.Component {
                 </div>
             </div>
 
-        } else if (questionCount == 3) {
+        } else if (questionCount === 3) {
             questionLayout =
             <div className="questionCard">
                 <div className="progressDiv">
-                    <h3 className="progress">Kysymys {questionCount}/6</h3>
+                    <h3 className="progress">Kysymys {questionCount}/{taskData.questions.length}</h3>
                     <h4 className="progress">{taskData.introText}...</h4>
                 </div>
                 <Opentext qTitle={taskData.questions[index].prompt} maxLength={taskData.questions[index].maxLen} />
                 <h3 className="warning">{this.state.warning}</h3>
                 <div className="quizButtons">
                     <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
-                    <button onClick={this.handleTextClick} className="next_btn">Seuraava</button>
+                    <button onClick={this.handleClick} className="next_btn">Seuraava</button>
                     <Link to="/test">
                         <button className="abort_btn">Poistu</button>
                     </Link>
                 </div>
             </div>
 
-        } else if (questionCount == 4) {
+        } else if (questionCount === 4) {
             questionLayout =
             <div className="questionCard">
                 <div className="progressDiv">
-                    <h3 className="progress">Kysymys {questionCount}/6</h3>
+                    <h3 className="progress">Kysymys {questionCount}/{taskData.questions.length}</h3>
                     <h4 className="progress">{taskData.introText}...</h4>
                 </div>
                 <MultiChoice qTitle={taskData.questions[index].prompt} options={taskData.questions[index].choices}  />
@@ -156,11 +165,11 @@ export default class Quiz extends React.Component {
                 </div>
             </div>
 
-        } else if (questionCount == 5) {
+        } else if (questionCount === 5) {
             questionLayout =
             <div className="questionCard">
                 <div className="progressDiv">
-                    <h3 className="progress">Kysymys {questionCount}/6</h3>
+                    <h3 className="progress">Kysymys {questionCount}/{taskData.questions.length}</h3>
                     <h4 className="progress">{taskData.introText}...</h4>
                 </div>
                 <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />
@@ -174,11 +183,11 @@ export default class Quiz extends React.Component {
                 </div>
             </div>
 
-        } else if (questionCount == 6) {
+        } else if (questionCount === 6) {
             questionLayout =
             <div className="questionCard">
                 <div className="progressDiv">
-                    <h3 className="progress">Kysymys {questionCount}/6</h3>
+                    <h3 className="progress">Kysymys {questionCount}/{taskData.questions.length}</h3>
                     <h4 className="progress">{taskData.introText}...</h4>
                 </div>
                 <RadioGroup qTitle={taskData.questions[index].prompt} value1="Tosi" value2="Epätosi" />
@@ -197,7 +206,7 @@ export default class Quiz extends React.Component {
                     </Link>
                 </div>
             </div>
-        } // Should go to completion page after
+        }
 
         return(
         <Spring from={{opacity: 0}} to={{opacity: 1}} config={{ duration: 2000 }}>        

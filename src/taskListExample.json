@@ -20,7 +20,8 @@
                 "questionId": "sukupuoli",
                 "prompt": "Mikä on sukupuolesi?",
                 "ansType": ["Mies", "Nainen", "Muu/en halua kertoa"],
-                "multiple": false
+                "multiple": false,
+                "type": "radio"
             },
             {
                 "questionId": "syntymävuosi",
@@ -28,7 +29,8 @@
                 "ansType": "integer",
                 "minValue": 1920,
                 "maxValue": 2040,
-                "placeholder": 2001
+                "placeholder": 2001,
+                "type": "rangeslider"
             },
             {
                 "questionId": "kuvausteksti",
@@ -36,7 +38,8 @@
                 "public": true,
                 "ansType": "freetext",
                 "maxLen": 200,
-                "placeholder": "Millainen olet? Mikä kiinnostaa?"
+                "placeholder": "Millainen olet? Mikä kiinnostaa?",
+                "type": "opentext"
             },
             {
                 "questionId": "omakuva",
@@ -44,19 +47,22 @@
                 "public": true,
                 "ansType": "multi",
                 "choices": 4,
-                "placeholder": "Millainen olet? Mikä kiinnostaa?"
+                "placeholder": "Millainen olet? Mikä kiinnostaa?",
+                "type": "multichoice"
             },
             {
                 "questionId": "ilmoitukset",
                 "prompt": "Haluan sovellusilmoituksia",
                 "ansType": "boolean",
-                "default": true
+                "default": true,
+                "type": "radio"
             },
             {
                 "questionId": "näkyvyys",
                 "prompt": "Muut käyttäjät voivat löytää minut? Vain julkiset tiedot näytetään",
                 "ansType": "boolean",
-                "default": true
+                "default": true,
+                "type": "radio"
             }
         ]
     }

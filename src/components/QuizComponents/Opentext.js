@@ -2,14 +2,9 @@ import React from 'react';
 import './Opentext.css';
 import { Spring } from 'react-spring/renderprops';
 
-var taskData = require('../../taskListExample.json');
-
 // Textarea question component
 export default class Opentext extends React.Component {    
-    constructor(props) {
-        super(props)
-        this.props = {maxLength: "250", qTitle: "null"}
-    }
+    static props = {maxLength: "250", qTitle: "null"}
 
     checkProp() {
         if (this.props.maxLength == null) {
@@ -31,7 +26,7 @@ export default class Opentext extends React.Component {
                 </div>
                 <div className="textArea">
                     <label>
-                        <textarea onChange={this.handleEvent} id="textArea" placeholder={this.checkProp()} className="textBox" rows="8" maxLength={this.props.maxLength}></textarea>
+                        <textarea onChange={this.handleEvent} id="textArea" placeholder={this.checkProp()} className="textBox" rows="10" maxLength={this.props.maxLength}></textarea>
                     </label>
                 </div>
             </div>}
