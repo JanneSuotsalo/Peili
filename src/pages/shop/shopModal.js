@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "./modal.css";
-import shopImg from "./shopImg.png"
+import "./shopModal.css";
 
 const Modal = ({ isShowing, hide, item, buyItem, errorMsg, goBack }) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
     <div className="shop_modal_overlay"/>
     <div className="shop_modal_wrapper">
       <div className="shop_modal">
-      <img className="modal_img" src={shopImg} ></img>
+      <div className="shop_modal_img" style={{background: item.color}} ></div>
         <div className="shop_modalName">
             {item.name}
         </div>

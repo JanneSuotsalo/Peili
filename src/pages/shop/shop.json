@@ -1,42 +1,65 @@
 [
     {
-        "name":"Chatbot robotti 2",
-        "price":"600",
+        "name":"Chatbot taustakuva punainen gradient",
+        "price":"700",
+        "color":"linear-gradient(0deg, rgba(255,143,143,1) 0%, rgba(255,0,0,1) 100%)",
+        "style":"bgColor",
         "id":"1"
     },
     {
-        "name":"Profiili kuva tonttu",
-        "price":"1000",
+        "name":"Chatbot taustakuva sininen",
+        "price":"500",
+        "color":"blue",
+        "style":"bgColor",
         "id":"2"
     },
     {
-        "name":"Chatbot ihminen",
+        "name":"Chatbot väri vihreä",
         "price":"200",
+        "color":"green",
+        "style":"color",
         "id":"3"
     },
     {
-        "name":"Chatbot joulupukki",
-        "price":"1200",
+        "name":"Chatbot väri rainbow",
+        "price":"1900",
+        "color":"linear-gradient(to right, orange , yellow, green, cyan, blue, violet)",
+        "style":"color",
         "id":"4"
     },
     {
-        "name":"Profiilikuva tiikeri",
-        "price":"1100",
+        "name":"Chatbot väri harmaa",
+        "price":"300",
+        "color":"grey",
+        "style":"color",
         "id":"5"
     },
     {
-        "name":"Profiilikuva joulupukki",
-        "price":"1200",
+        "name":"Chatbot taustakuva punainen",
+        "price":"500",
+        "color":"red",
+        "style":"bgColor",
         "id":"6"
     },
     {
-        "name":"Chatbot taustakuva meri",
+        "name":"Chatbot taustakuva sininen gradient",
         "price":"2000",
+        "color":"linear-gradient(190deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
+        "style":"bgColor",
         "id":"7"
     },
     {
-        "name":"Chatbot taustakuva vaalean vihreä",
+        "name":"Chatbot taustakuva vaalean vihreä gradient",
         "price":"1600",
+        "color":"linear-gradient(0deg, rgba(175,236,183,1) 0%, rgba(112,236,16,1) 100%)",
+        "style":"bgColor",
         "id":"8"
+    },
+    {
+        "name":"Chatbot taustakuva rainbow",
+        "price":"2000",
+        "color":"linear-gradient(to top, rgb(249, 179, 0) , rgb(249, 245, 0), rgb(56, 255, 25), rgb(25, 255, 224), rgb(25, 56, 255), rgb(182, 25, 255))",
+        "style":"bgColor",
+        "id":"9"
     }
 ]

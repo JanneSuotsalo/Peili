@@ -18,6 +18,7 @@ import History from "./pages/history/History";
 import Result from "./pages/result/Result";
 import CustomChatBot from './components/Chatbot/CustomChatbot';
 import Shop from "./pages/shop/shop";
+import Inventory from "./pages/inventory/inventory";
 
 function handleTestClick (){
 } 
@@ -36,7 +37,11 @@ class App extends React.Component {
     data: {},
     image: {},
     subscribedOrgz:[],
-    questionStatus: 0
+    questionStatus: 0,
+    inventory:[],
+    chatBotBgColor:"#FFFF",
+    chatBotColor:"#f76f07",
+    shopItems:["noItems"]
   };
 
   drawerToggleClickHandler = () => {
@@ -104,6 +109,26 @@ class App extends React.Component {
     this.setState({money: this.state.money + amount })
   }
 
+  setInventory = (item) => {
+    this.state.inventory.push(item)
+  }
+
+  setChatBotBgColor = (color) => {
+    this.setState({chatBotBgColor: color})
+  }
+
+  setChatBotColor = (color) => {
+    this.setState({chatBotColor: color})
+  }
+
+  setShopItems = (item) => {
+    this.state.shopItems.push(item)
+  }
+
+  removeShopItem = (item) => {
+    this.state.shopItems.splice( this.state.shopItems.indexOf(item),1 )
+  }
+
   render(){
     let backDrop;
     let backDrop1;
@@ -124,7 +149,8 @@ class App extends React.Component {
     <div style={{height: '100%'}}>
         <Toolbar show={this.state.noNav} showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
          <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
-         <CustomChatBot normal={true} className={this.state.sideDrawer ? "show" : "noShow"}/>      
+         <CustomChatBot chatBotColor = {this.state.chatBotColor}
+          chatBotBgColor = {this.state.chatBotBgColor} normal={true} className={this.state.sideDrawer ? "show" : "noShow"}/>      
         {backDrop}
         {backDrop1}
         {backDrop2}
@@ -184,7 +210,30 @@ class App extends React.Component {
         <Route path="/result" render={(props) => <Result {...props}/>}>
         </Route>
         <Route path="/shop">
-          <Shop />
+          <Shop 
+          setMoney = {this.setMoneyAmount}
+          money={this.state.money}
+          
+          setInventory = {this.setInventory}
+
+          chatBotColor = {this.state.chatBotColor}
+          chatBotBgColor = {this.state.chatBotBgColor}
+          setChatBotBgColor = {this.setChatBotBgColor}
+          setChatBotColor = {this.setChatBotColor}
+
+          shopItems = {this.state.shopItems}
+          setShopItems = {this.setShopItems}
+          removeShopItem = {this.removeShopItem}
+          />
+        </Route>
+        <Route path="/inventory">
+          <Inventory 
+          inventory = {this.state.inventory}
+          chatBotColor = {this.state.chatBotColor}
+          chatBotBgColor = {this.state.chatBotBgColor}
+          setChatBotBgColor = {this.setChatBotBgColor}
+          setChatBotColor = {this.setChatBotColor}
+          />
         </Route>
     </main>
     </div>

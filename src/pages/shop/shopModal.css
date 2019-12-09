@@ -77,10 +77,12 @@
     color: #fff;
 }
 
-.modal_img{
+.shop_modal_img{
     border-radius: 10px 10px 0px 0px;
     height: 150px;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .shop_modal_errorMsgContainer{
