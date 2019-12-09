@@ -17,6 +17,7 @@ import BackDrop from './components/BackDrop/Backdrop';
 import History from "./pages/history/History";
 import Result from "./pages/result/Result";
 import CustomChatBot from './components/Chatbot/CustomChatbot';
+import Shop from "./pages/shop/shop";
 
 function handleTestClick (){
 } 
@@ -183,6 +184,9 @@ class App extends React.Component {
           <History />
         </Route>
         <Route path="/result" render={(props) => <Result {...props}/>}>
+        </Route>
+        <Route path="/shop">
+          <Shop />
         </Route>
     </main>
     </div>
