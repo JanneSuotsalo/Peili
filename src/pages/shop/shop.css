@@ -18,6 +18,13 @@
     text-align:center;
 }
 
+.shop_subheader{
+    margin-left: 5%;
+    font-size: 1.5em;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
 .shopList{
     margin-top: 5px;
     padding-left: 2%;
@@ -53,11 +60,12 @@
 
 .shop_price{
     font-weight: 500;
+    margin-top: 2px
 }
 
 .shop_name{
     font-weight: 500;
-    margin-top: 1%;
+    margin-top: 0px;
     display: -webkit-box;
     -webkit-line-clamp:2;
     -webkit-box-orient: vertical;

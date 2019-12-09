@@ -27,12 +27,7 @@
 .inventory_modalName{
     font-weight: 500;
     margin-left: 3%;
-}
-
-.inventory_modalPrice{
-    font-weight: 500;
-    padding-top: 2%;
-    margin-left: 3%;
+    margin-bottom: 20px;
 }
 
 .inventory_buttonContainers{
@@ -41,14 +36,9 @@
     align-items: baseline;
 }
 
-.inventory_modal_backButton_container {
-}
-.inventory_modal_buyButton_container{
-}
-
 .inventory_modal_buy_button{
     margin-right: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     width: 140px;
     height: 50px;
     border-radius: 3px;
@@ -61,7 +51,7 @@
 
 .inventory_modal_close_button {
     margin-left: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     width: 140px;
     height: 50px;
     border-radius: 3px;
@@ -83,16 +73,6 @@
     width: 100%;
     margin: 0;
     padding: 0;
-}
-
-.inventory_modal_errorMsgContainer{
-    margin-left: 3%;
-    padding-bottom: 3%;
-}
-
-.inventory_modal_errorMsg{
-    font-weight: 500;
-    color: rgb(206, 0, 0);
 }
 
 @media screen and (max-width: 375px) {

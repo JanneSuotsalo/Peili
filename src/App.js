@@ -41,7 +41,8 @@ class App extends React.Component {
     inventory:[],
     chatBotBgColor:"#FFFF",
     chatBotColor:"#f76f07",
-    shopItems:["noItems"]
+    shopItemsColor:["noItems"],
+    shopItemsBgColor:["noItems"]
   };
 
   drawerToggleClickHandler = () => {
@@ -121,12 +122,20 @@ class App extends React.Component {
     this.setState({chatBotColor: color})
   }
 
-  setShopItems = (item) => {
-    this.state.shopItems.push(item)
+  setShopItemsColor = (item) => {
+    this.state.shopItemsColor.push(item)
   }
 
-  removeShopItem = (item) => {
-    this.state.shopItems.splice( this.state.shopItems.indexOf(item),1 )
+  removeShopItemsColor = (item) => {
+    this.state.shopItemsColor.splice( this.state.shopItemsColor.indexOf(item),1 )
+  }
+
+  setShopItemsBgColor = (item) => {
+    this.state.shopItemsBgColor.push(item)
+  }
+
+  removeShopItemsBgColor = (item) => {
+    this.state.shopItemsBgColor.splice( this.state.shopItemsBgColor.indexOf(item),1 )
   }
 
   render(){
@@ -213,7 +222,7 @@ class App extends React.Component {
           <Shop 
           setMoney = {this.setMoneyAmount}
           money={this.state.money}
-          
+
           setInventory = {this.setInventory}
 
           chatBotColor = {this.state.chatBotColor}
@@ -221,9 +230,13 @@ class App extends React.Component {
           setChatBotBgColor = {this.setChatBotBgColor}
           setChatBotColor = {this.setChatBotColor}
 
-          shopItems = {this.state.shopItems}
-          setShopItems = {this.setShopItems}
-          removeShopItem = {this.removeShopItem}
+          shopItemsColor = {this.state.shopItemsColor}
+          setShopItemsColor = {this.setShopItemsColor}
+          removeShopItemsColor = {this.removeShopItemsColor}
+
+          shopItemsBgColor = {this.state.shopItemsBgColor}
+          setShopItemsBgColor = {this.setShopItemsBgColor}
+          removeShopItemsBgColor = {this.removeShopItemsBgColor}
           />
         </Route>
         <Route path="/inventory">

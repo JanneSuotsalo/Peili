@@ -1,62 +1,62 @@
 [
     {
-        "name":"Chatbot taustakuva punainen gradient",
+        "name":"Punainen gradient",
         "price":"700",
         "color":"linear-gradient(0deg, rgba(255,143,143,1) 0%, rgba(255,0,0,1) 100%)",
         "style":"bgColor",
         "id":"1"
     },
     {
-        "name":"Chatbot taustakuva sininen",
+        "name":"Sininen",
         "price":"500",
         "color":"blue",
         "style":"bgColor",
         "id":"2"
     },
     {
-        "name":"Chatbot väri vihreä",
+        "name":"Vihreä",
         "price":"200",
         "color":"green",
         "style":"color",
         "id":"3"
     },
     {
-        "name":"Chatbot väri rainbow",
+        "name":"Sateenkaari",
         "price":"1900",
         "color":"linear-gradient(to right, orange , yellow, green, cyan, blue, violet)",
         "style":"color",
         "id":"4"
     },
     {
-        "name":"Chatbot väri harmaa",
+        "name":"Harmaa",
         "price":"300",
         "color":"grey",
         "style":"color",
         "id":"5"
     },
     {
-        "name":"Chatbot taustakuva punainen",
+        "name":"Punainen",
         "price":"500",
         "color":"red",
-        "style":"bgColor",
+        "style":"color",
         "id":"6"
     },
     {
-        "name":"Chatbot taustakuva sininen gradient",
+        "name":"Sininen gradient",
         "price":"2000",
         "color":"linear-gradient(190deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
         "style":"bgColor",
         "id":"7"
     },
     {
-        "name":"Chatbot taustakuva vaalean vihreä gradient",
+        "name":"Vaalean vihreä gradient",
         "price":"1600",
         "color":"linear-gradient(0deg, rgba(175,236,183,1) 0%, rgba(112,236,16,1) 100%)",
         "style":"bgColor",
         "id":"8"
     },
     {
-        "name":"Chatbot taustakuva rainbow",
+        "name":"Sateenkaari",
         "price":"2000",
         "color":"linear-gradient(to top, rgb(249, 179, 0) , rgb(249, 245, 0), rgb(56, 255, 25), rgb(25, 255, 224), rgb(25, 56, 255), rgb(182, 25, 255))",
         "style":"bgColor",

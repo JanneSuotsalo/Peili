@@ -5,10 +5,10 @@ import sideImg from "./history_sideImg.png";
 
 export default function History() {
   const [count, setCount] = useState(0);
-  const [historyData, setHistoryData] = useState([]);
-  const [indexArray, setIndexArray] = useState([-1]);
+  const [historyData, ] = useState([]);
+  const [indexArray, ] = useState([-1]);
   const [visible, setVisible] = useState(true);
-  const [runOnce, setRunOnce] = useState([0]);
+  const [runOnce, ] = useState([0]);
 
   let historyDataJson = require("./History.json");
   let lastIndexNumber;
@@ -18,17 +18,7 @@ export default function History() {
   if (runOnceCheck <= 0) {
     runOnce.push(1);
     historyData.push(AddElement(-1, changeLastIndex));
-    console.log(runOnceCheck);
   }
-
-  console.log(
-    "Lastindex: " +
-      lastIndexNumber +
-      " Visibility: " +
-      visible +
-      " Count: " +
-      count
-  );
 
   function render() {
     lastIndexNumber = indexArray.pop();
