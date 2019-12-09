@@ -2,17 +2,15 @@ import React from 'react';
 import './RangeSlider.css';
 import { Spring } from 'react-spring/renderprops';
 
-var taskData = require('../../taskListExample.json');
-
-
 // Range slider component for choosing value from range
 export default class RangeSlider extends React.Component {
     constructor(props) {
         super(props);
-        this.props = {qTitle: "null", min: "1", max: "5", minLabel: "null", maxLabel: "null"};
         this.handleChange = this.handleChange.bind(this);
         this.rangeValue = this.rangeValue.bind(this);
     }
+    static props = {qTitle: "null", min: "1", max: "5", minLabel: "null", maxLabel: "null"};
+        
 
     handleChange(event) {
         this.setState({value: event.target.value})

@@ -162,11 +162,11 @@ input[type=range]:focus::-ms-fill-upper {
   margin: 1em auto;
   padding: 0.5em;
   width: fit-content;
-  border: black groove 2px;
-  background-color: #f2f2f2;
+  background-color: transparent;
 }
 
 #rangeValue {
+  font-size: 3em;
   text-align: center;
   margin: 0.5em;
   text-decoration: #F27127 underline;

@@ -2,15 +2,10 @@ import React from 'react';
 import './MultiChoice.css';
 import { Spring } from 'react-spring/renderprops';
 
-var taskData = require('../../taskListExample.json');
-
-
 // Multiple choice question component
 export default class MultiChoice extends React.Component {    
-    constructor(props) {
-        super(props)
-        this.props = {options: "3", qTitle: "null"}
-    }
+
+    static props = {options: "3", qTitle: "null"}
 
     optionCount() {
         var options = [];
@@ -18,9 +13,9 @@ export default class MultiChoice extends React.Component {
         for (var i = 0; i < this.props.options; i++) {
             var id = "cb" + i
             //console.log(id);
-            options.push(<div className="checkBoxDiv">
+            options.push(<div key={id + i} className="checkBoxDiv">
                             <input id={id} type='checkbox' />
-                            <label for={id}>
+                            <label htmlFor={id}>
                                 <span></span>
                                 {values[i]}
                             </label>

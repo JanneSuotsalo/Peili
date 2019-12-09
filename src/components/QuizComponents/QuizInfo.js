@@ -2,13 +2,8 @@ import React from 'react';
 import './QuizInfo.css';
 import { Spring } from 'react-spring/renderprops';
 
-var taskData = require('../../taskListExample.json');
-
 export default class QuizInfo extends React.Component {
-    constructor(props) {
-        super(props)
-        this.props = {taskName: "Quiz", desc: "null", intro: "null", reward: "null"}
-    }
+    static props = {taskName: "Quiz", desc: "null", reward: "null"}
 
     render() {
         return(
