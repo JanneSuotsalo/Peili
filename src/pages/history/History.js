@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./History.css";
 import sideImgStart from "./history_sideImgStart.png";
 import sideImg from "./history_sideImg.png";
@@ -101,5 +101,5 @@ const AddElement = (lastIndex, changevalue) => {
     }
   }
 
-  return <div className="history_container">{data}</div>;
+  return <div key={lastIndex} className="history_container">{data}</div>;
 };

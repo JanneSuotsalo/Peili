@@ -1,0 +1,42 @@
+[
+    {
+        "name":"Chatbot robotti 2",
+        "price":"600",
+        "id":"1"
+    },
+    {
+        "name":"Profiili kuva tonttu",
+        "price":"1000",
+        "id":"2"
+    },
+    {
+        "name":"Chatbot ihminen",
+        "price":"200",
+        "id":"3"
+    },
+    {
+        "name":"Chatbot joulupukki",
+        "price":"1200",
+        "id":"4"
+    },
+    {
+        "name":"Profiilikuva tiikeri",
+        "price":"1100",
+        "id":"5"
+    },
+    {
+        "name":"Profiilikuva joulupukki",
+        "price":"1200",
+        "id":"6"
+    },
+    {
+        "name":"Chatbot taustakuva meri",
+        "price":"2000",
+        "id":"7"
+    },
+    {
+        "name":"Chatbot taustakuva vaalean vihreä",
+        "price":"1600",
+        "id":"8"
+    }
+]
