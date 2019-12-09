@@ -6,6 +6,7 @@ import OrgDetail from '../../pages/organizations/OrgDetail';
 import TestCard from '../../components/card/TestCard';
 import { Trail } from 'react-spring/renderprops'
 import TestDetail from '../../pages/testDetail/TestDetail';
+import { width } from '@material-ui/system';
 
 var data1 = require('../../test.json');
 var data = require('../../example.json');
@@ -28,7 +29,7 @@ export default class Feed extends React.Component {
         for (var i = 0; i < 1; i++) {
             this.setState(prevState => ({
                 quiz: [data1.tasks[i], ...prevState.quiz]
-            }));            
+            }));
         }
     }
 
@@ -47,13 +48,32 @@ export default class Feed extends React.Component {
         this.props.handleUnsubscribe(item)
         this.props.popOrgDetail();
     }
+    handleSubscribe = (item) => {
+        this.props.handleSubscribe(item)
+    }
 
     render() {
         let item;
         let popup;
 
         if (this.props.orgHandler) {
-            item = <OrgDetail image={this.props.image} handleUnsubscribe={this.handleUnsubscribe} data={this.props.data} />
+            if (!this.props.subscribed.some(subItems => subItems.id === this.props.data.id)) {
+                item =
+                    <OrgDetail
+                        image={this.props.image}
+                        handleSubscribe={this.handleSubscribe}
+                        handleUnsubscribe={this.handleUnsubscribe}
+                        subscribed={true}
+                        data={this.props.data} />
+            } else {
+                item =
+                    <OrgDetail
+                        image={this.props.image}
+                        handleSubscribe={this.handleSubscribe}
+                        handleUnsubscribe={this.handleUnsubscribe}
+                        subscribed={false}
+                        data={this.props.data} />
+            }
         }
         if (this.props.showPopup) {
             popup = <TestDetail item={this.state.itemToShow} click={this.onclick} close={this.testClicked} />
@@ -63,13 +83,13 @@ export default class Feed extends React.Component {
             <div>
                 {item}
                 {popup}
-                <Cell title="Suositellut" recommend={true} />
+                <Cell title="Suositellut" recommend={true} subOrgz={this.props.subscribed} click={this.handleClick} />
                 <div className="cardHeader">
                     <h2 className="sectionTitle">Kyselyt</h2>
                 </div>
                 <div className="mainFeed">
                     <Trail items={this.state.quiz} keys={item => item} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
-                        {item => props => <TestCard style={props} clicked={this.onclick} title={item} />}
+                        {item => props => <TestCard style={props} feed={true} clicked={this.onclick} title={item} />}
                     </Trail>
                 </div>
                 <Cell title="Tilatut" click={this.handleClick} recommend={false} subOrgz={this.props.subscribed} />
@@ -88,9 +108,10 @@ class Container extends React.Component {
     }
     render() {
         if (this.props.recommend) {
+
             return (
                 <div class="scrolling-wrapper">
-                    <div class="card"><Simplelist click={this.onClick} item={data.organizations[0]} /></div>
+                    <div class="card"><Simplelist click={this.onClick} item={data.organizations[data.organizations.length - 1]} /></div>
                 </div>
             )
         }

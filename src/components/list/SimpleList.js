@@ -13,10 +13,8 @@ export default class Simplelist extends React.Component {
         super(props);
     }
     componentWillMount() {
-        fetch(`https://source.unsplash.com/random/800x600/?house?sig=` + this.props.index).then((response) => {
-            this.setState({
-                image: response.url
-            })
+        this.setState({
+            image: this.props.item.image
         })
     }
     click = () => {
@@ -26,7 +24,7 @@ export default class Simplelist extends React.Component {
     render() {
         return (
             <div style={this.props.style} className="SimplelistCard" onClick={this.click}>
-                <img src={this.state.image}></img>
+                <img src={this.props.item.image}></img>
                 <div className="SimplelistHeader">
                     <h4>{this.props.item.name}</h4>
                 </div>

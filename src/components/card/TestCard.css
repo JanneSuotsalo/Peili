@@ -21,7 +21,10 @@
 
 .TestCard p{
     margin-top: 0;
+    margin-bottom: 0;
+
 }
+
 .TestWindow{
     width: 50%;
     height: 100%;
@@ -36,6 +39,11 @@
 .color {
     animation: colourItem 2s ease-in-out;
     animation-delay: 0.4s;
+}
+.icon {
+    float: right;
+    margin-top: -15%;
+    margin-right: -70%;
 }
 @keyframes colourItem {
     0% {background: linear-gradient(to right, #FFFFFF,#FFFFFF, #FFFFFF);}

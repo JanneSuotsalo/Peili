@@ -23,10 +23,7 @@ function handleTestClick (){
 } 
 
 /*
-Rahapussi toimimaan
 
-Quiz UI paremmiks
-chatbot pois 
 */
 class App extends React.Component {
   state = {
@@ -167,6 +164,7 @@ class App extends React.Component {
             popPopup={this.popPopUp}
             showPopup={this.state.showPopup}
             subscribed={this.state.subscribedOrgz}
+            handleSubscribe={this.handleSubscribe} 
             handleUnsubscribe={this.handleUnsubscribe} 
             image={this.state.image}
             data={this.state.data}

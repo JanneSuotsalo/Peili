@@ -29,6 +29,7 @@ export default class OrgDetail extends React.Component {
     render() {
         let subscribe;
         let picOrMap;
+        console.log(this.props.subscribed)
         if (this.props.subscribed) {
             subscribe = <div className="OrgButton a" onClick={this.subscribe} ><a>Tilaa</a></div>
         } else {
