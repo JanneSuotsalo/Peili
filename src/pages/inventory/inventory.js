@@ -15,7 +15,7 @@ export default function Inventory(prop) {
     const [showColorHeader, setShowColorHeader] = useState(false)
     const [showBgColorHeader, setShowBgColorHeader] = useState(false)
 
-    // Renders inventory items once
+    // Renders inventory items once. Handles removing message "no items in inventory". Also handles showing subheaders.
     useEffect(() => {
         setForceRender(1)
         for (var i = 0; i < prop.inventory.length; i++)
@@ -36,6 +36,8 @@ export default function Inventory(prop) {
 
     // Opens modal and shows the item
     function openItem(item){
+
+        // Sets current item so that modal knows which item to show
         setCurrentItem(item)
 
         // If the item is alrdy equipped, button will say unequip instead of equip
@@ -53,12 +55,11 @@ export default function Inventory(prop) {
                 setEquipText("Käytä")
             }
         }
-
         toggle()
     }
 
 
-    // Equips and unequips chosen item
+    // Equips and unequips chosen item. If item is unequiped, sets default color back for chatbot
     function equipItem(item){
         if(item.style === "color"){
             if(prop.chatBotColor === item.color){

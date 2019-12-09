@@ -14,7 +14,7 @@ export default function Shop(prop) {
     const [showBgColorHeader, setShowBgColorHeader] = useState(true)
     const {isShowing, toggle} = useModal();
     
-    // Renders shop items once. Uses global variable shopItems to store items that are in the shop.
+    // Renders shop items once. Uses global variables to store items that are in the shop.
     useEffect(() => {
         
         if(prop.shopItemsColor[0] === "noItems" && prop.shopItemsBgColor[0] === "noItems"){
@@ -40,7 +40,7 @@ export default function Shop(prop) {
         setCurrentItem(item)
     }
 
-    // Handles item buying, if user doesn't have enough money, shows error msg
+    // Handles item buying, if user doesn't have enough money, shows error message
     function buyItem(item){
         if(prop.money >= item.price){
             console.log("BOUGHT")
@@ -51,7 +51,7 @@ export default function Shop(prop) {
             // Sets bought item into inventory
             prop.setInventory(item)
 
-            // Equips bought color and removes the color from the global variable that holds items that are in the shop
+            // Equips bought item and removes the item from the global variable that holds items that are in the shop
             if(item.style === "color"){
                 prop.removeShopItemsColor(item)
                 prop.setChatBotColor(item.color)
@@ -78,11 +78,12 @@ export default function Shop(prop) {
         setEmptyShop(true)
     }
 
-
+    // Handles removing subheader "Chatbot värit"
     if( prop.shopItemsColor.length === 0 && showColorHeader === true){
         setShowColorHeader(false)
     }
 
+    // Handles removing subheader "Chatbot taustakuvat"
     if( prop.shopItemsBgColor.length === 0 && showBgColorHeader === true){
         setShowBgColorHeader(false)
     }
