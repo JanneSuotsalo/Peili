@@ -1,7 +1,6 @@
 import React from 'react';
 import './Feed.css';
 import Cell from '../../components/cell/cell';
-import Simplelist from '../../components/list/SimpleList';
 import OrgDetail from '../../pages/organizations/OrgDetail';
 import TestCard from '../../components/card/TestCard';
 import { Trail } from 'react-spring/renderprops'

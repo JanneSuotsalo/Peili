@@ -3,7 +3,6 @@ import Simplelist from '../../components/list/SimpleList';
 import { Trail } from 'react-spring/renderprops'
 var data = require('../../example.json');
 
-
 export default class Container extends React.Component {
     constructor(props) {
         super(props);
