@@ -59,3 +59,7 @@ html{
 .noShow {
   transform: translateX(200%);
 }
+.rsc-submit-button {
+  margin: 0;
+  height: 100%;
+}
