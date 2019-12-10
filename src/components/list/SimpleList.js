@@ -1,7 +1,10 @@
 import React from 'react';
 import './Simplelist.css'
 
-
+/*
+    Main component used to display organization. uses pictures of 800 * 600
+    
+*/
 export default class Simplelist extends React.Component {
     state = {
         image: ""

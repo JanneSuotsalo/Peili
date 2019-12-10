@@ -1,6 +1,9 @@
 import React from 'react';
 import Simplelist from './SimpleList';
-
+/*
+At first was going to be used as a platform to distripute different kind of layout cards.
+After user testing it was unnecessery but still in use
+*/
 export default class ListItemHandler extends React.Component {
     onClick = (image, data) => {
         this.props.click(image, data)
