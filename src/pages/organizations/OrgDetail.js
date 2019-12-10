@@ -3,6 +3,12 @@ import "./OrgDetail.css";
 import { Spring } from 'react-spring/renderprops';
 import Map from '../../components/GoogleMap/GoogleMap';
 
+
+/*
+Popup window where you can see the single organisations detail. Just a div with smaller height & width
+  
+
+*/
 export default class OrgDetail extends React.Component {
     state = {
         map: false

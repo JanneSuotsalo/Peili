@@ -6,7 +6,11 @@ import { Trail } from 'react-spring/renderprops'
 import './Test.css'
 
 var data = require('../../test.json');
-
+/*
+    All of the tests are listed in this page.
+    Tests are mount in componentWillMount() function so you can fetch them with api call
+    
+*/
 
 export default class Test extends React.Component {
     state = {
