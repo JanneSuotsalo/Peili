@@ -21,9 +21,9 @@
         "id":"3"
     },
     {
-        "name":"Sateenkaari",
+        "name":"Kulta",
         "price":"1900",
-        "color":"linear-gradient(to right, orange , yellow, green, cyan, blue, violet)",
+        "color":"linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)",
         "style":"color",
         "id":"4"
     },
@@ -56,9 +56,9 @@
         "id":"8"
     },
     {
-        "name":"Sateenkaari",
+        "name":"Sinivihreä gradient",
         "price":"2000",
-        "color":"linear-gradient(to top, rgb(249, 179, 0) , rgb(249, 245, 0), rgb(56, 255, 25), rgb(25, 255, 224), rgb(25, 56, 255), rgb(182, 25, 255))",
+        "color":"linear-gradient(90deg, rgba(63,251,170,1) 0%, rgba(236,255,0,1) 100%)",
         "style":"bgColor",
         "id":"9"
     }
