@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./inventoryModal.css";
+import I18n from "../../components/Element/LanguageSwticher/I18n";
 
 const Modal = ({ isShowing, hide, item, equipItem, equipText }) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
@@ -15,7 +16,7 @@ const Modal = ({ isShowing, hide, item, equipItem, equipText }) => isShowing ? R
         <div className="inventory_buttonContainers">
         <div className="inventory_modal_backButton_container">
         <button type="button" className="inventory_modal_close_button" onClick={hide}>
-            Takaisin
+        {I18n.t("inventory.inventoryModalBack")}
         </button>
         </div>
 

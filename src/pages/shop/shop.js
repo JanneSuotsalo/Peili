@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./shop.css";
 import Modal from "./shopModal";
 import useModal from './useModal';
+import I18n from "../../components/Element/LanguageSwticher/I18n";
 let shopData = require("./shop.json");
 
 export default function Shop(prop) {
@@ -42,11 +43,10 @@ export default function Shop(prop) {
 
     // Handles item buying, if user doesn't have enough money, shows error message
     function buyItem(item){
-        if(prop.money >= item.price){
-            console.log("BOUGHT")
+        if(money >= item.price){
 
             // Removes money amount that the item costs
-            prop.setMoney(-item.price)
+            //prop.setMoney(-item.price)
 
             // Sets bought item into inventory
             prop.setInventory(item)
@@ -63,7 +63,7 @@ export default function Shop(prop) {
 
             toggle()
         } else {
-            setErrorMsg("Sinulla ei riitä rahat kyseiseen tuotteeseen.")
+            setErrorMsg(I18n.t("shop.shopNoMoneyError"))
         }
     }
 
@@ -90,11 +90,11 @@ export default function Shop(prop) {
 
     return (
         <div>
-            <div className="shopText"> Kauppa </div>
-            <div className="shop_moneyAmount">Rahaa:&nbsp;{prop.money}G</div>
-            { emptyShop && <div className="shop_emptyShop">Kauppa on tyhjä, tule myöhemmin uudelleen. Uusia tavaroita lisätään pian!</div>}
+            <div className="shopText"> {I18n.t("shop.shopTitle")} </div>
+            <div className="shop_moneyAmount">{I18n.t("shop.shopMoney")} {prop.money}G</div>
+            { emptyShop && <div className="shop_emptyShop">{I18n.t("shop.emptyShop")}</div>}
 
-            { showColorHeader && <div className="shop_subheader"> Chatbot värit</div> }
+            { showColorHeader && <div className="shop_subheader"> {I18n.t("shop.chatBotColor")}</div> }
             <ul className="shopList">
                 {prop.shopItemsColor.map(item => (
                     <li key={item.id} onClick={()=> openItem(item)}>
@@ -102,14 +102,14 @@ export default function Shop(prop) {
                         <div className="shop_img" style={{background: item.color}}></div>
                             <div className="shopItem_box">
                                 <a className="shop_name">{item.name}</a>
-                                <a className="shop_price">Hinta: {item.price}G</a>
+                                <a className="shop_price">{I18n.t("shop.price")} {item.price}G</a>
                             </div>
                         </div>
                     </li>
                 ))}
             </ul>
 
-            {showBgColorHeader && <div className="shop_subheader"> Chatbot taustakuvat</div>}
+            {showBgColorHeader && <div className="shop_subheader"> {I18n.t("shop.chatBotBgColor")}</div>}
             <ul className="shopList">
                 {prop.shopItemsBgColor.map(item => (
                     <li key={item.id} onClick={()=> openItem(item)}>
@@ -117,7 +117,7 @@ export default function Shop(prop) {
                         <div className="shop_img" style={{background: item.color}}></div>
                             <div className="shopItem_box">
                                 <a className="shop_name">{item.name}</a>
-                                <a className="shop_price">Hinta: {item.price}G</a>
+                                <a className="shop_price">{I18n.t("shop.price")} {item.price}G</a>
                             </div>
                         </div>
                     </li>

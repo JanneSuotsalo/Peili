@@ -42,12 +42,12 @@ const sideDrawer = props => {
         </Link>
         <Link to="/shop">
           <li>
-            <a onClick={props.closeDraw}>{I18n.t("Kauppa")}</a>
+            <a onClick={props.closeDraw}>{I18n.t("navBar.shop")}</a>
           </li>
         </Link>
         <Link to="/inventory">
         <li>
-          <a onClick={props.closeDraw}>{I18n.t("Tavaraluettelo")}</a>
+          <a onClick={props.closeDraw}>{I18n.t("navBar.inventory")}</a>
         </li>
         </Link>
         <div className="profileCorner">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./inventory.css";
 import useModal from '../shop/useModal';
 import InventoryModal from "./inventoryModal";
+import I18n from "../../components/Element/LanguageSwticher/I18n";
 
 export default function Inventory(prop) {
 
@@ -43,16 +44,16 @@ export default function Inventory(prop) {
         // If the item is alrdy equipped, button will say unequip instead of equip
         if(item.style === "color"){
             if(prop.chatBotColor === item.color){
-                setEquipText("Pois käytöstä")
+                setEquipText(I18n.t("inventory.unequip"))
             } else {
-                setEquipText("Käytä")
+                setEquipText(I18n.t("inventory.equip"))
             }
         }
         if(item.style === "bgColor"){
             if(prop.chatBotBgColor === item.color){
-                setEquipText("Pois käytöstä")
+                setEquipText(I18n.t("inventory.unequip"))
             } else {
-                setEquipText("Käytä")
+                setEquipText(I18n.t("inventory.equip"))
             }
         }
         toggle()
@@ -85,10 +86,10 @@ export default function Inventory(prop) {
 
     return(
         <div>
-            <div className="inventoryText"> Tavaraluettelo </div>
-            { emptyInventory && <div className="inventory_emptyInventory">Et ole vielä ostanut tavaroita. Käy kauppa sivulla ostamassa jotain!</div>}
+            <div className="inventoryText"> {I18n.t("inventory.InventoryTitle")} </div>
+            { emptyInventory && <div className="inventory_emptyInventory">{I18n.t("inventory.emptyInventory")}</div>}
 
-            { showColorHeader && <div className="inventory_subheader"> Chatbot värit</div> }
+            { showColorHeader && <div className="inventory_subheader">{I18n.t("inventory.chatBotColor")}</div> }
             <ul className="inventoryList">
                 {inventoryListColor.map(item => (
                     <li key={item.id} onClick={() => openItem(item)}>
@@ -102,7 +103,7 @@ export default function Inventory(prop) {
                 ))}
             </ul>
                 
-            {showBgColorHeader && <div className="inventory_subheader"> Chatbot taustakuvat</div>}
+            {showBgColorHeader && <div className="inventory_subheader"> {I18n.t("inventory.chatBotBgColor")}</div>}
             <ul className="inventoryList">
                 {inventoryListBgColor.map(item => (
                     <li key={item.id} onClick={() => openItem(item)}>

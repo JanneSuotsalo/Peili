@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useTrail, animated, useSpring } from 'react-spring'
 import { Line } from 'rc-progress';
 import { Redirect } from "react-router-dom";
+import I18n from "../../components/Element/LanguageSwticher/I18n";
 import "./Result.css"
 
 export default function Result(props) {
@@ -12,7 +13,7 @@ export default function Result(props) {
     console.log(quizData)
 
     // Gongratulation text array
-    const thankSentenceArray = ["Onneksi olkoon", "teit tehtävän", quizData.taskName]
+    const thankSentenceArray = [I18n.t("result.congratulationsText1"), I18n.t("result.congratulationsText2"), quizData.taskName]
 
     // Config for gongratulation text
     const config = { mass: 20, tension: 500, friction: 150 }
@@ -51,9 +52,9 @@ export default function Result(props) {
                 ))}
                 </div>
                 </div>
-            <h1 className="result_quizReward">Palkinto: &nbsp;
+            <h1 className="result_quizReward">{I18n.t("result.reward")} &nbsp;
             <animated.span delay={1000}>{numberProps.number.interpolate(value => Math.floor(value))}</animated.span>
-            GP
+            G
             </h1>
             
             <div className="LifeMeterCell">
@@ -80,7 +81,7 @@ export default function Result(props) {
                         className="result_goBacktBtn"
                         onClick={() => redirectBack()}
                     >
-                        Takaisin etusivulle
+                        {I18n.t("result.backToMain")}
                 </button>
                 </div>
             

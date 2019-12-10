@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import I18n from "../../components/Element/LanguageSwticher/I18n";
 import "./shopModal.css";
 
 const Modal = ({ isShowing, hide, item, buyItem, errorMsg, goBack }) => isShowing ? ReactDOM.createPortal(
@@ -12,19 +13,19 @@ const Modal = ({ isShowing, hide, item, buyItem, errorMsg, goBack }) => isShowin
             {item.name}
         </div>
         <div className="shop_modalPrice">
-            Hinta: {item.price}G
+        {I18n.t("shop.price")} {item.price}G
         </div>
 
         <div className="shop_buttonContainers">
         <div className="shop_modal_backButton_container">
         <button type="button" className="shop_modal_close_button" onClick={() => goBack()}>
-            Takaisin
+        {I18n.t("shop.shopModalBack")}
         </button>
         </div>
 
         <div className="shop_modal_buyButton_container">
         <button type="button" className="shop_modal_buy_button" onClick={() => buyItem(item)}>
-            Osta
+        {I18n.t("shop.shopModalBuy")}
         </button>
         </div>
         </div>

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { TextField } from '@material-ui/core';
+import I18n from "../../components/Element/LanguageSwticher/I18n";
 import "./Login.css";
 
-export default function Login(props) {
+export default function Login() {
     const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
     const [loginErrorMsg, setLoginErrorMsg] = useState("");
     const [errorMsgBoolean, setErrorMsgBoolean] = useState(false)
     const [redirect, changeRedirect] = useState(false);
     const [redirectRegister, changeRedirectRegister] = useState(false);
 
+    // Removes the error message when user types into the username field
     function onUsernameChange(username) {
         setUsername(username.target.value);
         console.log(username.target.value);
@@ -18,31 +19,30 @@ export default function Login(props) {
         setErrorMsgBoolean(false)
     }
 
+    // Validates login form
     function validateForm() {
         if (username === "") {
             setErrorMsgBoolean(true)
-            setLoginErrorMsg("Käyttäjänimi ei voi olla tyhjä");
+            setLoginErrorMsg(I18n.t("login.loginError"));
         }else {
             changeRedirect(true);
         }
     }
 
+    // Sets redirection to true
     function redirectRegistering(){
         changeRedirectRegister(true);
     }
     
+    // Handles redirection to feed page
     if(redirect){
         return <Redirect push to="/feed" />;
     }
 
+    // Handles redirection to register page
     if(redirectRegister){
         return <Redirect push to="/register" />;
     }
-
-    /*In case 
-    <div className="login_errorMsg">
-                    <small>{loginErrorMsg}</small>
-                </div>*/
     
     return (
         <div className="login_container">
@@ -53,7 +53,7 @@ export default function Login(props) {
                 </div>
 
                 <div className="login_signInText">
-                    Kirjautuminen
+                {I18n.t("login.title")}
             </div>
 
                 <hr className="login_line">
@@ -61,11 +61,11 @@ export default function Login(props) {
 
                 <div className="login_inputContainers">
                     <TextField 
-                        label="Käyttäjänimi"
+                        label={I18n.t("login.usernameLabel")}
                         className="login_inputs"
                         type="text"
                         name="username"
-                        placeholder="Käyttäjänimi"
+                        placeholder={I18n.t("login.usernameLabel")}
                         maxLength={20}
                         onChange={onUsernameChange}
                         error = {errorMsgBoolean}
@@ -76,11 +76,11 @@ export default function Login(props) {
 
                 <div className="login_inputContainers">
                 <TextField 
-                        label="Salasana"
+                        label={I18n.t("login.passwordLabel")}
                         className="login_inputs"
                         type="password"
                         name="password"
-                        placeholder="Salasana"
+                        placeholder={I18n.t("login.passwordLabel")}
                         InputLabelProps={{style: {fontSize: 20}}} />
                 </div>
 
@@ -89,7 +89,7 @@ export default function Login(props) {
                         type="button"
                         className="login_btn"
                         onClick={() => validateForm()}>
-                        Kirjaudu
+                        {I18n.t("login.loginText")}
                 </button>
                 </div>
 
@@ -99,7 +99,7 @@ export default function Login(props) {
                         className="login_noAccountBtn"
                         onClick={() => redirectRegistering()}
                     >
-                        Rekisteröidy klikkaamlla tästä
+                        {I18n.t("login.noAccountText")}
                 </button>
                 </div>
 
