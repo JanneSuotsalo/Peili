@@ -2,10 +2,6 @@ import React from 'react';
 import Container from '../container/container'
 
 export default class Cell extends React.Component {
-    constructor(props) {
-        super(props);
-        this.props = { title: "null" }
-    }
 
     handleClick = (image, data) => {
         this.props.click(image, data);

@@ -16,7 +16,6 @@ const sideDrawer = props => {
     <nav className={drawAnim}>
       <ul>
         <Link to="/profile">
-<<<<<<< HEAD
           <li className="first">
             <div onClick={props.closeDraw}>{I18n.t("navBar.profile")}</div>
           </li>
@@ -49,39 +48,6 @@ const sideDrawer = props => {
         <Link to="/shop">
         <li>
           <div onClick={props.closeDraw}>{I18n.t("Tavaraluettelo")}</div>
-=======
-          <li onClick={props.closeDraw} className="first">
-            <a>{I18n.t("navBar.profile")}</a>
-          </li>
-        </Link>
-        <Link to="/Feed">
-          <li onClick={props.closeDraw}>
-            <a>{I18n.t("navBar.mainFeed")}</a>
-          </li>
-        </Link>
-        <Link to="/organization">
-          <li onClick={props.closeDraw}>
-            <a>{I18n.t("navBar.organisations")}</a>
-          </li>
-        </Link>
-        <Link to="/test">
-          <li onClick={props.closeDraw}>
-            <a>{I18n.t("navBar.test")}</a>
-          </li>
-        </Link>
-        <Link to="/history">
-          <li onClick={props.closeDraw}>
-            <a>{I18n.t("navBar.history")}</a>
-          </li>
-        </Link>
-        <Link to="/shop">
-          <li onClick={props.closeDraw}>
-            <a>{I18n.t("Kauppa")}</a>
-          </li>
-        </Link>
-        <li onClick={props.closeDraw}>
-          <a>{I18n.t("Tavaraluettelo")}</a>
->>>>>>> 168182f1e9398f839ad8fa9be5a3e519a80f5283
         </li>
         </Link>
 

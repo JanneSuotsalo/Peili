@@ -4,10 +4,6 @@ import { Trail } from 'react-spring/renderprops'
 var data = require('../../example.json');
 
 export default class Container extends React.Component {
-    constructor(props) {
-        super(props);
-        this.props = { title: "null" }
-    }
     onClick = (image, data) => {
         this.props.click(image, data)
     }
