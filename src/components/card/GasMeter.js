@@ -4,7 +4,10 @@ import { Line } from 'rc-progress';
 import { IoIosStats } from 'react-icons/io';
 import { Collapse } from 'react-collapse';
 import Arrow from '../../components/Arrow/Arrow'
-
+/*
+    displays you lifemeters. Clients wish that was added late. Just for showing purposes
+    
+*/
 export default class GasMeter extends React.Component {
     state={
         showAnim: false

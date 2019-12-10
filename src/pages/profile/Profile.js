@@ -3,7 +3,10 @@ import './Profile.css';
 import ProfileCard from '../../components/card/ProfileCard';
 import GasMeter from '../../components/card/GasMeter';
 import Settings from '../../components/Settings/Settings'
+/*
+Profile page that displays your information. Hardcoded for now.
 
+*/
 export default class Profile extends React.Component {
     //NOW HARD CODED. FETCH IN THE FUTURE
     state = {

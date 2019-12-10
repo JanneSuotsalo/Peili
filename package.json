@@ -23,17 +23,32 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "jest": {
-    "verbose": false,
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/client/assetsTransformer.js"
+      "\\.(css|less)$": "identity-obj-proxy"
     }
+  },
+    "jest-junit": {
+      "reporters":["jest-junit"],
+       "output": "./junit.xml",
+       "classNameTemplate": "{classname}-{title}",
+       "titleTemplate": "{classname}-{title}",
+       "ancestorSeparator": " › ",
+       "suiteNameTemplate": "{filepath}",
+       "usePathForSuiteName": "true"
+   }  
   },
   "browserslist": {
     "production": [
