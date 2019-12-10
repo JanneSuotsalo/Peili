@@ -8,7 +8,7 @@ const Modal = ({ isShowing, hide, item, buyItem, errorMsg, goBack }) => isShowin
     <div className="shop_modal_overlay"/>
     <div className="shop_modal_wrapper">
       <div className="shop_modal">
-      <img className="modal_img" src={shopImg} ></img>
+      <img className="modal_img" alt="img" src={shopImg} ></img>
         <div className="shop_modalName">
             {item.name}
         </div>

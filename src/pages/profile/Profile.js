@@ -1,9 +1,6 @@
  import React from 'react';
-import ListView from '../../components/list/ListView';
 import './Profile.css';
-import SmallCard from '../../components/card/SmallCard';
 import ProfileCard from '../../components/card/ProfileCard';
-import I18n from '../../components/Element/LanguageSwticher/I18n';
 import GasMeter from '../../components/card/GasMeter';
 import Settings from '../../components/Settings/Settings'
 
@@ -38,19 +35,19 @@ export default class Profile extends React.Component {
 
     handleCardChange(id){
 
-        if(id == 1){
+        if(id === 1){
             this.setState({
                 scroll:true,
                 scroll1:false,
                 zoom:false
             })
-        } else if(id == 2){
+        } else if(id === 2){
             this.setState({
                 scroll:false,
                 scroll1:false,
                 zoom:true
             })
-        } else if(id == 3){
+        } else if(id === 3){
             this.setState({
                 scroll:false,
                 scroll1:true,

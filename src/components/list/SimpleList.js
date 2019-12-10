@@ -1,16 +1,10 @@
 import React from 'react';
 import './Simplelist.css'
-import I18n from '../Element/LanguageSwticher/I18n';
-import { FaWalking, FaInfo, FaMap } from 'react-icons/fa';
-import { Spring } from 'react-spring/renderprops'
 
 
 export default class Simplelist extends React.Component {
     state = {
         image: ""
-    }
-    constructor(props) {
-        super(props);
     }
     componentWillMount() {
         this.setState({
@@ -24,7 +18,7 @@ export default class Simplelist extends React.Component {
     render() {
         return (
             <div style={this.props.style} className="SimplelistCard" onClick={this.click}>
-                <img src={this.props.item.image}></img>
+                <img alt="img" src={this.props.item.image}></img>
                 <div className="SimplelistHeader">
                     <h4>{this.props.item.name}</h4>
                 </div>

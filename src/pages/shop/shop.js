@@ -6,7 +6,7 @@ import shopImg from "./shopImg.png"
 let shopData = require("./shop.json");
 
 export default function Shop() {
-    const [shopList, setShopList] = useState([])
+    const [shopList] = useState([])
     const [currentItem, setCurrentItem] = useState()
     const [, setForceRender] = useState("")
     const [errorMsg, setErrorMsg] = useState("")
@@ -19,7 +19,7 @@ export default function Shop() {
         {
             shopList.push(shopData[i])
         }
-    }, []);
+    }, [shopList]);
         
     function openItem(item){
         console.log(item)
@@ -52,10 +52,10 @@ export default function Shop() {
                 {shopList.map(item => (
                     <li key={item.id} onClick={()=> openItem(item)}>
                         <div className="shopItem_container">
-                        <img className="shop_img" src={shopImg} ></img>
+                        <img alt="shop" className="shop_img" src={shopImg} ></img>
                             <div className="shopItem_box">
-                                <a className="shop_name">{item.name}</a>
-                                <a className="shop_price">Hinta: {item.price}G</a>
+                                <div className="shop_name">{item.name}</div>
+                                <div className="shop_price">Hinta: {item.price}G</div>
                             </div>
                         </div>
                     </li>

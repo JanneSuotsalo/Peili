@@ -4,9 +4,6 @@ import "./TestDetail.css";
 
 
 export default class TestCard extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         return (

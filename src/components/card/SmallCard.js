@@ -2,9 +2,6 @@ import React from 'react';
 import './SmallCard.css';
 
 export default class SmallCard extends React.Component {
-    constructor(props){
-        super(props)
-    }
     render() {
         //now only one item but will be changed to a list
           

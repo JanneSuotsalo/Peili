@@ -3,20 +3,16 @@ import './Settings.css';
 import { Collapse } from 'react-collapse';
 import Arrow from '../../components/Arrow/Arrow'
 import { FiLogIn } from 'react-icons/fi';
-import { FaMobile, FaMobileAlt } from 'react-icons/fa';
+import { FaMobile } from 'react-icons/fa';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
-import I18n from "../../components/Element/LanguageSwticher/I18n";
 
 export default class Settings extends React.Component {
     state = {
         showAnim: false,
         showAnim1: false,
         showAnim2: false
-    }
-    constructor(props) {
-        super(props)
     }
     clicked = () => {
         this.setState((prevState) => {

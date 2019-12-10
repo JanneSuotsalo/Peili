@@ -5,7 +5,6 @@ import "./Login.css";
 
 export default function Login(props) {
     const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
     const [loginErrorMsg, setLoginErrorMsg] = useState("");
     const [errorMsgBoolean, setErrorMsgBoolean] = useState(false)
     const [redirect, changeRedirect] = useState(false);
@@ -49,7 +48,7 @@ export default function Login(props) {
             <div className="login_box">
 
                 <div className="login_peiliLogoContainer">
-                    <img className="login_peiliLogo" src="PeiliLogo.png" />
+                    <img alt="dsa" className="login_peiliLogo" src="PeiliLogo.png" />
                 </div>
 
                 <div className="login_signInText">

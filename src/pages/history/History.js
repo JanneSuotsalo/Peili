@@ -5,10 +5,10 @@ import sideImg from "./history_sideImg.png";
 
 export default function History() {
   const [count, setCount] = useState(0);
-  const [historyData, setHistoryData] = useState([]);
-  const [indexArray, setIndexArray] = useState([-1]);
+  const [historyData] = useState([]);
+  const [indexArray] = useState([-1]);
   const [visible, setVisible] = useState(true);
-  const [runOnce, setRunOnce] = useState([0]);
+  const [runOnce] = useState([0]);
 
   let historyDataJson = require("./History.json");
   let lastIndexNumber;
@@ -84,12 +84,12 @@ const AddElement = (lastIndex, changevalue) => {
       );
       if (i === 0) {
         container.push(
-          <img key={i} className="history_sideImgStart" src={sideImgStart} />
+          <img key={i} alt="ds" className="history_sideImgStart" src={sideImgStart} />
         );
         container.push(<div className="history_dateStart">{new Date(obj.date).toLocaleString()}</div>);
         container.push(<div className="history_eventStart">{obj.event}</div>);
       } else {
-        container.push(<img className="history_sideImg" src={sideImg} />);
+        container.push(<img alt="sda" className="history_sideImg" src={sideImg} />);
         container.push(<div className="history_date">{new Date(obj.date).toLocaleString()}</div>);
         container.push(<div className="history_event">{obj.event}</div>);
       }

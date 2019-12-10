@@ -1,5 +1,4 @@
 import React from 'react';
-import I18n from '../../components/Element/LanguageSwticher/I18n';
 import './ProfileCard.css';
 import Arrow from '../../components/Arrow/Arrow'
 import { MdPersonOutline } from 'react-icons/md';
@@ -15,10 +14,6 @@ export default class ProfileCard extends React.Component {
         showAnim: false,
         showAnim1: false
     }
-    constructor(props) {
-        super(props)
-
-    }
     clicked = () => {
         this.setState((prevState) => {
             return { showAnim: !prevState.showAnim };
@@ -32,7 +27,7 @@ export default class ProfileCard extends React.Component {
     render() {
         return (
             <div className='profileHeader'>
-                <img src={exampleIcon}></img>
+                <img alt="img" src={exampleIcon}></img>
                 <h3>{this.props.user.name}</h3>
                 <h4> Rahaa: {this.props.money}</h4>
                 <p>{this.props.title}</p>

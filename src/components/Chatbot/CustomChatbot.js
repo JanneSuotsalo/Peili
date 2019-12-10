@@ -1,6 +1,5 @@
 import React from "react";
 import ChatBot from "react-simple-chatbot";
-import I18n from '../../components/Element/LanguageSwticher/I18n';
 import { ThemeProvider } from 'styled-components';
 
 

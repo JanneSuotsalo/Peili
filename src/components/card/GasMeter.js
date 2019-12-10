@@ -1,6 +1,6 @@
 import React from 'react';
 import './GasMeter.css';
-import { Line, Circle } from 'rc-progress';
+import { Line } from 'rc-progress';
 import { IoIosStats } from 'react-icons/io';
 import { Collapse } from 'react-collapse';
 import Arrow from '../../components/Arrow/Arrow'
@@ -8,9 +8,6 @@ import Arrow from '../../components/Arrow/Arrow'
 export default class GasMeter extends React.Component {
     state={
         showAnim: false
-    }
-    constructor(props) {
-        super(props)
     }
     clicked = () => {
         this.setState((prevState) => {

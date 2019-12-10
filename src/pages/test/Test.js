@@ -9,9 +9,6 @@ var data = require('../../test.json');
 
 
 export default class Test extends React.Component {
-    constructor(props) {
-        super(props)
-    }
     state = {
         item: [],
         show: false,

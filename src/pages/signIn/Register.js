@@ -45,7 +45,7 @@ export default function Register(props) {
     }
 
     function validEmailCheck(){
-        const regexp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const regexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
        // console.log("reg:" + regexp.test(email));
         if(regexp.test(email) !== true){
             setEmailErrorMsg("Kelpaamaton sähköposti")
@@ -107,7 +107,7 @@ export default function Register(props) {
             <div className="register_box">
 
             <div className="register_peiliLogoContainer">
-            <img className="register_peiliLogo" src="PeiliLogo.png" />
+            <img alt="asd" className="register_peiliLogo" src="PeiliLogo.png" />
             </div>
 
             <div className="register_signUpText">

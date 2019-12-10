@@ -7,11 +7,12 @@ export default class Opentext extends React.Component {
     static props = {maxLength: "250", qTitle: "null"}
 
     checkProp() {
+        let placeHolder;
         if (this.props.maxLength == null) {
-            var placeHolder = "Vastaa vapaasti:"
+            placeHolder = "Vastaa vapaasti:"
             return placeHolder;
         } else {
-            var placeHolder = "Vastaa vapaasti: (Maksimi pituus " + this.props.maxLength + " kirjainta)"
+            placeHolder = "Vastaa vapaasti: (Maksimi pituus " + this.props.maxLength + " kirjainta)"
             return placeHolder;
         }
     };

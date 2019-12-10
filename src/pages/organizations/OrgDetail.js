@@ -1,16 +1,12 @@
 import React from 'react';
 import "./OrgDetail.css";
-import { Spring, Transition } from 'react-spring/renderprops';
+import { Spring } from 'react-spring/renderprops';
 import Map from '../../components/GoogleMap/GoogleMap';
 
 export default class OrgDetail extends React.Component {
     state = {
         map: false
     }
-    constructor(props) {
-        super(props)
-    }
-    
 
     subscribe = () => {
         if(this.props.subscribed){
@@ -31,17 +27,16 @@ export default class OrgDetail extends React.Component {
         let picOrMap;
         console.log(this.props.subscribed)
         if (this.props.subscribed) {
-            subscribe = <div className="OrgButton a" onClick={this.subscribe} ><a>Tilaa</a></div>
+            subscribe = <div className="OrgButton a" onClick={this.subscribe} ><div>Tilaa</div></div>
         } else {
-            subscribe = <div className="OrgButton d" onClick={this.subscribe} ><a>Lopeta tilaus</a></div>
+            subscribe = <div className="OrgButton d" onClick={this.subscribe} ><div>Lopeta tilaus</div></div>
        }
 
         if (!this.state.map) {
-            picOrMap = <img src={this.props.image}></img>
+            picOrMap = <img alt="img" src={this.props.image}></img>
         } else {
             picOrMap =  <Map />
         }
-        let show = true;
         return (
             <Spring from={{opacity: 0}} to={{opacity:1}} config={{duration: 1000}} >
                 {props => 
@@ -54,8 +49,8 @@ export default class OrgDetail extends React.Component {
         
                         <div className="OrgBody">
                             {subscribe}
-                            <div className="OrgButton b"><a href="https://www.kohtaus.info/" target="_blank">Vieraile kotisivulla</a></div>
-                            <div className="OrgButton c" onClick={this.showMap}><a>katso kartalta</a></div>
+                            <div className="OrgButton b"><a href="https://www.kohtaus.info/" target="#">Vieraile kotisivulla</a></div>
+                            <div className="OrgButton c" onClick={this.showMap}><div>katso kartalta</div></div>
                         </div>
                     </div>
                 }

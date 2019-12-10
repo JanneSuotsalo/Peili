@@ -1,12 +1,7 @@
 import React from 'react';
 import Simplelist from './SimpleList';
-import ListView from './ListView';
 
 export default class ListItemHandler extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     onClick = (image, data) => {
         this.props.click(image, data)
     }

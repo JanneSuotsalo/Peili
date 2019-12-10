@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Toolbar from './components/Toolbar/Toolbar'
 import Organization from "./pages/organizations/Organization";
@@ -10,9 +9,8 @@ import Feed from "./pages/feed/Feed";
 import Login from "./pages/signIn/Login"
 import Register from "./pages/signIn/Register"
 import SideDrawer from './components/SideDrawer/SideDrawer'
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import Test from './pages/test/Test';
-import TestDetail from './pages/testDetail/TestDetail';
 import BackDrop from './components/BackDrop/Backdrop';
 import History from "./pages/history/History";
 import Result from "./pages/result/Result";

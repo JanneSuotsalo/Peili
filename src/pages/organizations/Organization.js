@@ -1,7 +1,5 @@
 import React from 'react';
-import ListView from '../../components/list/ListView';
 import './Organization.css'
-import Simplelist from '../../components/list/SimpleList';
 import OrgDetail from './OrgDetail';
 import { Spring, Trail } from 'react-spring/renderprops'
 import ListItemHandler from '../../components/list/ListItemHandler';

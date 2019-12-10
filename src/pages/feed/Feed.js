@@ -7,7 +7,6 @@ import { Trail } from 'react-spring/renderprops'
 import TestDetail from '../../pages/testDetail/TestDetail';
 
 var data1 = require('../../test.json');
-var data = require('../../example.json');
 
 export default class Feed extends React.Component {
     state = {
@@ -15,31 +14,16 @@ export default class Feed extends React.Component {
         item: [],
         quiz: []
     }
-    constructor(props) {
-        super(props);
-        /*this.data = props.data;
-        this.handleSubscribe = props.handleSubscribe;
-        this.handleUnsubscribe = props.handleUnsubscribe;
-        this.image = props.image;
-        this.orgHandler = props.orgHandler;
-        this.orgHandler1 = props.orgHandler1;
-        this.popHandler = props.popHandler;
-        this.popOrgDetail = props.popOrgDetail;
-        this.popPopup = props.popPopup;
-        this.showPopup = props.showPopup;
-        this.subscribed = props.subscribed;
-    */}
 
     handleClick = (image, data) => {
         this.props.orgHandler1(image, data);
     }
 
     componentWillMount() {
-        for (var i = 0; i < 1; i++) {
-            this.setState(prevState => ({
-                quiz: [data1.tasks[i], ...prevState.quiz]
-            }));
-        }
+        this.setState(prevState => ({
+            quiz: [data1.tasks[0], ...prevState.quiz]
+        })
+        )
     }
 
     onclick = (item) => {

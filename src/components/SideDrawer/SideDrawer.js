@@ -52,7 +52,7 @@ const sideDrawer = props => {
         </Link>
 
         <div className="profileCorner">
-          <img src={exampleIcon}></img>
+          <img alt="sa" src={exampleIcon}></img>
           <p>John Doe</p>
           <Link to="/login">
             <button onClick={props.closeDraw}>
