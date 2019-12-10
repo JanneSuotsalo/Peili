@@ -25,6 +25,7 @@
 }
 
 .shop_modalName{
+    margin-top: 5px;
     font-weight: 500;
     margin-left: 3%;
 }
@@ -42,6 +43,7 @@
 }
 
 .shop_modal_buy_button{
+    margin-top: 20px;
     margin-right: 10px;
     margin-bottom: 5px;
     width: 140px;
@@ -55,6 +57,7 @@
 }
 
 .shop_modal_close_button {
+    margin-top: 20px;
     margin-left: 10px;
     margin-bottom: 5px;
     width: 140px;
