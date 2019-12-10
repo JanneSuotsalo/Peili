@@ -78,20 +78,20 @@ const AddElement = (lastIndex, changevalue) => {
 
     if (i > lastIndex) {
       data.push(
-        <div key={i} className={"history_" + obj.tag.toString() + "Container"}>
+        <div key={i+obj.tag.toString()} className={"history_" + obj.tag.toString() + "Container"}>
           {container}
         </div>
       );
       if (i === 0) {
         container.push(
-          <img key={i} className="history_sideImgStart" src={sideImgStart} />
+          <img key={i+obj.date.toString()} className="history_sideImgStart" src={sideImgStart} />
         );
-        container.push(<div className="history_dateStart">{new Date(obj.date).toLocaleString()}</div>);
-        container.push(<div className="history_eventStart">{obj.event}</div>);
+        container.push(<div key={i+obj.tag.toString()} className="history_dateStart">{new Date(obj.date).toLocaleString()}</div>);
+        container.push(<div key={i} className="history_eventStart">{obj.event}</div>);
       } else {
-        container.push(<img className="history_sideImg" src={sideImg} />);
-        container.push(<div className="history_date">{new Date(obj.date).toLocaleString()}</div>);
-        container.push(<div className="history_event">{obj.event}</div>);
+        container.push(<img key={i+obj.tag.toString()} className="history_sideImg" src={sideImg} />);
+        container.push(<div key={i+obj.date.toString()} className="history_date">{new Date(obj.date).toLocaleString()}</div>);
+        container.push(<div key={i} className="history_event">{obj.event}</div>);
       }
 
       lastIndex = i;
