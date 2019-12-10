@@ -47,8 +47,7 @@
        "titleTemplate": "{classname}-{title}",
        "ancestorSeparator": " › ",
        "suiteNameTemplate": "{filepath}",
-       "usePathForSuiteName": "true"
-   }  
+       "usePathForSuiteName": "true"  
   },
   "browserslist": {
     "production": [

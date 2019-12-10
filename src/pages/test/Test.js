@@ -9,7 +9,7 @@ var data = require('../../test.json');
 /*
     All of the tests are listed in this page.
     Tests are mount in componentWillMount() function so you can fetch them with api call
-    
+    has a pop for TestDetail where you can start quiz
 */
 
 export default class Test extends React.Component {

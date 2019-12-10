@@ -5,7 +5,10 @@ import { Spring, Trail } from 'react-spring/renderprops'
 import ListItemHandler from '../../components/list/ListItemHandler';
 
 var data = require('../../example.json');
-
+/*
+    All of the organizations are displayed here. Has a mount function to fetch data from api.
+    
+*/
 export default class Organization extends React.Component {
     state = {
         loading: true,
