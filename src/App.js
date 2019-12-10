@@ -19,12 +19,6 @@ import Result from "./pages/result/Result";
 import CustomChatBot from './components/Chatbot/CustomChatbot';
 import Shop from "./pages/shop/shop";
 
-function handleTestClick (){
-} 
-
-/*
-
-*/
 class App extends React.Component {
   state = {
     sideDrawer: false,

@@ -50,7 +50,7 @@ export default class Test extends React.Component {
                     <p>{I18n.t('testpage.headerText')}</p>
                 </div>
                 <div className="testList">
-                    <Trail items={this.state.item} keys={item => item} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{  transform: 'translate3d(0, 0, 0)'}}>
+                    <Trail items={this.state.item} keys={item => item.id} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{  transform: 'translate3d(0, 0, 0)'}}>
                         {item => props =><TestCard style={props} clicked={this.onclick} title={item} />}
                     </Trail>
                 </div>

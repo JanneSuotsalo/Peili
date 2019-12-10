@@ -26,5 +26,8 @@
     },
     "chatbot":{
         "Greet":"Hi!, How is it going?"
+    },
+    "settings":{
+        "login":"Login"
     }
 }

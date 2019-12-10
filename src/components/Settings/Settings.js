@@ -7,6 +7,7 @@ import { FaMobile, FaMobileAlt } from 'react-icons/fa';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
+import I18n from "../../components/Element/LanguageSwticher/I18n";
 
 export default class Settings extends React.Component {
     state = {

@@ -17,37 +17,40 @@ const sideDrawer = props => {
       <ul>
         <Link to="/profile">
           <li className="first">
-            <a onClick={props.closeDraw}>{I18n.t("navBar.profile")}</a>
+            <div onClick={props.closeDraw}>{I18n.t("navBar.profile")}</div>
           </li>
         </Link>
         <Link to="/Feed">
           <li>
-            <a onClick={props.closeDraw}>{I18n.t("navBar.mainFeed")}</a>
+            <div onClick={props.closeDraw}>{I18n.t("navBar.mainFeed")}</div>
           </li>
         </Link>
         <Link to="/organization">
           <li>
-            <a onClick={props.closeDraw}>{I18n.t("navBar.organisations")}</a>
+            <div onClick={props.closeDraw}>{I18n.t("navBar.organisations")}</div>
           </li>
         </Link>
         <Link to="/test">
           <li>
-            <a onClick={props.closeDraw}>{I18n.t("navBar.test")}</a>
+            <div onClick={props.closeDraw}>{I18n.t("navBar.test")}</div>
           </li>
         </Link>
         <Link to="/history">
           <li>
-            <a onClick={props.closeDraw}>{I18n.t("navBar.history")}</a>
+            <div onClick={props.closeDraw}>{I18n.t("navBar.history")}</div>
           </li>
         </Link>
         <Link to="/shop">
           <li>
-            <a onClick={props.closeDraw}>{I18n.t("Kauppa")}</a>
+            <div onClick={props.closeDraw}>{I18n.t("Kauppa")}</div>
           </li>
-        </Link>
+          </Link>
+        <Link to="/shop">
         <li>
-          <a onClick={props.closeDraw}>{I18n.t("Tavaraluettelo")}</a>
+          <div onClick={props.closeDraw}>{I18n.t("Tavaraluettelo")}</div>
         </li>
+        </Link>
+
         <div className="profileCorner">
           <img src={exampleIcon}></img>
           <p>John Doe</p>

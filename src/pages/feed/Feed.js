@@ -1,12 +1,11 @@
 import React from 'react';
 import './Feed.css';
-import CellListView from '../../components/cellList/CellList';
+import Cell from '../../components/cell/cell';
 import Simplelist from '../../components/list/SimpleList';
 import OrgDetail from '../../pages/organizations/OrgDetail';
 import TestCard from '../../components/card/TestCard';
 import { Trail } from 'react-spring/renderprops'
 import TestDetail from '../../pages/testDetail/TestDetail';
-import { width } from '@material-ui/system';
 
 var data1 = require('../../test.json');
 var data = require('../../example.json');
@@ -19,7 +18,18 @@ export default class Feed extends React.Component {
     }
     constructor(props) {
         super(props);
-    }
+        /*this.data = props.data;
+        this.handleSubscribe = props.handleSubscribe;
+        this.handleUnsubscribe = props.handleUnsubscribe;
+        this.image = props.image;
+        this.orgHandler = props.orgHandler;
+        this.orgHandler1 = props.orgHandler1;
+        this.popHandler = props.popHandler;
+        this.popOrgDetail = props.popOrgDetail;
+        this.popPopup = props.popPopup;
+        this.showPopup = props.showPopup;
+        this.subscribed = props.subscribed;
+    */}
 
     handleClick = (image, data) => {
         this.props.orgHandler1(image, data);
@@ -88,70 +98,11 @@ export default class Feed extends React.Component {
                     <h2 className="sectionTitle">Kyselyt</h2>
                 </div>
                 <div className="mainFeed">
-                    <Trail items={this.state.quiz} keys={item => item} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
+                    <Trail items={this.state.quiz} keys={item => item.id} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
                         {item => props => <TestCard style={props} feed={true} clicked={this.onclick} title={item} />}
                     </Trail>
                 </div>
                 <Cell title="Tilatut" click={this.handleClick} recommend={false} subOrgz={this.props.subscribed} />
-            </div>
-        )
-    };
-};
-
-class Container extends React.Component {
-    constructor(props) {
-        super(props);
-        this.props = { title: "null" }
-    }
-    onClick = (image, data) => {
-        this.props.click(image, data)
-    }
-    render() {
-        if (this.props.recommend) {
-
-            return (
-                <div class="scrolling-wrapper">
-                    <div class="card"><Simplelist click={this.onClick} item={data.organizations[data.organizations.length - 1]} /></div>
-                </div>
-            )
-        }
-        if (this.props.subOrgz.length > 0) {
-            return (
-                <div class="scrolling-wrapper">
-                    <Trail items={this.props.subOrgz} keys={item => item} from={{ transform: 'translate3d(-400px,-400px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
-                        {item => props => <div class="card"><Simplelist style={props} click={this.onClick} item={item} /></div>}
-                    </Trail>
-                </div>
-            )
-        } else {
-            return (
-                <div className="EmptyCard">
-                    <h3>Hups...</h3>
-                    <h3> Kokeile tilata järjestösivulta mieleisesi järjestö</h3>
-                </div>
-            )
-        }
-    };
-};
-
-class Cell extends React.Component {
-    constructor(props) {
-        super(props);
-        this.props = { title: "null" }
-    }
-
-    handleClick = (image, data) => {
-        this.props.click(image, data);
-    }
-
-    render() {
-
-        return (
-            <div>
-                <div className="cardHeader">
-                    <h2 className="sectionTitle">{this.props.title}</h2>
-                </div>
-                <Container recommend={this.props.recommend} click={this.handleClick} subOrgz={this.props.subOrgz} />
             </div>
         )
     };

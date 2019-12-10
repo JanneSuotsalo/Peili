@@ -67,7 +67,7 @@ export default class Organization extends React.Component {
                             <h1 style={props}>Paikat</h1>
                             <p style={props}></p>
                         </div>
-                        <Trail items={this.state.item} from={{ transform: 'translate3d(-400px, 200px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
+                        <Trail items={this.state.item} keys={item => item.id} from={{ transform: 'translate3d(-400px, 200px,0)' }} to={{ transform: 'translate3d(0, 0, 0)' }}>
                             {(item, i) => props =>
                                 <ListItemHandler item={item} style={props} index={i} click={this.handleClick} />}
                         </Trail>

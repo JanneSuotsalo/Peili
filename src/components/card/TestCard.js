@@ -1,9 +1,6 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import './TestCard.css';
-import { Spring } from 'react-spring/renderprops';
 import { FaCheck, FaPause, FaArrowRight } from 'react-icons/fa';
-import { width } from '@material-ui/system';
 
 
 

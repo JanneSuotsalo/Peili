@@ -78,13 +78,13 @@ const AddElement = (lastIndex, changevalue) => {
 
     if (i > lastIndex) {
       data.push(
-        <div className={"history_" + obj.tag.toString() + "Container"}>
+        <div key={i} className={"history_" + obj.tag.toString() + "Container"}>
           {container}
         </div>
       );
       if (i === 0) {
         container.push(
-          <img className="history_sideImgStart" src={sideImgStart} />
+          <img key={i} className="history_sideImgStart" src={sideImgStart} />
         );
         container.push(<div className="history_dateStart">{new Date(obj.date).toLocaleString()}</div>);
         container.push(<div className="history_eventStart">{obj.event}</div>);
