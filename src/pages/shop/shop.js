@@ -43,10 +43,10 @@ export default function Shop(prop) {
 
     // Handles item buying, if user doesn't have enough money, shows error message
     function buyItem(item){
-        if(money >= item.price){
+        if(prop.money >= item.price){
 
             // Removes money amount that the item costs
-            //prop.setMoney(-item.price)
+            prop.setMoney(-item.price)
 
             // Sets bought item into inventory
             prop.setInventory(item)
