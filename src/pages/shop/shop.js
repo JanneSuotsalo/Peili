@@ -34,7 +34,7 @@ export default function Shop(prop) {
       }
     }
     setForceRender(1);
-  }, [shopList]);
+  }, [shopList, prop]);
 
   // Opens modal and shows the item
   function openItem(item) {
@@ -114,10 +114,10 @@ export default function Shop(prop) {
                 style={{ background: item.color }}
               ></div>
               <div className="shopItem_box">
-                <a className="shop_name">{item.name}</a>
-                <a className="shop_price">
+                <div className="shop_name">{item.name}</div>
+                <div className="shop_price">
                   {I18n.t("shop.price")} {item.price}G
-                </a>
+                </div>
               </div>
             </div>
           </li>
@@ -136,10 +136,10 @@ export default function Shop(prop) {
                 style={{ background: item.color }}
               ></div>
               <div className="shopItem_box">
-                <a className="shop_name">{item.name}</a>
-                <a className="shop_price">
+                <div className="shop_name">{item.name}</div>
+                <div className="shop_price">
                   {I18n.t("shop.price")} {item.price}G
-                </a>
+                </div>
               </div>
             </div>
           </li>

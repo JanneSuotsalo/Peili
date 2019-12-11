@@ -33,7 +33,7 @@ export default function Inventory(prop) {
                 setEmptyInventory(false)
             }
         }
-    }, []);
+    }, [inventoryListBgColor, inventoryListColor, prop.inventory]);
 
     // Opens modal and shows the item
     function openItem(item){
@@ -96,7 +96,7 @@ export default function Inventory(prop) {
                         <div className="inventoryItem_container">
                         <div className="inventory_img" style={{background: item.color}}></div>
                             <div className="inventoryItem_box">
-                                <a className="inventory_name">{item.name}</a>
+                                <div className="inventory_name">{item.name}</div>
                             </div>
                         </div>
                     </li>
@@ -110,7 +110,7 @@ export default function Inventory(prop) {
                         <div className="inventoryItem_container">
                         <div className="inventory_img" style={{background: item.color}}></div>
                             <div className="inventoryItem_box">
-                                <a className="inventory_name">{item.name}</a>
+                                <div className="inventory_name">{item.name}</div>
                             </div>
                         </div>
                     </li>
