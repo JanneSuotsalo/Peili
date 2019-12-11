@@ -16,6 +16,7 @@ import History from "./pages/history/History";
 import Result from "./pages/result/Result";
 import CustomChatBot from './components/Chatbot/CustomChatbot';
 import Shop from "./pages/shop/shop";
+import { createBrowserHistory } from "history";
 
 class App extends React.Component {
   state = {
@@ -97,10 +98,12 @@ class App extends React.Component {
   }
 
   render(){
+    const history = createBrowserHistory()
     let backDrop;
     let backDrop1;
     let backDrop2;
-
+    let chat;
+    
     if(this.state.sideDrawer){
       backDrop = <BackDrop drawerToggleClickHandler={this.drawerToggleClickHandler}/>;
     }
@@ -110,13 +113,19 @@ class App extends React.Component {
     if(this.state.orgPopup){
       backDrop2 = <BackDrop organizationHandler={this.organizationHandler} popPopUp={this.popPopUp}/>;
     }
+    console.log(history.location.pathname)
+    if(history.location.pathname === "/" || history.location.pathname === "/login"){
+        
+    } else {
+      chat =<CustomChatBot normal={true} className={this.state.sideDrawer ? "show" : "noShow"}/>      
+    }
   return (
     
     <Router>    
     <div style={{height: '100%'}}>
         <Toolbar show={this.state.noNav} showX={this.state.sideDrawer} drawClickHandler={this.drawerToggleClickHandler}/>
          <SideDrawer closeDraw={this.drawerToggleClickHandler} show={this.state.sideDrawer}/>;
-         <CustomChatBot normal={true} className={this.state.sideDrawer ? "show" : "noShow"}/>      
+         {chat}
         {backDrop}
         {backDrop1}
         {backDrop2}

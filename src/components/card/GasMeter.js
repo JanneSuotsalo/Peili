@@ -28,11 +28,11 @@ export default class GasMeter extends React.Component {
         return (
             <div className='LifeMeters'>
                 <div className="LifeMeterHeader" onClick={this.clicked}>
-                    <IoIosStats size={30} /><p>Life Meters</p><div className="lifeMeterNav"><Arrow anim={this.state.showAnim}/></div>
+                    <IoIosStats size={30} /><p>Elämän mittarit</p><div className="lifeMeterNav"><Arrow anim={this.state.showAnim}/></div>
                 </div>
                 <Collapse isOpened={this.state.showAnim}>
                     <div className="LifeMeterCell">
-                        <p>Mittari 1</p>
+                        <p>Rakkaus</p>
                         <Line className="LifeMeterLine1" percent="60" strokeWidth="2" strokeColor="#228B22" />
                     </div>
                     <div className="LifeMeterCell">

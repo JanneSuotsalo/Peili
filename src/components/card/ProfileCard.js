@@ -32,7 +32,7 @@ export default class ProfileCard extends React.Component {
                 <h4> Rahaa: {this.props.money}</h4>
                 <p>{this.props.title}</p>
                 <div className="accountDetail" onClick={this.clicked}>
-                    <MdPersonOutline size={30} /><p>Account detail</p><div className="buttonProfile"><Arrow anim={this.state.showAnim} /></div>
+                    <MdPersonOutline size={30} /><p>Käyttäjän tiedot</p><div className="buttonProfile"><Arrow anim={this.state.showAnim} /></div>
                 </div>
                 <Collapse isOpened={this.state.showAnim}>
                     <div className="userDetails">
@@ -42,7 +42,7 @@ export default class ProfileCard extends React.Component {
                 </Collapse>
 
                 <div className="statisticsDetail" onClick={this.clicked1}>
-                    <TiDocument size={30} /><p>Statistics</p><div className="buttonProfileStat"><Arrow anim={this.state.showAnim1}/></div>
+                    <TiDocument size={30} /><p>Statistiikkaa</p><div className="buttonProfileStat"><Arrow anim={this.state.showAnim1}/></div>
                 </div>
                 <Collapse isOpened={this.state.showAnim1}>
                     <div className="StatDetails">

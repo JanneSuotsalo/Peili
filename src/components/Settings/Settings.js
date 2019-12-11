@@ -36,7 +36,7 @@ export default class Settings extends React.Component {
             <div className='SettingsDiv'>
                 <p>{this.props.title}</p>
                 <div className="SettingsDetail" onClick={this.clicked}>
-                    <FiLogIn size={30} /><p>Login</p><div className="buttonSettingsDetail"><Arrow anim={this.state.showAnim} /></div>
+                    <FiLogIn size={30} /><p>Kirjautumis Asetukset</p><div className="buttonSettingsDetail"><Arrow anim={this.state.showAnim} /></div>
                 </div>
                 <Collapse isOpened={this.state.showAnim}>
                     <div className="AccountDetails">
@@ -45,7 +45,7 @@ export default class Settings extends React.Component {
                     </div>
                 </Collapse>
                 <div className="SettingsDark" onClick={this.clicked1}>
-                    <FaMobile size={30} /><p>Dark mode</p><div className="buttonDarkDetail"><Arrow anim={this.state.showAnim1} /></div>
+                    <FaMobile size={30} /><p>Tumma tila</p><div className="buttonDarkDetail"><Arrow anim={this.state.showAnim1} /></div>
                 </div>
                 <Collapse isOpened={this.state.showAnim1}>
                     <div className="DarkMode">
@@ -56,17 +56,17 @@ export default class Settings extends React.Component {
                     </div>
                 </Collapse>
                 <div className="SettingsNotification" onClick={this.clicked2}>
-                    <IoMdNotificationsOutline size={30} /><p>Notifications</p><div className="buttonNotificationDetail"><Arrow anim={this.state.showAnim2} /></div>
+                    <IoMdNotificationsOutline size={30} /><p>Hälytykset</p><div className="buttonNotificationDetail"><Arrow anim={this.state.showAnim2} /></div>
                 </div>
                 <Collapse isOpened={this.state.showAnim2}>
                     <div className="Notification">
-                        <p>Notifications: </p>
+                        <p>Hälytykset: </p>
                         <label>
                             <Toggle icons={false} />
                         </label>
                     </div>
                     <div className="Notification">
-                        <p>Email notifications: </p>
+                        <p>Sähköposti hälytykset: </p>
                         <label>
                             <Toggle icons={false} />
 

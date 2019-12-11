@@ -13,7 +13,7 @@ export default class TestCard extends React.Component {
                     <p>{this.props.item.description}</p>
                 </div>
                 <Link to="/quiz">
-                    <div onClick={this.props.click} className="buttoni">
+                    <div classname="buttonTes" onClick={this.props.click} className="buttoni">
                         Aloita testi
                      </div>
                      </Link>

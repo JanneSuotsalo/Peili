@@ -29,9 +29,9 @@ export default class Profile extends React.Component {
         //now only one item but will be changed to a list
         return (
             <div className="profileMain">
-                <ProfileCard title={"User"} money={this.props.money} highlight={this.state.scroll} user={this.state.user}/>
+                <ProfileCard title={"Käyttäjä"} money={this.props.money} highlight={this.state.scroll} user={this.state.user}/>
                 <GasMeter />
-                <Settings title={"Settings"}/>
+                <Settings title={"Asetukset"}/>
                 </div>
         );
     }
