@@ -104,6 +104,96 @@ export default class Quiz extends React.Component {
         }
     }
 
+    
+    // Potential way to handle quiz data coming from database
+    // cant use since having problems with: Objects are not valid as a React child
+    /*
+    handleQuizData() {
+        console.log(taskData.questions.length)
+        
+        var questions = [];
+        for (var i = 0; i < taskData.questions.length; i++) {
+
+            if(taskData.questions[i].type = "radio") {
+                console.log(taskData.questions[i])
+                questions.push(
+                <div className="questionCard">
+                    <div className="progressDiv">
+                        <h3 className="progress">Kysymys {taskData.questions[i]}/{taskData.questions.length}</h3>
+                        <h4 className="progress">{taskData.introText}...</h4>
+                    </div>
+                    <RadioGroup qTitle={taskData.questions[i].prompt} value1={taskData.questions[i].ansType[0]} value2={taskData.questions[i].ansType[1]} />
+                    <h3 className="warning">{this.state.warning}</h3>
+                    <div className="quizButtons">
+                        <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                        <button onClick={this.handleRadioClick} className="next_btn">Seuraava</button>
+                        <Link to="/test">
+                            <button className="abort_btn">Poistu</button>
+                        </Link>
+                    </div>
+                </div>
+                )
+                console.log(questions)
+            } else if (taskData.questions[i].type = "opentext") {
+                questions.push(
+                    <div className="questionCard">
+                    <div className="progressDiv">
+                        <h3 className="progress">Kysymys {taskData.questions[i]}/{taskData.questions.length}</h3>
+                        <h4 className="progress">{taskData.introText}...</h4>
+                    </div>
+                    <Opentext qTitle={taskData.questions[i].prompt} maxLength={taskData.questions[i].maxLen} />
+                    <h3 className="warning">{this.state.warning}</h3>
+                    <div className="quizButtons">
+                        <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                        <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                        <Link to="/test">
+                            <button className="abort_btn">Poistu</button>
+                        </Link>
+                    </div>
+                </div>
+                )
+            } else if (taskData.questions[i].type = "multichoice") {
+                questions.push(
+                    <div className="questionCard">
+                    <div className="progressDiv">
+                        <h3 className="progress">Kysymys {taskData.questions[i]}/{taskData.questions.length}</h3>
+                        <h4 className="progress">{taskData.introText}...</h4>
+                    </div>
+                    <MultiChoice qTitle={taskData.questions[i].prompt} options={taskData.questions[i].choices}  />
+                    <h3 className="warning">{this.state.warning}</h3>
+                    <div className="quizButtons">
+                        <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                        <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                        <Link to="/test">
+                            <button className="abort_btn">Poistu</button>
+                        </Link>
+                    </div>
+                </div>
+                )
+            } else if (taskData.questions[i].type = "rangeslider") {
+                questions.push(
+                    <div className="questionCard">
+                    <div className="progressDiv">
+                        <h3 className="progress">Kysymys {taskData.questions[i]}/{taskData.questions.length}</h3>
+                        <h4 className="progress">{taskData.introText}...</h4>
+                    </div>
+                    <RangeSlider qTitle={taskData.questions[i].prompt}min={taskData.questions[i].minValue} max={taskData.questions[i].maxValue} minLabel={taskData.questions[i].minLabel} maxLabel={taskData.questions[i].maxLabel} />
+                    <h3 className="warning">{this.state.warning}</h3>
+                    <div className="quizButtons">
+                        <button onClick={this.handleBackClick} className="back_btn">Takaisin</button>
+                        <button onClick={this.handleClick} className="next_btn">Seuraava</button>
+                        <Link to="/test">
+                            <button className="abort_btn">Poistu</button>
+                        </Link>
+                    </div>
+                </div>
+                )
+            }
+        }
+        return questions;
+    }
+    */
+
 
     render() {
         let questionCount = this.state.questionCount;
