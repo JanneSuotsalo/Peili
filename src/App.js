@@ -170,6 +170,8 @@ class App extends React.Component {
       chat = (
         <CustomChatBot
           normal={true}
+          chatBotColor={this.state.chatBotColor}
+          chatBotBgColor={this.state.chatBotBgColor}
           className={this.state.sideDrawer ? "show" : "noShow"}
         />
       );
