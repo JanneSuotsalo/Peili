@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./History.css";
 import sideImgStart from "./history_sideImgStart.png";
 import sideImg from "./history_sideImg.png";
+import I18n from "../../components/Element/LanguageSwticher/I18n";
 
 export default function History() {
   const [count, setCount] = useState(0);
@@ -49,7 +50,7 @@ export default function History() {
       {visible && (
         <div className="history_buttonContainer">
           <button className="history_ShowMoreButton" onClick={() => render()}>
-            Näytä lisää
+            {I18n.t("history.showMore")}
           </button>
         </div>
       )}

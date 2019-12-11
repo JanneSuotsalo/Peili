@@ -75,5 +75,8 @@
     "passLengthError": "Password has to be longer than 8 characters",
     "registerText": "Register",
     "alrdyHaveAccountText": "Already registered? Click here"
+  },
+  "history": {
+    "showMore": "Show more"
   }
 }

@@ -61,7 +61,7 @@
     "usernameLabel": "Käyttäjänimi",
     "passwordLabel": "Salasana",
     "loginText": "Kirjaudu",
-    "noAccountText": "Rekisteröidy klikkaamlla tästä"
+    "noAccountText": "Rekisteröidy klikkaamalla tästä"
   },
   "register": {
     "title": "Rekisteröityminen",
@@ -75,5 +75,8 @@
     "passLengthError": "Salasanan pitää olla yli 8 merkkiä pitkä",
     "registerText": "Rekisteröidy",
     "alrdyHaveAccountText": "Jos sinulla on jo käyttäjä, klikkaa tästä"
+  },
+  "history": {
+    "showMore": "Näytä lisää"
   }
 }
