@@ -1,42 +1,65 @@
 [
     {
-        "name":"Chatbot robotti 2",
-        "price":"600",
+        "name":"Punainen gradient",
+        "price":"700",
+        "color":"linear-gradient(0deg, rgba(255,143,143,1) 0%, rgba(255,0,0,1) 100%)",
+        "style":"bgColor",
         "id":"1"
     },
     {
-        "name":"Profiili kuva tonttu",
-        "price":"1000",
+        "name":"Sininen",
+        "price":"500",
+        "color":"blue",
+        "style":"bgColor",
         "id":"2"
     },
     {
-        "name":"Chatbot ihminen",
+        "name":"Vihreä",
         "price":"200",
+        "color":"green",
+        "style":"color",
         "id":"3"
     },
     {
-        "name":"Chatbot joulupukki",
-        "price":"1200",
+        "name":"Kulta",
+        "price":"1900",
+        "color":"linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)",
+        "style":"color",
         "id":"4"
     },
     {
-        "name":"Profiilikuva tiikeri",
-        "price":"1100",
+        "name":"Harmaa",
+        "price":"300",
+        "color":"grey",
+        "style":"color",
         "id":"5"
     },
     {
-        "name":"Profiilikuva joulupukki",
-        "price":"1200",
+        "name":"Punainen",
+        "price":"500",
+        "color":"red",
+        "style":"color",
         "id":"6"
     },
     {
-        "name":"Chatbot taustakuva meri",
+        "name":"Sininen gradient",
         "price":"2000",
+        "color":"linear-gradient(190deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
+        "style":"bgColor",
         "id":"7"
     },
     {
-        "name":"Chatbot taustakuva vaalean vihreä",
+        "name":"Vaalean vihreä gradient",
         "price":"1600",
+        "color":"linear-gradient(0deg, rgba(175,236,183,1) 0%, rgba(112,236,16,1) 100%)",
+        "style":"bgColor",
         "id":"8"
+    },
+    {
+        "name":"Sinivihreä gradient",
+        "price":"2000",
+        "color":"linear-gradient(90deg, rgba(63,251,170,1) 0%, rgba(236,255,0,1) 100%)",
+        "style":"bgColor",
+        "id":"9"
     }
 ]

@@ -1,0 +1,103 @@
+.inventory_modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.inventory_modal_wrapper {
+    position: fixed;
+    top: 20%;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+}
+
+.inventory_modal {
+    border-radius: 10px 10px 10px 10px;
+    background: white;
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.inventory_modalName{
+    margin-top: 5px;
+    font-weight: 500;
+    margin-left: 3%;
+    margin-bottom: 20px;
+}
+
+.inventory_buttonContainers{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.inventory_modal_buy_button{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    width: 140px;
+    height: 50px;
+    border-radius: 3px;
+    border-style: none;
+    font-size: 1.2em;
+    background-color: #04bfbf;
+    color: white;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+}
+
+.inventory_modal_close_button {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    width: 140px;
+    height: 50px;
+    border-radius: 3px;
+    border-style: none;
+    font-size: 1.2em;
+    background-color: #04bfbf;
+    color: white;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+}
+
+.inventory_button_default {
+    background: #247BA0;
+    color: #fff;
+}
+
+.inventory_modal_img{
+    border-radius: 10px 10px 0px 0px;
+    height: 150px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 375px) {
+    .inventory_modal_buy_button{
+        width: 120px;
+    }
+
+    .inventory_modal-close-button {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .modal_img{
+        height: 115px;
+    }
+
+    .inventory_modal_buy_button{
+        width: 110px;
+    }
+
+    .inventory_modal_close_button {
+        width: 110px;
+    }
+}

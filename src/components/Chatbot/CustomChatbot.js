@@ -5,8 +5,8 @@ import { ThemeProvider } from 'styled-components';
 
 function CustomChatbot(props) {
   const theme = {
-    background: '#FFFF',
-    headerBgColor: '#f76f07',
+    background: props.chatBotBgColor,
+    headerBgColor: props.chatBotColor,
     headerFontColor: '#fff',
     headerFontSize: '25px',
     botBubbleColor: '#f76f07',
